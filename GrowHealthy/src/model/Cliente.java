@@ -5,7 +5,9 @@ public class Cliente {
 	private String codiceFiscale;
 	private String nome;
 	private String cognome;
-	private String indirizzo;
+	private String via;
+	private String città;
+	private String cap;
 	private String dataDiNascita;
 	private String telefono;
 	private String email;
@@ -35,12 +37,28 @@ public class Cliente {
 		this.cognome = cognome;
 	}
 
-	public String getIndirizzo() {
-		return indirizzo;
+	public String getVia() {
+		return via;
 	}
 
-	public void setIndirizzo(String indirizzo) {
-		this.indirizzo = indirizzo;
+	public void setVia(String via) {
+		this.via = via;
+	}
+
+	public String getCittà() {
+		return città;
+	}
+
+	public void setCittà(String città) {
+		this.città = città;
+	}
+
+	public String getCap() {
+		return cap;
+	}
+
+	public void setCap(String cap) {
+		this.cap = cap;
 	}
 
 	public String getDataDiNascita() {

@@ -60,7 +60,7 @@ legend {
     border-bottom: 1px solid #e5e5e5;
 }
 label {
-    font-size: 14px;
+    font-size: 13.5px;
 }
 .box {
     margin: 0 -10px;
@@ -1575,7 +1575,7 @@ ul.main-navigation > li.menu-last ul ul {
 .col-2 #content{width:80%;}
 
 #column-left, .single-blog #column-right, .blog #column-right {
-    width: 20%;
+    width: 5%;
 }
 .category_block, .filter-block, .account-block, .affiliate-block, .information-block {
 	padding: 10px 20px 20px;;

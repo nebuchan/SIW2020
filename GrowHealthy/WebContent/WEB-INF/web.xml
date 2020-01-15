@@ -11,8 +11,12 @@
         <servlet-name>Welcome</servlet-name>
         <servlet-class>login.Welcome</servlet-class>
     </servlet>
-   
     
+     <servlet>
+        <servlet-name>RegisterClient</servlet-name>
+        <servlet-class>controllers.RegistrazioneCliente</servlet-class>
+    </servlet>
+   
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -21,6 +25,11 @@
     <servlet-mapping>
         <servlet-name>Welcome</servlet-name>
         <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>RegisterClient</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
   
 </web-app>

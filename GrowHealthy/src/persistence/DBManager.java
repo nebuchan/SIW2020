@@ -101,4 +101,8 @@ public class DBManager {
 		return getSemeDao().findByPrimaryKey(iD);
 	}
 
+	public void inserisciCliente(Cliente cliente) {
+		getClienteDao().save(cliente);
+	}
+
 }
