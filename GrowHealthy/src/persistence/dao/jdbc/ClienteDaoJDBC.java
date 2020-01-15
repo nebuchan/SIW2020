@@ -50,17 +50,19 @@ public class ClienteDaoJDBC implements ClienteDao {
 	}
 
 	@Override
-	public Cliente findByPrimaryKey(String codiceFiscale) {
+	public Cliente findByPrimaryKey(String email) {
 		Connection connection = null;
 		Cliente cliente = null;
+
 		try {
 			connection = this.dataSource.getConnection();
 			PreparedStatement statement;
-			String query = "select * from cliente where codice_fiscale = ?";
+			String query = "select * from cliente where email = ?";
 			statement = connection.prepareStatement(query);
-			statement.setString(1, codiceFiscale);
+			statement.setString(1, email);
 			ResultSet result = statement.executeQuery();
 			if (result.next()) {
+
 				cliente = new Cliente();
 				cliente.setCodiceFiscale(result.getString("codice_fiscale"));
 				cliente.setNome(result.getString("nome"));
@@ -125,16 +127,16 @@ public class ClienteDaoJDBC implements ClienteDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update cliente SET nome = ?, cognome = ?, indirizzo = ?, data_nascita = ?, telefono = ?, email = ?, password = ? WHERE codice_fiscale = ?";
+			String update = "update cliente SET nome = ?, cognome = ?, indirizzo = ?, data_nascita = ?, telefono = ?, codice_fiscale = ?, password = ? WHERE email = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, cliente.getNome());
 			statement.setString(2, cliente.getCognome());
 			statement.setString(3, cliente.getIndirizzo());
 			statement.setString(4, cliente.getDataDiNascita());
 			statement.setString(5, cliente.getTelefono());
-			statement.setString(6, cliente.getEmail());
+			statement.setString(6, cliente.getCodiceFiscale());
 			statement.setString(7, cliente.getPassword());
-			statement.setString(8, cliente.getCodiceFiscale());
+			statement.setString(8, cliente.getEmail());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -154,9 +156,9 @@ public class ClienteDaoJDBC implements ClienteDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String delete = "delete FROM cliente WHERE codice_fiscale = ? ";
+			String delete = "delete FROM cliente WHERE email = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setString(1, cliente.getCodiceFiscale());
+			statement.setString(1, cliente.getEmail());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());

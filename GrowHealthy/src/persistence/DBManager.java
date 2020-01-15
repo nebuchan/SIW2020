@@ -1,14 +1,11 @@
 package persistence;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.Properties;
-
+import model.Azienda;
 import model.Cliente;
+import model.Prodotto;
+import model.Seme;
+import model.Terreno;
 import persistence.dao.AziendaDao;
 import persistence.dao.ClienteDao;
 import persistence.dao.ProdottoDao;
@@ -22,8 +19,7 @@ import persistence.dao.jdbc.TerrenoDaoJDBC;
 
 public class DBManager {
 	private static DataSource dataSource;
-	private static Connection conn=null;
-	
+
 	public static DBManager instance = null;
 
 	public static DBManager getInstance() {
@@ -34,17 +30,14 @@ public class DBManager {
 	}
 
 	private DBManager() {
-		String url = "jdbc:postgresql://packy.db.elephantsql.com:5432/scqjcqio";
-		Properties props = new Properties();
-		props.setProperty("user","scqjcqio");
-		props.setProperty("password","wynuYWnkYD7uF6IIIkWyj25hlvlUYs2S");
-		try 
-		{
-			Class.forName("org.postgresql.Driver");
-		conn= DriverManager.getConnection(url, props);
+		try {
+			Class.forName("org.postgresql.Driver").newInstance();
+			dataSource = new DataSource("jdbc:postgresql://packy.db.elephantsql.com:5432/scqjcqio", "scqjcqio",
+					"wynuYWnkYD7uF6IIIkWyj25hlvlUYs2S");
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		catch(Exception e) {e.printStackTrace();}
-		
 
 	}
 
@@ -68,31 +61,44 @@ public class DBManager {
 		return new SemeDaoJDBC(dataSource);
 	}
 
-	public List<Cliente> dammiClienti(){
+	public List<Cliente> dammiClienti() {
 		return getClienteDao().findAll();
 	}
-	
-	public Cliente dammiCliente(String codiceFiscale) {
-		return getClienteDao().findByPrimaryKey(codiceFiscale);
+
+	public Cliente dammiCliente(String email) {
+		return getClienteDao().findByPrimaryKey(email);
 	}
-	
-	public boolean autenticazione(String email,String password)
-	{	
-		boolean st=false;
-		PreparedStatement statement=null;
-		try {
-			statement = conn.prepareStatement(
-					"select Email,Password from Cliente where Email=? and Password=?");
-			statement.setString(1, email);
-			statement.setString(2, password);
-			ResultSet rs=statement.executeQuery();
-			st=rs.next();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		return st;
+
+	public List<Azienda> dammiAziende() {
+		return getAziendaDao().findAll();
 	}
+
+	public Azienda dammiAzienda(int iD) {
+		return getAziendaDao().findByPrimaryKey(iD);
+	}
+
+	public List<Prodotto> dammiProdotti() {
+		return getProdottoDao().findAll();
+	}
+
+	public Prodotto dammiProdotto(int iD) {
+		return getProdottoDao().findByPrimaryKey(iD);
+	}
+
+	public List<Terreno> dammiTerreni() {
+		return getTerrenoDao().findAll();
+	}
+
+	public Terreno dammiTerreno(int iD) {
+		return getTerrenoDao().findByPrimaryKey(iD);
+	}
+
+	public List<Seme> dammiSemi() {
+		return getSemeDao().findAll();
+	}
+
+	public Seme dammiSeme(int iD) {
+		return getSemeDao().findByPrimaryKey(iD);
+	}
+
 }

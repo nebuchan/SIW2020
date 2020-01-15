@@ -5,19 +5,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DataSource {
-	private String uri;
+	private String url;
 	private String username;
 	private String password;
 
-	public DataSource(String uri, String username, String password) {
+	public DataSource(String url, String username, String password) {
 		super();
-		this.uri = uri;
+		this.url = url;
 		this.username = username;
 		this.password = password;
 	}
-	
+
 	public Connection getConnection() throws SQLException {
-		Connection connection = DriverManager.getConnection(uri, username, password);
+		Connection connection = DriverManager.getConnection(url, username, password);
 		return connection;
 	}
 
