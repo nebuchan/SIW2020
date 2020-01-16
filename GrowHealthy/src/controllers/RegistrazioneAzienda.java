@@ -35,7 +35,7 @@ public class RegistrazioneAzienda extends HttpServlet{
 		
 		Azienda azienda = new Azienda();
 		
-		azienda.setiD(0);
+		azienda.setiD(2);
 		azienda.setRagioneSociale(ragioneSociale);
 		azienda.setSedeLegale(sedeLegale);
 		azienda.setReferente(referente);
@@ -45,12 +45,9 @@ public class RegistrazioneAzienda extends HttpServlet{
 		azienda.setTelefono(telefono);
 		azienda.setDescrizione(descrizione);
 		
+		System.out.print(ragioneSociale);
 		DBManager.getInstance().inserisciAzienda(azienda);
 		
-		out.println("<div class=\"alert alert-success\">\r\n" +
-				" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
-				"  <strong> Grazie per esserti registrato!</strong> Ora puoi effettuare il Login.\r\n" + 
-				"</div>");
 		
 		RequestDispatcher rd = req.getRequestDispatcher("index.html");
 		rd.forward(req, resp);
