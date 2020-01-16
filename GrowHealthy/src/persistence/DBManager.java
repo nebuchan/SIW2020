@@ -104,5 +104,9 @@ public class DBManager {
 	public void inserisciCliente(Cliente cliente) {
 		getClienteDao().save(cliente);
 	}
+	
+	public void inserisciAzienda(Azienda azienda) {
+		getAziendaDao().save(azienda);
+	}
 
 }

@@ -25,17 +25,17 @@ public class AziendaDaoJDBC implements AziendaDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into azienda(iD, ragione_sociale, sede_legale, partita_iva, referente, descrizione, telefono, email, password) values (?,?,?,?,?,?,?,?,?)";
+			String insert = "insert into azienda(iD, ragione_sociale, sede_legale, referente, descrizione, email, password, telefono, partita_iva) values (?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, azienda.getiD());
 			statement.setString(2, azienda.getRagioneSociale());
 			statement.setString(3, azienda.getSedeLegale());
-			statement.setInt(4, azienda.getpIva());
-			statement.setString(5, azienda.getReferente());
-			statement.setString(6, azienda.getDescrizione());
-			statement.setString(7, azienda.getTelefono());
-			statement.setString(8, azienda.getEmail());
-			statement.setString(9, azienda.getPassword());
+			statement.setString(4, azienda.getReferente());
+			statement.setString(5, azienda.getDescrizione());
+			statement.setString(6, azienda.getEmail());
+			statement.setString(7, azienda.getPassword());
+			statement.setString(8, azienda.getTelefono());
+			statement.setInt(9, azienda.getpIva());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {

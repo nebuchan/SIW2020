@@ -16,6 +16,11 @@
         <servlet-name>RegistrazioneCliente</servlet-name>
         <servlet-class>controllers.RegistrazioneCliente</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>RegistrazioneAzienda</servlet-name>
+        <servlet-class>controllers.RegistrazioneAzienda</servlet-class>
+    </servlet>
    
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -30,6 +35,11 @@
     <servlet-mapping>
         <servlet-name>RegistrazioneCliente</servlet-name>
         <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>RegistrazioneAzienda</servlet-name>
+        <url-pattern>/companyRegister</url-pattern>
     </servlet-mapping>
   
 </web-app>
