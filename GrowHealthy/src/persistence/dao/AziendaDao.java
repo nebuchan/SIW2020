@@ -7,7 +7,7 @@ import model.Azienda;
 public interface AziendaDao {
 	public void save(Azienda azienda); // Create
 
-	public Azienda findByPrimaryKey(int iD); // Retrieve
+	public Azienda findByPrimaryKey(String email); // Retrieve
 
 	public List<Azienda> findAll();
 

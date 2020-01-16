@@ -25,17 +25,16 @@ public class AziendaDaoJDBC implements AziendaDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into azienda(id, ragione_sociale, sede_legale, referente, descrizione, email, password, telefono, partita_iva) values (?,?,?,?,?,?,?,?,?)";
+			String insert = "insert into azienda(email, password, ragione_sociale, sede_legale, partita_iva, referente, telefono, descrizione) values (?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
-			statement.setInt(1, azienda.getiD());
-			statement.setString(2, azienda.getRagioneSociale());
-			statement.setString(3, azienda.getSedeLegale());
-			statement.setString(4, azienda.getReferente());
-			statement.setString(5, azienda.getDescrizione());
-			statement.setString(6, azienda.getEmail());
-			statement.setString(7, azienda.getPassword());
-			statement.setString(8, azienda.getTelefono());
-			statement.setInt(9, azienda.getpIva());
+			statement.setString(1, azienda.getEmail());
+			statement.setString(2, azienda.getPassword());
+			statement.setString(3, azienda.getRagioneSociale());
+			statement.setString(4, azienda.getSedeLegale());
+			statement.setInt(5, azienda.getpIva());
+			statement.setString(6, azienda.getReferente());
+			statement.setString(7, azienda.getTelefono());
+			statement.setString(8, azienda.getDescrizione());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -51,28 +50,26 @@ public class AziendaDaoJDBC implements AziendaDao {
 	}
 
 	@Override
-	public Azienda findByPrimaryKey(int iD) {
+	public Azienda findByPrimaryKey(String email) {
 		Connection connection = null;
 		Azienda azienda = null;
 		try {
 			connection = this.dataSource.getConnection();
 			PreparedStatement statement;
-			String query = "select * from azienda where iD = ?";
+			String query = "select * from azienda where email = ?";
 			statement = connection.prepareStatement(query);
-			statement.setInt(1, iD);
+			statement.setString(1, email);
 			ResultSet result = statement.executeQuery();
 			if (result.next()) {
 				azienda = new Azienda();
-				azienda.setiD(result.getInt("iD"));
+				azienda.setEmail(result.getString("email"));
+				azienda.setPassword(result.getString("password"));
 				azienda.setRagioneSociale(result.getString("ragione_sociale"));
 				azienda.setSedeLegale(result.getString("sede_legale"));
 				azienda.setpIva(result.getInt("partita_iva"));
 				azienda.setReferente(result.getString("referente"));
-				azienda.setDescrizione(result.getString("descrizione"));
 				azienda.setTelefono(result.getString("telefono"));
-				azienda.setEmail(result.getString("email"));
-				azienda.setPassword(result.getString("password"));
-				statement.executeUpdate();
+				azienda.setDescrizione(result.getString("descrizione"));
 
 			}
 		} catch (SQLException e) {
@@ -100,15 +97,14 @@ public class AziendaDaoJDBC implements AziendaDao {
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				azienda = new Azienda();
-				azienda.setiD(result.getInt("iD"));
+				azienda.setEmail(result.getString("email"));
+				azienda.setPassword(result.getString("password"));
 				azienda.setRagioneSociale(result.getString("ragione_sociale"));
 				azienda.setSedeLegale(result.getString("sede_legale"));
 				azienda.setpIva(result.getInt("partita_iva"));
 				azienda.setReferente(result.getString("referente"));
-				azienda.setDescrizione(result.getString("descrizione"));
 				azienda.setTelefono(result.getString("telefono"));
-				azienda.setEmail(result.getString("email"));
-				azienda.setPassword(result.getString("password"));
+				azienda.setDescrizione(result.getString("descrizione"));
 
 				aziende.add(azienda);
 			}
@@ -129,17 +125,16 @@ public class AziendaDaoJDBC implements AziendaDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update azienda SET ragione_sociale = ?, sede_legale = ?, partita_iva = ?, referente = ?, descrizione = ?, telefono = ?, email = ?, password = ? WHERE iD = ?";
+			String update = "update azienda SET password = ?, ragione_sociale = ?, sede_legale = ?, partita_iva = ?, referente = ?, descrizione = ?, telefono = ? WHERE email = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
-			statement.setString(1, azienda.getRagioneSociale());
-			statement.setString(2, azienda.getSedeLegale());
-			statement.setInt(3, azienda.getpIva());
-			statement.setString(4, azienda.getReferente());
-			statement.setString(5, azienda.getDescrizione());
+			statement.setString(1, azienda.getPassword());
+			statement.setString(2, azienda.getRagioneSociale());
+			statement.setString(3, azienda.getSedeLegale());
+			statement.setInt(4, azienda.getpIva());
+			statement.setString(5, azienda.getReferente());
 			statement.setString(6, azienda.getTelefono());
-			statement.setString(7, azienda.getEmail());
-			statement.setString(8, azienda.getPassword());
-			statement.setInt(9, azienda.getiD());
+			statement.setString(7, azienda.getDescrizione());
+			statement.setString(8, azienda.getEmail());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -159,9 +154,9 @@ public class AziendaDaoJDBC implements AziendaDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String delete = "delete FROM azienda WHERE iD = ? ";
+			String delete = "delete FROM azienda WHERE email = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setInt(1, azienda.getiD());
+			statement.setString(1, azienda.getEmail());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());

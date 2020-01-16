@@ -73,8 +73,8 @@ public class DBManager {
 		return getAziendaDao().findAll();
 	}
 
-	public Azienda dammiAzienda(int iD) {
-		return getAziendaDao().findByPrimaryKey(iD);
+	public Azienda dammiAzienda(String email) {
+		return getAziendaDao().findByPrimaryKey(email);
 	}
 
 	public List<Prodotto> dammiProdotti() {

@@ -4,7 +4,7 @@
   
   <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>controllers.loginController</servlet-class>
+        <servlet-class>controllers.Login</servlet-class>
     </servlet>
     
    <servlet>
@@ -34,7 +34,7 @@
     
     <servlet-mapping>
         <servlet-name>RegistrazioneCliente</servlet-name>
-        <url-pattern>/register</url-pattern>
+        <url-pattern>/clientRegister</url-pattern>
     </servlet-mapping>
     
     <servlet-mapping>

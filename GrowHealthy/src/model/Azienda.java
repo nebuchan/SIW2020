@@ -2,7 +2,6 @@ package model;
 
 public class Azienda {
 
-	private int iD;
 	private String ragioneSociale;
 	private String sedeLegale;
 	private String referente;
@@ -11,14 +10,6 @@ public class Azienda {
 	private String password;
 	private String telefono;
 	private String descrizione;
-
-	public int getiD() {
-		return iD;
-	}
-
-	public void setiD(int iD) {
-		this.iD = iD;
-	}
 
 	public String getRagioneSociale() {
 		return ragioneSociale;

@@ -73,7 +73,7 @@
         </div>
         <div class="col-sm-9" id="content">
             <h1>Registrazione Cliente</h1>
-            <p>Se sei un'azienda, clicca <a href="CompanyRegister.jsp">qui</a>.</p>
+            <p>Se sei un'azienda, clicca <a href="companyRegistration.jsp">qui</a>.</p>
             <form class="form-horizontal" method="POST" action="register">
             
                     <p>INFORMAZIONI PERSONALI</p>
