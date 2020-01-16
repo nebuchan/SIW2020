@@ -70,77 +70,72 @@
         <div class="col-sm-9" id="content">
             <h1>Registrazione Cliente</h1>
             <p>Se sei un'azienda, clicca <a href="CompanyRegister.html">qui</a>.</p>
-            <form class="form-horizontal" enctype="multipart/form-data" method="post" action="register">
-                <fieldset id="account">
-                    <legend>Informazioni Personali</legend>
-                    <div style="display: none;" class="form-group required">
-                        <label class="col-sm-2 control-label">Customer Group</label>
-                        <div class="col-sm-10">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" checked="checked" value="1" name="customer_group_id">
-                                    Default</label>
-                            </div>
-                        </div>
-                    </div>
+            <form class="form-horizontal" method="POST" action="register">
+            
+                    <p>INFORMAZIONI PERSONALI</p>
+                    
                     <div class="form-group required">
                         <label for="input-firstname" class="col-sm-2 control-label">Nome</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input-firstname" placeholder="Nome" value="" name="nome">
+                            <input type="text" class="form-control" id="input-firstname" placeholder="Nome"  name="nome">
                         </div>
                     </div>
                     <div class="form-group required">
                         <label for="input-lastname" class="col-sm-2 control-label">Cognome</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input-lastname" placeholder="Cognome" value="" name="cognome">
+                            <input type="text" class="form-control" id="input-lastname" placeholder="Cognome"  name="cognome">
                         </div>
                     </div>
                     <div class="form-group required">
                         <label for="input-email" class="col-sm-2 control-label">Codice Fiscale</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input-email" placeholder="Codice Fiscale" value="" name="codiceFiscale">
+                            <input type="text" class="form-control" id="input-email" placeholder="Codice Fiscale"  name="cf">
+                        </div>
+                    </div>
+                     <div class="form-group required">
+                        <label for="input-email" class="col-sm-2 control-label">Data di Nascita</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id=input-date placeholder="Data di Nascita"  name="data">
                         </div>
                     </div>
                     <div class="form-group required">
                         <label for="input-email" class="col-sm-2 control-label">E-Mail</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="input-email" placeholder="E-Mail" value="" name="email">
+                            <input type="email" class="form-control" id="input-email" placeholder="E-Mail"  name="email">
                         </div>
                     </div>
                     <div class="form-group required">
                         <label for="input-telephone" class="col-sm-2 control-label">Numero Telefono</label>
                         <div class="col-sm-10">
-                            <input type="tel" class="form-control" id="input-telephone" placeholder="Numero Telefono" value="" name="telefono">
+                            <input type="tel" class="form-control" id="input-telephone" placeholder="Numero Telefono"  name="telefono">
                         </div>
                     </div>
-                </fieldset>
-                <fieldset id="address">
-                    <legend>Indirizzo</legend>
+              
+               <p>INDIRIZZO</p>
                     <div class="form-group required">
                         <label for="input-address-1" class="col-sm-2 control-label">Via</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input-address-1" placeholder="Via" value="" name="via">
+                            <input type="text" class="form-control" id="input-address-1" placeholder="Via"  name="via">
                         </div>
                     </div>
                     <div class="form-group required">
                         <label for="input-city" class="col-sm-2 control-label">Città</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input-city" placeholder="Città" value="" name="citta">
+                            <input type="text" class="form-control" id="input-city" placeholder="Città"  name="citta">
                         </div>
                     </div>
                     <div class="form-group required">
                         <label for="input-postcode" class="col-sm-2 control-label">CAP</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="input-postcode" placeholder="CAP" value="" name="cap">
+                            <input type="text" class="form-control" id="input-postcode" placeholder="CAP"  name="cap">
                         </div>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Password</legend>
+               
+                <p>PASSWORD</p>
                     <div class="form-group required">
                         <label for="input-password" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="input-password" placeholder="Password" value="" name="password">
+                            <input type="password" class="form-control" id="input-password" placeholder="Password"  name="password">
                         </div>
                     </div>
                    <!--   <div class="form-group required">
@@ -154,7 +149,7 @@
                     <div class="pull-right">I have read and agree to the <a class="agree" href="#"><b>Privacy Policy</b></a>
                         <input type="checkbox" value="1" name="agree">
                         &nbsp;
-                        <input type="submit" class="btn btn-primary" value="Continue">
+                        <button type="submit" class="btn btn-primary" value="RegistrazioneCliente">Continue </button>
                     </div>
                 </div>
             </form>

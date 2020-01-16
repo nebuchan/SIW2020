@@ -25,18 +25,19 @@ public class ClienteDaoJDBC implements ClienteDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into cliente(codice_fiscale, nome, cognome, via, città, cap, data_nascita, telefono, email, password) values (?,?,?,?,?,?,?,?,?,?)";
+			String insert = "insert into Cliente(codice_fiscale, nome, cognome, telefono, email, password, via, citta, cap, data_nascita) values (?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, cliente.getCodiceFiscale());
 			statement.setString(2, cliente.getNome());
 			statement.setString(3, cliente.getCognome());
-			statement.setString(4, cliente.getVia());
-			statement.setString(5, cliente.getCittà());
-			statement.setString(6, cliente.getCap());
-			statement.setString(7, cliente.getDataDiNascita());
-			statement.setString(8, cliente.getTelefono());
-			statement.setString(9, cliente.getEmail());
-			statement.setString(10, cliente.getPassword());
+			statement.setString(4, cliente.getTelefono());
+			statement.setString(5, cliente.getEmail());
+			statement.setString(6, cliente.getPassword());
+			statement.setString(7, cliente.getVia());
+			statement.setString(8, cliente.getCitta());
+			statement.setString(9, cliente.getCap());
+			statement.setString(10, cliente.getDataDiNascita());
+			
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -59,7 +60,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 		try {
 			connection = this.dataSource.getConnection();
 			PreparedStatement statement;
-			String query = "select * from cliente where email = ?";
+			String query = "select * from Cliente where email = ?";
 			statement = connection.prepareStatement(query);
 			statement.setString(1, email);
 			ResultSet result = statement.executeQuery();
@@ -70,7 +71,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 				cliente.setNome(result.getString("nome"));
 				cliente.setCognome(result.getString("cognome"));
 				cliente.setVia(result.getString("via"));
-				cliente.setCittà(result.getString("città"));
+				cliente.setCitta(result.getString("citta"));
 				cliente.setCap(result.getString("cap"));
 				cliente.setDataDiNascita(result.getString("data_nascita"));
 				cliente.setTelefono(result.getString("telefono"));
@@ -98,7 +99,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 			connection = this.dataSource.getConnection();
 			Cliente cliente;
 			PreparedStatement statement;
-			String query = "select * from cliente";
+			String query = "select * from Cliente";
 			statement = connection.prepareStatement(query);
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
@@ -107,7 +108,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 				cliente.setNome(result.getString("nome"));
 				cliente.setCognome(result.getString("cognome"));
 				cliente.setVia(result.getString("via"));
-				cliente.setCittà(result.getString("città"));
+				cliente.setCitta(result.getString("citta"));
 				cliente.setCap(result.getString("cap"));
 				cliente.setDataDiNascita(result.getString("data_nascita"));
 				cliente.setTelefono(result.getString("telefono"));
@@ -133,12 +134,12 @@ public class ClienteDaoJDBC implements ClienteDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update cliente SET nome = ?, cognome = ?, via = ?, città = ?, cap = ?, data_nascita = ?, telefono = ?, codice_fiscale = ?, password = ? WHERE email = ?";
+			String update = "update cliente SET nome = ?, cognome = ?, via = ?, citta = ?, cap = ?, data_nascita = ?, telefono = ?, codice_fiscale = ?, password = ? WHERE email = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, cliente.getNome());
 			statement.setString(2, cliente.getCognome());
 			statement.setString(3, cliente.getVia());
-			statement.setString(4, cliente.getCittà());
+			statement.setString(4, cliente.getCitta());
 			statement.setString(5, cliente.getCap());
 			statement.setString(6, cliente.getDataDiNascita());
 			statement.setString(7, cliente.getTelefono());

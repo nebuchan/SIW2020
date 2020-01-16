@@ -13,7 +13,7 @@
     </servlet>
     
      <servlet>
-        <servlet-name>RegisterClient</servlet-name>
+        <servlet-name>RegistrazioneCliente</servlet-name>
         <servlet-class>controllers.RegistrazioneCliente</servlet-class>
     </servlet>
    
@@ -28,7 +28,7 @@
     </servlet-mapping>
     
     <servlet-mapping>
-        <servlet-name>RegisterClient</servlet-name>
+        <servlet-name>RegistrazioneCliente</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
   

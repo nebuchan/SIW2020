@@ -21,7 +21,6 @@ public class loginController extends HttpServlet {
 
 		String n = request.getParameter("email");
 		String p = request.getParameter("password");
-
 		Cliente cliente = DBManager.getInstance().dammiCliente(n);
 		if (cliente != null && cliente.getPassword().equals(p)) {
 			RequestDispatcher rd = request.getRequestDispatcher("/welcome");

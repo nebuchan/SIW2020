@@ -6,7 +6,7 @@ public class Cliente {
 	private String nome;
 	private String cognome;
 	private String via;
-	private String città;
+	private String citta;
 	private String cap;
 	private String dataDiNascita;
 	private String telefono;
@@ -45,12 +45,12 @@ public class Cliente {
 		this.via = via;
 	}
 
-	public String getCittà() {
-		return città;
+	public String getCitta() {
+		return citta;
 	}
 
-	public void setCittà(String città) {
-		this.città = città;
+	public void setCitta(String citta) {
+		this.citta = citta;
 	}
 
 	public String getCap() {
