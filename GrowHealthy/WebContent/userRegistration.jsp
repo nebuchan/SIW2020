@@ -29,7 +29,7 @@
 <div class="preloader loader" style="display: block; background:#f2f2f2;"> <img src="image/loader.gif"  alt="#"/></div>
 <!--#include virtual="index.html" -->
 <header>
-
+<%@ include file="header.jsp" %>  
 </header>
 <nav id="menu" class="navbar">
     <div class="nav-inner container">

@@ -30,7 +30,10 @@ public class Login extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-
+		String tipo= request.getParameter("tipo");
+		
+		System.out.print(tipo);
+		
 		Cliente cliente = DBManager.getInstance().dammiCliente(email);
 
 		Azienda azienda = DBManager.getInstance().dammiAzienda(email);
