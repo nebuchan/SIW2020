@@ -25,7 +25,7 @@
 													</div>
 													
 													<div class="form-group">
-													<input type="radio" name="tipo" value="Cliente"> Cliente
+													<input type="radio" name="tipo" value="Cliente" checked> Cliente
 													<input type="radio" name="tipo" value="Azienda"> Azienda
 													</div>
 													
