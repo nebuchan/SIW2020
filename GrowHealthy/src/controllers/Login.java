@@ -21,8 +21,10 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("Sono nel login!");
 
-		response.setContentType("text/html");
+		response.setContentType("text/html;charset=UTF-8");
 
 		PrintWriter out = response.getWriter();
 
@@ -35,17 +37,33 @@ public class Login extends HttpServlet {
 
 		if (cliente != null) {
 			if (cliente.getPassword().equals(password)) {
-				RequestDispatcher rd = request.getRequestDispatcher("/welcome");
+				System.out.println("Utente :" + cliente.getNome() + " " + cliente.getCognome());
+				request.getSession().setAttribute("utente", cliente);
+				request.getSession().removeAttribute("error");
+				
+				
+				RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 				rd.forward(request, response);
 			} else
-				out.print("Sorry email or password error");
+				request.getSession().setAttribute("error", "Sorry, email or password error");
 		} else if (azienda != null) {
 			if (azienda.getPassword().equals(password)) {
-				RequestDispatcher rd = request.getRequestDispatcher("/welcome");
+				System.out.println("Utente : " + azienda.getRagioneSociale());
+				
+				request.getSession().setAttribute("utente", azienda);
+				request.getSession().removeAttribute("error");
+				
+				RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 				rd.forward(request, response);
 			} else
-				out.print("Sorry email or password error");
+				request.getSession().setAttribute("error", "Sorry, email or password error");
 		}
+		else {
+			request.getSession().setAttribute("error", "Sorry, email or password error");
+			RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+			rd.forward(request, response);
+		}
+		
 
 		out.close();
 	}
