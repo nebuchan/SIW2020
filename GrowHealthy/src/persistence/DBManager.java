@@ -2,16 +2,19 @@ package persistence;
 
 import java.util.List;
 import model.Azienda;
+import model.CategoriaProdotto;
 import model.Cliente;
 import model.Prodotto;
 import model.Seme;
 import model.Terreno;
 import persistence.dao.AziendaDao;
+import persistence.dao.CategoriaProdottoDao;
 import persistence.dao.ClienteDao;
 import persistence.dao.ProdottoDao;
 import persistence.dao.SemeDao;
 import persistence.dao.TerrenoDao;
 import persistence.dao.jdbc.AziendaDaoJDBC;
+import persistence.dao.jdbc.CategoriaProdottoDaoJDBC;
 import persistence.dao.jdbc.ClienteDaoJDBC;
 import persistence.dao.jdbc.ProdottoDaoJDBC;
 import persistence.dao.jdbc.SemeDaoJDBC;
@@ -60,6 +63,10 @@ public class DBManager {
 	private SemeDao getSemeDao() {
 		return new SemeDaoJDBC(dataSource);
 	}
+	
+	private CategoriaProdottoDao getCategoriaProdottoDao() {
+		return new CategoriaProdottoDaoJDBC(dataSource);
+	}
 
 	public List<Cliente> dammiClienti() {
 		return getClienteDao().findAll();
@@ -99,6 +106,14 @@ public class DBManager {
 
 	public Seme dammiSeme(int iD) {
 		return getSemeDao().findByPrimaryKey(iD);
+	}
+	
+	public CategoriaProdotto dammiCategoriaProdotto(String categoria) {
+		return getCategoriaProdottoDao().findByPrimaryKey(categoria);
+	}
+	
+	public List<CategoriaProdotto> dammiCategorieProdotti(){
+		return getCategoriaProdottoDao().findAll();
 	}
 
 	public void inserisciCliente(Cliente cliente) {

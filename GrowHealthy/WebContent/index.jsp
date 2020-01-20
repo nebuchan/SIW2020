@@ -3,7 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>Grow Healthy</title>
 
@@ -46,16 +46,21 @@
 
 </head>
 <body>
-<header>
-<%@ include file="header.jsp" %>  
-</header>
+
 	<div class="preloader loader"
 		style="display: block; background: #f2f2f2;">
 		<img src="image/loader.gif" alt="#" />
 	</div>
+
+	<header>
+		<%@ include file="header.jsp"%>
+	</header>
+
+
 	<nav id="menu" class="navbar">
-	<%@ include file="menu.jsp" %>  
+		<%@ include file="menu.jsp"%>
 	</nav>
+
 	<div class="mainbanner">
 		<div id="main-banner" class="owl-carousel home-slider">
 			<div class="item">

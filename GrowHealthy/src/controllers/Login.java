@@ -23,16 +23,16 @@ public class Login extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		System.out.println("Sono nel login!");
-
-		response.setContentType("text/html;charset=UTF-8");
+		
+		PrintWriter out = response.getWriter();
+		
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String tipo = request.getParameter("tipo");
 
 		System.out.print(tipo);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
 
 		if (tipo.equals("Cliente")) {
 			System.out.println("Log Cliente");
@@ -46,16 +46,22 @@ public class Login extends HttpServlet {
 					request.getSession().removeAttribute("error");
 
 					rd.forward(request, response);
-				} else
-				{
-					request.getSession().setAttribute("error", "Sorry, email or password error");
-					rd.forward(request, response);
+				} else {
+					out.println("<div class=\"alert alert-danger\">\r\n" +
+							" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
+							"  <strong>Accesso Negato!</strong> Username o Password errati. Controllare se i dati inseriti sono corretti\r\n" + 
+							"</div>");
+
+					rd.include(request, response);
 				}
 			} else {
 				System.out.println("Log Cliente fallito!");
-				request.getSession().setAttribute("error", "Sorry, email or password error");
-				
-				rd.forward(request, response);
+				out.println("<div class=\"alert alert-danger\">\r\n" +
+						" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
+						"  <strong>Accesso Negato!</strong> Username o Password errati. Controllare se i dati inseriti sono corretti\r\n" + 
+						"</div>");
+
+				rd.include(request, response);
 			}
 		} else if (tipo.equals("Azienda")) {
 			System.out.println("Log Azienda");
@@ -69,17 +75,33 @@ public class Login extends HttpServlet {
 					request.getSession().removeAttribute("error");
 
 					rd.forward(request, response);
-				} else
-				{
-					request.getSession().setAttribute("error", "Sorry, email or password error");
-					rd.forward(request, response);
+				} else {
+					out.println("<div class=\"alert alert-danger\">\r\n" +
+							" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
+							"  <strong>Accesso Negato!</strong> Username o Password errati. Controllare se i dati inseriti sono corretti\r\n" + 
+							"</div>");
+
+					rd.include(request, response);
 				}
 			} else {
 				System.out.println("Log Azienda fallito!");
-				request.getSession().setAttribute("error", "Sorry, email or password error");
-				
-				rd.forward(request, response);
+
+				out.println("<div class=\"alert alert-danger\">\r\n" +
+						" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
+						"  <strong>Accesso Negato!</strong> Username o Password errati. Controllare se i dati inseriti sono corretti\r\n" + 
+						"</div>");
+
+				rd.include(request, response);
 			}
 		}
+		out.close();
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getSession().invalidate();
+		RequestDispatcher rd = req.getRequestDispatcher("home");
+		rd.forward(req, resp);
+		
 	}
 }

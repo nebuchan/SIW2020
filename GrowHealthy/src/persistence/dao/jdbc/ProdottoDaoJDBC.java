@@ -25,16 +25,16 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into prodotto(iD, azienda, nome, categoria, quantità_magazzino, quantità_minima, descrizione, prezzo) values (?,?,?,?,?,?,?,?)";
+			String insert = "insert into prodotto(iD, nome, categoria, quantità_magazzino, quantità_minima, descrizione, prezzo, azienda) values (?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, prodotto.getiD());
-			statement.setInt(2, prodotto.getIdAzienda());
-			statement.setString(3, prodotto.getNome());
-			statement.setString(4, prodotto.getCategoria());
-			statement.setInt(5, prodotto.getQuantitaMagazzino());
-			statement.setInt(6, prodotto.getQuantitaMin());
-			statement.setString(7, prodotto.getDescrizione());
-			statement.setDouble(8, prodotto.getPrezzo());
+			statement.setString(2, prodotto.getNome());
+			statement.setString(3, prodotto.getCategoria());
+			statement.setInt(4, prodotto.getQuantitaMagazzino());
+			statement.setInt(5, prodotto.getQuantitaMin());
+			statement.setString(6, prodotto.getDescrizione());
+			statement.setDouble(7, prodotto.getPrezzo());
+			statement.setString(8, prodotto.getEmailAzienda());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -63,13 +63,13 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			if (result.next()) {
 				prodotto = new Prodotto();
 				prodotto.setiD(result.getInt("iD"));
-				prodotto.setIdAzienda(result.getInt("azienda"));
 				prodotto.setNome(result.getString("nome"));
 				prodotto.setCategoria(result.getString("categoria"));
 				prodotto.setQuantitaMagazzino(result.getInt("quantità_magazzino"));
 				prodotto.setQuantitaMin(result.getInt("quantità_minima"));
 				prodotto.setDescrizione(result.getString("descrizione"));
 				prodotto.setPrezzo(result.getInt("prezzo"));
+				prodotto.setEmailAzienda(result.getString("azienda"));
 
 			}
 		} catch (SQLException e) {
@@ -98,13 +98,13 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			while (result.next()) {
 				prodotto = new Prodotto();
 				prodotto.setiD(result.getInt("iD"));
-				prodotto.setIdAzienda(result.getInt("azienda"));
 				prodotto.setNome(result.getString("nome"));
 				prodotto.setCategoria(result.getString("categoria"));
 				prodotto.setQuantitaMagazzino(result.getInt("quantità_magazzino"));
 				prodotto.setQuantitaMin(result.getInt("quantità_minima"));
 				prodotto.setDescrizione(result.getString("descrizione"));
 				prodotto.setPrezzo(result.getInt("prezzo"));
+				prodotto.setEmailAzienda(result.getString("azienda"));
 
 				prodotti.add(prodotto);
 			}
@@ -125,16 +125,16 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update prodotto SET azienda = ?, nome = ?, categoria = ?, quantità_magazzino = ?, quantità_minima = ?, descrizione = ?, prezzo = ? WHERE iD = ?";
+			String update = "update prodotto SET nome = ?, categoria = ?, quantità_magazzino = ?, quantità_minima = ?, descrizione = ?, prezzo = ?, azienda = ? WHERE iD = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
-			statement.setInt(1, prodotto.getIdAzienda());
-			statement.setString(2, prodotto.getNome());
-			statement.setString(3, prodotto.getCategoria());
-			statement.setInt(4, prodotto.getQuantitaMagazzino());
-			statement.setInt(5, prodotto.getQuantitaMin());
-			statement.setString(6, prodotto.getDescrizione());
-			statement.setDouble(7, prodotto.getPrezzo());
-			statement.setInt(8, prodotto.getiD());
+			statement.setString(1, prodotto.getNome());
+			statement.setString(2, prodotto.getCategoria());
+			statement.setInt(3, prodotto.getQuantitaMagazzino());
+			statement.setInt(4, prodotto.getQuantitaMin());
+			statement.setString(5, prodotto.getDescrizione());
+			statement.setDouble(6, prodotto.getPrezzo());
+			statement.setInt(7, prodotto.getiD());
+			statement.setString(8, prodotto.getEmailAzienda());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {

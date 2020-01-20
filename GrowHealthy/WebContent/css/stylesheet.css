@@ -6,6 +6,8 @@ body {
     line-height: 24px;
     position: relative;
     letter-spacing:0.5px;
+    background-image:url("../image/heaer-ptn.jpg");
+    background-attachment: fixed;
 }
 
 :focus {
@@ -635,6 +637,7 @@ border-radius: 0px;
 	background-image: url(../image/prlx.jpg);
 	background-size: auto;
 	background-position: 50% 50%;
+	background-attachment: fixed;
 	padding: 70px 0;
 	margin: 50px 0 20px;
 	text-align: center;
@@ -1575,7 +1578,7 @@ ul.main-navigation > li.menu-last ul ul {
 .col-2 #content{width:80%;}
 
 #column-left, .single-blog #column-right, .blog #column-right {
-    width: 5%;
+    width: 20%;
 }
 .category_block, .filter-block, .account-block, .affiliate-block, .information-block {
 	padding: 10px 20px 20px;;

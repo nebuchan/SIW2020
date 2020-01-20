@@ -4,12 +4,12 @@ public class Prodotto {
 
 	private int iD;
 	private String nome;
-	private String categoria;
 	private int quantitaMagazzino;
 	private int quantitaMin;
 	private String descrizione;
 	private double prezzo;
-	private int idAzienda;
+	private String categoria;
+	private String emailAzienda;
 
 	public int getiD() {
 		return iD;
@@ -67,12 +67,12 @@ public class Prodotto {
 		this.prezzo = prezzo;
 	}
 
-	public int getIdAzienda() {
-		return idAzienda;
+	public String getEmailAzienda() {
+		return emailAzienda;
 	}
 
-	public void setIdAzienda(int idAzienda) {
-		this.idAzienda = idAzienda;
+	public void setEmailAzienda(String emailAzienda) {
+		this.emailAzienda = emailAzienda;
 	}
 
 }
