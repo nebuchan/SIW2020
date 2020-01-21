@@ -46,11 +46,11 @@
 	<header>
 		<%@ include file="header.jsp"%>
 	</header>
-	
+
 	<nav id="menu" class="navbar">
 		<%@ include file="menu.jsp"%>
 	</nav>
-	
+
 	<div class="container">
 		<ul class="breadcrumb">
 			<li><a href="index.html"><i class="fa fa-home"></i></a></li>
@@ -64,7 +64,7 @@
 				<p>
 					Se sei un'azienda, clicca <a href="companyRegistration.jsp">qui</a>.
 				</p>
-				<form class="form-horizontal" method="POST" action="register">
+				<form class="form-horizontal" method="POST" action="clientRegister">
 
 					<p>INFORMAZIONI PERSONALI</p>
 

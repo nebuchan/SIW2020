@@ -43,7 +43,7 @@ public class RegistrazioneAzienda extends HttpServlet {
 
 		DBManager.getInstance().inserisciAzienda(azienda);
 
-		RequestDispatcher rd = req.getRequestDispatcher("index.html");
+		RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 		rd.forward(req, resp);
 
 	}

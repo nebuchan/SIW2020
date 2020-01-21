@@ -123,5 +123,15 @@ public class DBManager {
 	public void inserisciAzienda(Azienda azienda) {
 		getAziendaDao().save(azienda);
 	}
+	
+	public List<Prodotto> dammiProdottiPerCategoria(String categoria){
+		List<Prodotto> prodotti = getProdottoDao().findAll();
+		
+		for(int i=0; i < prodotti.size(); i++) {
+			if(!prodotti.get(i).getCategoria().equals(categoria))
+				prodotti.remove(i);
+		}
+		return prodotti;
+	}
 
 }

@@ -52,7 +52,7 @@
 	<nav id="menu" class="navbar">
 		<%@ include file="menu.jsp"%>
 	</nav>
-	
+
 	<div class="container">
 		<ul class="breadcrumb">
 			<li><a href="index.html"><i class="fa fa-home"></i></a></li>

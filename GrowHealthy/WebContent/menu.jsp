@@ -13,7 +13,7 @@
 		<div class="navbar-collapse">
 			<ul class="main-navigation">
 				<li><a href="index.jsp" class="parent">Home</a></li>
-				<li><a href="categories.jsp" class="parent">I nostri
+				<li><a href="categories" class="parent">I nostri
 						prodotti</a></li>
 				<li><a href="index.jsp" class="parent">Terreni</a></li>
 				<!--  

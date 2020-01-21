@@ -1,8 +1,6 @@
 package controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,11 +12,15 @@ import persistence.DBManager;
 
 public class RegistrazioneCliente extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2974334476489069848L;
+
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
-		PrintWriter out = resp.getWriter();
-		
+
 		String nome = req.getParameter("nome");
 		String cognome = req.getParameter("cognome");
 		String codiceFiscale = req.getParameter("cf");
@@ -29,7 +31,7 @@ public class RegistrazioneCliente extends HttpServlet {
 		String citta = req.getParameter("citta");
 		String cap = req.getParameter("cap");
 		String password = req.getParameter("password");
-		
+
 		System.out.println("Nuovo Cliente : " + nome + " " + cognome);
 		Cliente cliente = new Cliente();
 		cliente.setCodiceFiscale(codiceFiscale);
@@ -44,11 +46,10 @@ public class RegistrazioneCliente extends HttpServlet {
 		cliente.setPassword(password);
 
 		DBManager.getInstance().inserisciCliente(cliente);
-		
-		RequestDispatcher rd = req.getRequestDispatcher("index.html");
+
+		RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 		rd.forward(req, resp);
 
-		
 	}
 
 }
