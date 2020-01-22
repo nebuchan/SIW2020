@@ -125,12 +125,8 @@ public class DBManager {
 	}
 	
 	public List<Prodotto> dammiProdottiPerCategoria(String categoria){
-		List<Prodotto> prodotti = getProdottoDao().findAll();
+		List<Prodotto> prodotti = getProdottoDao().findByCategory(categoria);
 		
-		for(int i=0; i < prodotti.size(); i++) {
-			if(!prodotti.get(i).getCategoria().equals(categoria))
-				prodotti.remove(i);
-		}
 		return prodotti;
 	}
 

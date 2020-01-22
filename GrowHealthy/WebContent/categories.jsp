@@ -29,12 +29,12 @@
 
 <script src="javascript/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="javascript/jstree.min.js"></script>
-<script type="text/javascript" src="javascript/template.js"></script>
+<script src="javascript/jstree.min.js" type="text/javascript"></script>
+<script src="javascript/template.js" type="text/javascript"></script>
 <script src="javascript/common.js" type="text/javascript"></script>
 <script src="javascript/global.js" type="text/javascript"></script>
 <script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
-<script src="javascript/categorie.js" type="text/javascript"></script>
+<script src="javascript/categories.js" type="text/javascript"></script>
 </head>
 
 <body class="category col-2 left-col">
@@ -70,8 +70,9 @@
 							<c:forEach items="${categories}" var="category">
 
 								<li><a href="javascript:void(0);"
-									id="${category.categoria}">${category.categoria}</a></li>
-									
+									id="${category.categoria}"
+									onclick="caricaProdottiPerCategoria()">${category.categoria}</a></li>
+
 
 							</c:forEach>
 							<!--  <li><a href="#">Frutta</a>
@@ -371,12 +372,12 @@
 				</div>
 				-->
 			</div>
+
 			<div id="content" class="col-sm-9">
 
 				<div id="divFrutta">
-
 					<div class="row category-banner">
-						<h2 class="category-title" style="margin-left: 400px;">Frutta</h2>
+						<h2 class="category-title" style="margin-left: 400px;" id="cat">Frutta</h2>
 						<div class="col-sm-12 category-image">
 							<img src="image/banners/category-banner-frutta.jpg" alt="Frutta"
 								title="Frutta" class="img-thumbnail" />
@@ -393,7 +394,7 @@
 						<div class="col-md-6 list-grid-wrapper">
 							<div class="btn-group btn-list-grid">
 								<button type="button" id="list-view"
-									class="btn btn-default list" data-toggle="tooltip" title="List">
+									class="btn btn-default list active" data-toggle="tooltip" title="List">
 									<i class="fa fa-th-list"></i>
 								</button>
 								<button type="button" id="grid-view"
@@ -404,114 +405,107 @@
 						</div>
 					</div>
 
-					<br />
 
-					<div class="grid-list-wrapper">
-						<c:forEach items="${products}" var="product">
-							<div class="product-layout product-list col-xs-12">
-								<div class="product-thumb">
-									<div class="image product-imageblock">
-										<a href="product.html"> <img
-											src="image/product/pro-2-220x294.jpg"
-											alt="women's clothing stores"
-											title="lorem ippsum dolor dummy" class="img-responsive" />
-										</a>
-										<div class="button-group">
-											<button type="button" class="wishlist" data-toggle="tooltip"
-												title="Add to Wish List">
-												<i class="fa fa-heart-o"></i>
-											</button>
-											<button type="button" class="addtocart-btn">Add to
-												Cart</button>
-											<button type="button" class="compare" data-toggle="tooltip"
-												title="Compare this Product">
-												<i class="fa fa-exchange"></i>
-											</button>
-										</div>
-									</div>
-									<div class="caption product-detail">
-										<h4 class="product-name">
-											<a href="product.html" title="${product.nome}">${product.nome}</a>
+					<div class="grid-list-wrapper" id="divProdottiFrutta"></div>
 
-										</h4>
-										<!--  <p class="product-desc"></p>-->
-										<p class="price product-price">
-											<!--  <span class="price-old">${product.prezzo}</span>-->€${product.prezzo}<!--  <span
-												class="price-tax">Ex Tax: $100.00</span>-->
-										</p>
-										<div class="rating">
-											<span class="fa fa-stack"><i
-												class="fa fa-star fa-stack-2x"></i><i
-												class="fa fa-star-o fa-stack-2x"></i></span> <span
-												class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i
-												class="fa fa-star-o fa-stack-2x"></i></span> <span
-												class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i
-												class="fa fa-star-o fa-stack-2x"></i></span> <span
-												class="fa fa-stack"><i
-												class="fa fa-star-o fa-stack-2x"></i></span> <span
-												class="fa fa-stack"><i
-												class="fa fa-star-o fa-stack-2x"></i></span>
-										</div>
-									</div>
+				</div>
 
-									<div class="button-group">
-										<button type="button" class="wishlist" data-toggle="tooltip"
-											title="Add to Wish List">
-											<i class="fa fa-heart-o"></i>
-										</button>
-										<button type="button" class="addtocart-btn">Add to
-											Cart</button>
-										<button type="button" class="compare" data-toggle="tooltip"
-											title="Compare this Product">
-											<i class="fa fa-exchange"></i>
-										</button>
-									</div>
-								</div>
+				<div id="divVerdura" style="display: none">
+					<div class="row category-banner">
+						<h2 class="category-title" style="margin-left: 400px;">Verdura</h2>
+						<div class="col-sm-12 category-image">
+							<img src="image/banners/category-banner-verdura.jpg"
+								alt="Verdura" title="Verdura" class="img-thumbnail" />
+						</div>
+						<div class="col-sm-12 category-desc">Una scelta di verdura
+							ideale per avere sempre prodotti freschi a disposizione. verdura
+							fresca per un apporto extra di fibre e vitamine.I prodotti sono
+							selezionati settimanalmente insieme ai nostri fornitori per
+							garantire sempre freschezza e qualità.</div>
+					</div>
+
+					<div class="category-page-wrapper">
+						<div class="col-md-6 list-grid-wrapper">
+							<div class="btn-group btn-list-grid">
+								<button type="button" id="list-view"
+									class="btn btn-default list active" data-toggle="tooltip" title="List">
+									<i class="fa fa-th-list"></i>
+								</button>
+								<button type="button" id="grid-view"
+									class="btn btn-default grid" data-toggle="tooltip" title="Grid">
+									<i class="fa fa-th"></i>
+								</button>
 							</div>
-						</c:forEach>
+						</div>
 					</div>
+
+					<div class="grid-list-wrapper" id="divProdottiVerdura"></div>
+
 				</div>
 
-
-				<div class="row category-banner" id="divVerdura"
-					style="display: none">
-					<h2 class="category-title" style="margin-left: 400px;">Verdura</h2>
-					<div class="col-sm-12 category-image">
-						<img src="image/banners/category-banner-verdura.jpg" alt="Verdura"
-							title="Verdura" class="img-thumbnail" />
+				<div id="divLegumi" style="display: none">
+					<div class="row category-banner">
+						<h2 class="category-title" style="margin-left: 400px;">Legumi</h2>
+						<div class="col-sm-12 category-image">
+							<img src="image/banners/category-banner-legumi.jpg" alt="Legumi"
+								title="Legumi" class="img-thumbnail" />
+						</div>
+						<div class="col-sm-12 category-desc">Una scelta di legumi
+							ideale per avere sempre prodotti freschi a disposizione. verdura
+							fresca per un apporto extra di fibre e vitamine.I prodotti sono
+							selezionati settimanalmente insieme ai nostri fornitori per
+							garantire sempre freschezza e qualità.</div>
 					</div>
-					<div class="col-sm-12 category-desc">Una scelta di verdura
-						ideale per avere sempre prodotti freschi a disposizione. verdura
-						fresca per un apporto extra di fibre e vitamine.I prodotti sono
-						selezionati settimanalmente insieme ai nostri fornitori per
-						garantire sempre freschezza e qualità.</div>
+
+					<div class="category-page-wrapper">
+						<div class="col-md-6 list-grid-wrapper">
+							<div class="btn-group btn-list-grid">
+								<button type="button" id="list-view"
+									class="btn btn-default list active" data-toggle="tooltip" title="List">
+									<i class="fa fa-th-list"></i>
+								</button>
+								<button type="button" id="grid-view"
+									class="btn btn-default grid " data-toggle="tooltip" title="Grid">
+									<i class="fa fa-th"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="grid-list-wrapper" id="divProdottiLegumi"></div>
+
 				</div>
 
-				<div class="row category-banner" id="divLegumi"
-					style="display: none">
-					<h2 class="category-title" style="margin-left: 400px;">Legumi</h2>
-					<div class="col-sm-12 category-image">
-						<img src="image/banners/category-banner-legumi.jpg" alt="Legumi"
-							title="Legumi" class="img-thumbnail" />
+				<div id="divTuberi" style="display: none">
+					<div class="row category-banner">
+						<h2 class="category-title" style="margin-left: 400px;">Tuberi</h2>
+						<div class="col-sm-12 category-image">
+							<img src="image/banners/category-banner-tuberi.jpg" alt="Tuberi"
+								title="Tuberi" class="img-thumbnail" />
+						</div>
+						<div class="col-sm-12 category-desc">Una scelta di tuberi
+							ideale per avere sempre prodotti freschi a disposizione.I
+							prodotti sono selezionati settimanalmente insieme ai nostri
+							fornitori per garantire sempre freschezza e qualità.</div>
 					</div>
-					<div class="col-sm-12 category-desc">Una scelta di legumi
-						ideale per avere sempre prodotti freschi a disposizione. verdura
-						fresca per un apporto extra di fibre e vitamine.I prodotti sono
-						selezionati settimanalmente insieme ai nostri fornitori per
-						garantire sempre freschezza e qualità.</div>
-				</div>
 
-				<div class="row category-banner" id="divTuberi"
-					style="display: none">
-					<h2 class="category-title" style="margin-left: 400px;">Tuberi</h2>
-					<div class="col-sm-12 category-image">
-						<img src="image/banners/category-banner-tuberi.jpg" alt="Tuberi"
-							title="Tuberi" class="img-thumbnail" />
+					<div class="category-page-wrapper">
+						<div class="col-md-6 list-grid-wrapper">
+							<div class="btn-group btn-list-grid">
+								<button type="button" id="list-view"
+									class="btn btn-default list active" data-toggle="tooltip" title="List">
+									<i class="fa fa-th-list"></i>
+								</button>
+								<button type="button" id="grid-view"
+									class="btn btn-default grid" data-toggle="tooltip" title="Grid">
+									<i class="fa fa-th"></i>
+								</button>
+							</div>
+						</div>
 					</div>
-					<div class="col-sm-12 category-desc">Una scelta di tuberi
-						ideale per avere sempre prodotti freschi a disposizione.I prodotti
-						sono selezionati settimanalmente insieme ai nostri fornitori per
-						garantire sempre freschezza e qualità.</div>
+
+					<div class="grid-list-wrapper" id="divProdottiTuberi"></div>
+
 				</div>
 
 				<!--  <div class="category-page-wrapper">

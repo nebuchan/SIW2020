@@ -1,13 +1,17 @@
 package controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import model.Prodotto;
 import persistence.DBManager;
@@ -18,22 +22,49 @@ public class DammiProdottiPerCategoria extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		String categoria = req.getParameter("categoria");
+
+		System.out.println("Categoria : " + req.getParameter("categoria"));
 
 		List<Prodotto> prodotti = DBManager.getInstance().dammiProdottiPerCategoria(categoria);
 
-		if (!prodotti.isEmpty()) {
-			req.setAttribute("products", prodotti);
+		JSONArray prodottiJSON = new JSONArray();
 
-			RequestDispatcher rd = req.getRequestDispatcher("categories.jsp");
-			rd.forward(req, resp);
-		}else {
-			req.setAttribute("", "Nessun prodotto per questa categoria");
-			
-			RequestDispatcher rd = req.getRequestDispatcher("");
-			rd.forward(req, resp);
-			
+		for (Prodotto prodotto : prodotti) {
+
+			JSONObject tmp = new JSONObject();
+
+			try {
+				tmp.put("nome", prodotto.getNome());
+				tmp.put("prezzo", prodotto.getPrezzo());
+				tmp.put("categoria", prodotto.getCategoria());
+
+				prodottiJSON.put(tmp);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 		}
+
+		PrintWriter out = resp.getWriter();
+		System.out.println(prodottiJSON.toString());
+		out.print(prodottiJSON.toString());
+		out.close();
+
+//		if (!prodotti.isEmpty()) {
+//			req.setAttribute("products", prodotti);
+//
+//			RequestDispatcher rd = req.getRequestDispatcher("categories.jsp");
+//			rd.forward(req, resp);
+//		}else {
+//			req.setAttribute("", "Nessun prodotto per questa categoria");
+//			
+//			RequestDispatcher rd = req.getRequestDispatcher("");
+//			rd.forward(req, resp);
+//			
+//		}
 	}
 
 }

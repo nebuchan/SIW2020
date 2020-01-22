@@ -169,5 +169,42 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 		}
 
 	}
+	
+	public List<Prodotto> findByCategory(String category){
+		Connection connection = null;
+		List<Prodotto> prodotti = new LinkedList<>();
+		try {
+			connection = this.dataSource.getConnection();
+			Prodotto prodotto;
+			PreparedStatement statement;
+			String query = "select * from prodotto where categoria = ?";
+			statement = connection.prepareStatement(query);
+			statement.setString(1, category);
+			ResultSet result = statement.executeQuery();
+			while (result.next()) {
+				prodotto = new Prodotto();
+				prodotto.setiD(result.getInt("iD"));
+				prodotto.setNome(result.getString("nome"));
+				prodotto.setCategoria(result.getString("categoria"));
+				prodotto.setQuantitaMagazzino(result.getInt("quantità_magazzino"));
+				prodotto.setQuantitaMin(result.getInt("quantità_minima"));
+				prodotto.setDescrizione(result.getString("descrizione"));
+				prodotto.setPrezzo(result.getInt("prezzo"));
+				prodotto.setEmailAzienda(result.getString("azienda"));
+
+				prodotti.add(prodotto);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		return prodotti;
+		
+	}
 
 }

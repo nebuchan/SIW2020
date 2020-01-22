@@ -14,5 +14,7 @@ public interface ProdottoDao {
 	public void update(Prodotto prodotto); // Update
 
 	public void delete(Prodotto prodotto); // Delete
+	
+	public List<Prodotto> findByCategory(String category);
 
 }
