@@ -1,7 +1,6 @@
 package controllers;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,20 +8,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.CategoriaProdotto;
+import model.Prodotto;
 import persistence.DBManager;
 
-public class DammiCategorieProdotti extends HttpServlet {
+public class DammiProdotto extends HttpServlet {
 
-	private static final long serialVersionUID = 8348860825733737032L;
-
+	private static final long serialVersionUID = 3063537202686077481L;
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<CategoriaProdotto> categorieProdotti = DBManager.getInstance().dammiCategorieProdotti();
-
-		req.setAttribute("categories", categorieProdotti);
-
-		RequestDispatcher rd = req.getRequestDispatcher("categories.jsp");
+		
+//		String idP = req.getParameter("idProdotto");
+		
+//		Prodotto prodotto = DBManager.getInstance().dammiProdotto(Integer.parseInt(idP));
+		
+		
+		System.out.println(req.getParameter("id"));
+		
+		RequestDispatcher rd = req.getRequestDispatcher("product.jsp");
 		rd.forward(req, resp);
 	}
+
 }

@@ -39,25 +39,27 @@
 	<div class="preloader loader"
 		style="display: block; background: #f2f2f2;">
 		<img src="image/loader.gif" alt="#" />
-		
+
 	</div>
 	<header>
 		<%@ include file="header.jsp"%>
 	</header>
-
 
 	<nav id="menu" class="navbar">
 		<%@ include file="menu.jsp"%>
 	</nav>
 
 	<div class="container">
+	
 		<ul class="breadcrumb">
-			<li><a href="index.html"><i class="fa fa-home"></i></a></li>
-			<li><a href="category.html">Desktops</a></li>
-			<li><a href="#">I nostri prodotti</a></li>
+			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
+			<li><a href="categories">Categorie</a></li>
+			<!--  <li><a href="#">I nostri prodotti</a></li>-->
 		</ul>
+		
 		<div class="row">
-			<div id="column-left" class="col-sm-3 hidden-xs column-left">
+		
+			<!-- <div id="column-left" class="col-sm-3 hidden-xs column-left">
 				<div class="column-block">
 					<div class="column-block">
 						<div class="columnblock-title">Categories</div>
@@ -519,8 +521,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div id="content" class="col-sm-9">
+			</div>-->
+			<div id="content" class="col-sm-9" style="margin-left: 100px ">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="thumbnails">

@@ -2,7 +2,7 @@ $(document)
 		.ready(
 				function() {
 
-					var category = document.getElementById('Frutta').id;
+					var category = $("#Frutta").attr("id");
 
 					$("#divProdotti" + category).empty();
 
@@ -21,20 +21,29 @@ $(document)
 										var $product = ("<div class='product-layout product-list col-xs-12'>"
 												+ "<div class='product-thumb'>"
 												+ "<div class='image product-imageblock'>"
-												+ "<a href='product.jsp'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
+												+ "<a href='product?id="
+												+ prodotti[i].id
+												+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
 												+ "<div class='button-group'>"
 												+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
 												+ "</div>"
 												+ "</div>"
 												+ "<div class='caption product-detail'>"
 												+ "<h4 class='product-name'>"
-												+ "<a href='product.jsp'>"
+												+ "<a href='product?id="
+												+ prodotti[i].id
+												+ "'>"
 												+ prodotti[i].nome
 												+ "</a>"
 												+ "</h4>"
 												+ "<p class='price product-price'> €"
 												+ prodotti[i].prezzo
 												+ "</p>"
+												+ "<h1>"
+												+ prodotti[i].azienda
+												+ "</h1>"
+												+ "<br>"
+												+ "<br>"
 												+ "</div>"
 												+ "<div class='button-group'>"
 												+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
@@ -58,8 +67,7 @@ $(document)
 										$("#divLegumi").hide("slow");
 										$("#divTuberi").hide("slow");
 
-										var category = document
-												.getElementById('Frutta').id;
+										var category = $("#Frutta").attr("id");
 
 										$("#divProdotti" + category).empty();
 
@@ -79,20 +87,32 @@ $(document)
 															var $product = ("<div class='product-layout product-list col-xs-12'>"
 																	+ "<div class='product-thumb'>"
 																	+ "<div class='image product-imageblock'>"
-																	+ "<a href='product.jsp'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
+																	+ "<a href='product?id="
+																	+ prodotti[i].id
+																	+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
 																	+ "<div class='button-group'>"
 																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
 																	+ "</div>"
 																	+ "</div>"
 																	+ "<div class='caption product-detail'>"
 																	+ "<h4 class='product-name'>"
-																	+ "<a href='product.jsp'>"
+																	+ "<a href='product?id="
+																	+ prodotti[i].id
+																	+ "'>"
 																	+ prodotti[i].nome
 																	+ "</a>"
 																	+ "</h4>"
 																	+ "<p class='price product-price'> €"
 																	+ prodotti[i].prezzo
 																	+ "</p>"
+																	+ "<h1>"
+																	+ prodotti[i].azienda
+																	+ "</h1>"
+																	+ "<input type='hidden' id='idProdotto' name='idProdotto' value="
+																	+ prodotti[i].id
+																	+ " />"
+																	+ "<br>"
+																	+ "<br>"
 																	+ "</div>"
 																	+ "<div class='button-group'>"
 																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
@@ -123,8 +143,7 @@ $(document)
 										$("#divLegumi").hide("slow");
 										$("#divTuberi").hide("slow");
 
-										var category = document
-												.getElementById('Verdura').id;
+										var category = $("#Verdura").attr("id");
 
 										$("#divProdotti" + category).empty();
 
@@ -144,20 +163,32 @@ $(document)
 															var $product = ("<div class='product-layout product-list col-xs-12'>"
 																	+ "<div class='product-thumb'>"
 																	+ "<div class='image product-imageblock'>"
-																	+ "<a href='product.jsp'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
+																	+ "<a href='product?id="
+																	+ prodotti[i].id
+																	+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
 																	+ "<div class='button-group'>"
 																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
 																	+ "</div>"
 																	+ "</div>"
 																	+ "<div class='caption product-detail'>"
 																	+ "<h4 class='product-name'>"
-																	+ "<a href='product.jsp'>"
+																	+ "<a href='product?id="
+																	+ prodotti[i].id
+																	+ "'>"
 																	+ prodotti[i].nome
 																	+ "</a>"
 																	+ "</h4>"
 																	+ "<p class='price product-price'> €"
 																	+ prodotti[i].prezzo
 																	+ "</p>"
+																	+ "<h1>"
+																	+ prodotti[i].azienda
+																	+ "</h1>"
+																	+ "<input type='hidden' id='idProdotto' name='idProdotto' value="
+																	+ prodotti[i].id
+																	+ " />"
+																	+ "<br>"
+																	+ "<br>"
 																	+ "</div>"
 																	+ "<div class='button-group'>"
 																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
@@ -188,8 +219,7 @@ $(document)
 										$("#divLegumi").show("slow");
 										$("#divTuberi").hide("slow");
 
-										var category = document
-												.getElementById('Legumi').id;
+										var category = $("#Legumi").attr("id");
 
 										$("#divProdotti" + category).empty();
 
@@ -209,20 +239,32 @@ $(document)
 															var $product = ("<div class='product-layout product-list col-xs-12'>"
 																	+ "<div class='product-thumb'>"
 																	+ "<div class='image product-imageblock'>"
-																	+ "<a href='product.jsp'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
+																	+ "<a href='product?id="
+																	+ prodotti[i].id
+																	+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
 																	+ "<div class='button-group'>"
 																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
 																	+ "</div>"
 																	+ "</div>"
 																	+ "<div class='caption product-detail'>"
 																	+ "<h4 class='product-name'>"
-																	+ "<a href='product.jsp'>"
+																	+ "<a href='product?id="
+																	+ prodotti[i].id
+																	+ "'>"
 																	+ prodotti[i].nome
 																	+ "</a>"
 																	+ "</h4>"
 																	+ "<p class='price product-price'> €"
 																	+ prodotti[i].prezzo
 																	+ "</p>"
+																	+ "<h1>"
+																	+ prodotti[i].azienda
+																	+ "</h1>"
+																	+ "<input type='hidden' id='idProdotto' name='idProdotto' value="
+																	+ prodotti[i].id
+																	+ " />"
+																	+ "<br>"
+																	+ "<br>"
 																	+ "</div>"
 																	+ "<div class='button-group'>"
 																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
@@ -253,8 +295,7 @@ $(document)
 										$("#divLegumi").hide("slow");
 										$("#divTuberi").show("slow");
 
-										var category = document
-												.getElementById('Tuberi').id;
+										var category = $("#Tuberi").attr("id");
 
 										$("#divProdotti" + category).empty();
 
@@ -274,20 +315,32 @@ $(document)
 															var $product = ("<div class='product-layout product-list col-xs-12'>"
 																	+ "<div class='product-thumb'>"
 																	+ "<div class='image product-imageblock'>"
-																	+ "<a href='product.jsp'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
+																	+ "<a href='product?id="
+																	+ prodotti[i].id
+																	+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
 																	+ "<div class='button-group'>"
 																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
 																	+ "</div>"
 																	+ "</div>"
 																	+ "<div class='caption product-detail'>"
 																	+ "<h4 class='product-name'>"
-																	+ "<a href='product.jsp'>"
+																	+ "<a href='product?id="
+																	+ prodotti[i].id
+																	+ "'>"
 																	+ prodotti[i].nome
 																	+ "</a>"
 																	+ "</h4>"
 																	+ "<p class='price product-price'> €"
 																	+ prodotti[i].prezzo
 																	+ "</p>"
+																	+ "<h1>"
+																	+ prodotti[i].azienda
+																	+ "</h1>"
+																	+ "<input type='hidden' id='idProdotto' name='idProdotto' value="
+																	+ prodotti[i].id
+																	+ " />"
+																	+ "<br>"
+																	+ "<br>"
 																	+ "</div>"
 																	+ "<div class='button-group'>"
 																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"

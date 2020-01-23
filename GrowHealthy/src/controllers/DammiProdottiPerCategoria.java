@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import model.Azienda;
 import model.Prodotto;
 import persistence.DBManager;
 
@@ -38,7 +39,12 @@ public class DammiProdottiPerCategoria extends HttpServlet {
 			try {
 				tmp.put("nome", prodotto.getNome());
 				tmp.put("prezzo", prodotto.getPrezzo());
-				tmp.put("categoria", prodotto.getCategoria());
+
+				Azienda tmpCompany = DBManager.getInstance().dammiAzienda(prodotto.getEmailAzienda());
+				String ragioneSociale = tmpCompany.getRagioneSociale();
+
+				tmp.put("azienda", ragioneSociale);
+				tmp.put("id", prodotto.getiD());
 
 				prodottiJSON.put(tmp);
 			} catch (JSONException e) {
@@ -53,18 +59,6 @@ public class DammiProdottiPerCategoria extends HttpServlet {
 		out.print(prodottiJSON.toString());
 		out.close();
 
-//		if (!prodotti.isEmpty()) {
-//			req.setAttribute("products", prodotti);
-//
-//			RequestDispatcher rd = req.getRequestDispatcher("categories.jsp");
-//			rd.forward(req, resp);
-//		}else {
-//			req.setAttribute("", "Nessun prodotto per questa categoria");
-//			
-//			RequestDispatcher rd = req.getRequestDispatcher("");
-//			rd.forward(req, resp);
-//			
-//		}
 	}
 
 }
