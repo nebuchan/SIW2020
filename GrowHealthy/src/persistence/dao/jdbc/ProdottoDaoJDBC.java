@@ -25,7 +25,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into prodotto(iD, nome, categoria, quantità_magazzino, quantità_minima, descrizione, prezzo, azienda) values (?,?,?,?,?,?,?,?)";
+			String insert = "insert into prodotto(iD, nome, categoria, quantita_magazzino, quantita_minima, descrizione, prezzo, azienda) values (?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, prodotto.getiD());
 			statement.setString(2, prodotto.getNome());
@@ -65,8 +65,8 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setiD(result.getInt("iD"));
 				prodotto.setNome(result.getString("nome"));
 				prodotto.setCategoria(result.getString("categoria"));
-				prodotto.setQuantitaMagazzino(result.getInt("quantità_magazzino"));
-				prodotto.setQuantitaMin(result.getInt("quantità_minima"));
+				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
+				prodotto.setQuantitaMin(result.getInt("quantita_minima"));
 				prodotto.setDescrizione(result.getString("descrizione"));
 				prodotto.setPrezzo(result.getInt("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
@@ -100,8 +100,8 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setiD(result.getInt("iD"));
 				prodotto.setNome(result.getString("nome"));
 				prodotto.setCategoria(result.getString("categoria"));
-				prodotto.setQuantitaMagazzino(result.getInt("quantità_magazzino"));
-				prodotto.setQuantitaMin(result.getInt("quantità_minima"));
+				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
+				prodotto.setQuantitaMin(result.getInt("quantita_minima"));
 				prodotto.setDescrizione(result.getString("descrizione"));
 				prodotto.setPrezzo(result.getInt("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
@@ -125,7 +125,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update prodotto SET nome = ?, categoria = ?, quantità_magazzino = ?, quantità_minima = ?, descrizione = ?, prezzo = ?, azienda = ? WHERE iD = ?";
+			String update = "update prodotto SET nome = ?, categoria = ?, quantita_magazzino = ?, quantita_minima = ?, descrizione = ?, prezzo = ?, azienda = ? WHERE iD = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, prodotto.getNome());
 			statement.setString(2, prodotto.getCategoria());
@@ -186,8 +186,8 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setiD(result.getInt("iD"));
 				prodotto.setNome(result.getString("nome"));
 				prodotto.setCategoria(result.getString("categoria"));
-				prodotto.setQuantitaMagazzino(result.getInt("quantità_magazzino"));
-				prodotto.setQuantitaMin(result.getInt("quantità_minima"));
+				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
+				prodotto.setQuantitaMin(result.getInt("quantita_minima"));
 				prodotto.setDescrizione(result.getString("descrizione"));
 				prodotto.setPrezzo(result.getInt("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
