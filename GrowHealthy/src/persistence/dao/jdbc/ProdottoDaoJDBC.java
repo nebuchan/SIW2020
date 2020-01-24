@@ -25,7 +25,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into prodotto(iD, nome, categoria, quantita_magazzino, quantita_minima, descrizione, prezzo, azienda) values (?,?,?,?,?,?,?,?)";
+			String insert = "insert into prodotto(id, nome, categoria, quantita_magazzino, quantita_minima, descrizione, prezzo, azienda) values (?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, prodotto.getiD());
 			statement.setString(2, prodotto.getNome());
@@ -56,13 +56,13 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 		try {
 			connection = this.dataSource.getConnection();
 			PreparedStatement statement;
-			String query = "select * from prodotto where iD = ?";
+			String query = "select * from prodotto where id = ?";
 			statement = connection.prepareStatement(query);
 			statement.setInt(1, iD);
 			ResultSet result = statement.executeQuery();
 			if (result.next()) {
 				prodotto = new Prodotto();
-				prodotto.setiD(result.getInt("iD"));
+				prodotto.setiD(result.getInt("id"));
 				prodotto.setNome(result.getString("nome"));
 				prodotto.setCategoria(result.getString("categoria"));
 				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
@@ -97,7 +97,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				prodotto = new Prodotto();
-				prodotto.setiD(result.getInt("iD"));
+				prodotto.setiD(result.getInt("id"));
 				prodotto.setNome(result.getString("nome"));
 				prodotto.setCategoria(result.getString("categoria"));
 				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
@@ -125,7 +125,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update prodotto SET nome = ?, categoria = ?, quantita_magazzino = ?, quantita_minima = ?, descrizione = ?, prezzo = ?, azienda = ? WHERE iD = ?";
+			String update = "update prodotto SET nome = ?, categoria = ?, quantita_magazzino = ?, quantita_minima = ?, descrizione = ?, prezzo = ?, azienda = ? WHERE id = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, prodotto.getNome());
 			statement.setString(2, prodotto.getCategoria());
@@ -154,7 +154,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String delete = "delete FROM prodotto WHERE iD = ? ";
+			String delete = "delete FROM prodotto WHERE id = ? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
 			statement.setInt(1, prodotto.getiD());
 			statement.executeUpdate();
@@ -183,7 +183,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				prodotto = new Prodotto();
-				prodotto.setiD(result.getInt("iD"));
+				prodotto.setiD(result.getInt("id"));
 				prodotto.setNome(result.getString("nome"));
 				prodotto.setCategoria(result.getString("categoria"));
 				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
