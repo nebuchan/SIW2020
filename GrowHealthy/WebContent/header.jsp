@@ -1,4 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<script src="javascript/chart.js" type="text/javascript"></script>
+
 <div class="header-top">
 	<div class="container">
 		<div class="row">
@@ -82,15 +85,20 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="col-sm-4 col-xs-12 header-right">
+		
 			<div id="cart" class="btn-group btn-block">
+			
 				<button type="button"
 					class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button">
 					<span id="cart-total"><span class="cart-title">Carrello</span><br>
 						0 prodotti(s) - €0.00</span>
 				</button>
-				<ul class="dropdown-menu pull-right cart-dropdown-menu">
-					<li>
+				
+				<ul class="dropdown-menu pull-right cart-dropdown-menu" id="productsInChart">
+				
+					<!--  <li>
 						<table class="table table-striped">
 							<tbody>
 								<tr>
@@ -98,9 +106,10 @@
 											class="img-thumbnail" title="lorem ippsum dolor dummy"
 											alt="lorem ippsum dolor dummy"
 											src="image/product/7product50x59.jpg"></a></td>
-									<td class="text-left"><a href="#">lorem ippsum dolor
-											dummy</a></td>
-									<td class="text-right">x 1</td>
+											
+									<td class="text-left"><a href="javascript:void(0);">lorem ippsum dolor
+											dummy</a></td>		
+									  <td class="text-right">x 1</td>
 									<td class="text-right">$254.00</td>
 									<td class="text-center"><button
 											class="btn btn-danger btn-xs" title="Remove" type="button">
@@ -109,8 +118,8 @@
 								</tr>
 							</tbody>
 						</table>
-					</li>
-					<li>
+					</li>-->
+					<li id="subtotal">
 						<div>
 							<table class="table table-bordered">
 								<tbody>
