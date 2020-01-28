@@ -72,6 +72,7 @@ public class Login extends HttpServlet {
 					System.out.println("Utente : " + azienda.getRagioneSociale());
 
 					request.getSession().setAttribute("utente", azienda);
+					request.getSession().setAttribute("ragioneSociale", azienda.getRagioneSociale());
 					request.getSession().removeAttribute("error");
 
 					rd.forward(request, response);

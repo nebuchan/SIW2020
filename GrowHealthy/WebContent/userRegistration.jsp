@@ -53,9 +53,9 @@
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
 			<li><a href="#">Account</a></li>
-			<li><a href="register.html">Register</a></li>
+			<li><a href="userRegistration.jsp">Registrazione Cliente</a></li>
 		</ul>
 		<div class="row">
 			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>

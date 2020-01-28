@@ -34,7 +34,7 @@
 <script src="javascript/common.js" type="text/javascript"></script>
 <script src="javascript/global.js" type="text/javascript"></script>
 <script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
-<script src="javascript/categories.js" type="text/javascript"></script>
+<script src="javascript/mycategories.js" type="text/javascript"></script>
 </head>
 
 <body class="category col-2 left-col">
@@ -53,12 +53,10 @@
 	</nav>
 
 	<div class="container">
-
-		<ul class="breadcrumb">
+	<ul>
 			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
-			<li><a href="categories">I Nostri Prodotti</a></li>
+			<li><a href="mycategories">I miei Prodotti</a></li>
 		</ul>
-
 		<div class="row">
 
 			<div id="column-left" class="col-sm-3 hidden-xs column-left">

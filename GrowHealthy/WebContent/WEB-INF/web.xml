@@ -56,6 +56,17 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>DammiMieCategorie</servlet-name>
+		<servlet-class>controllers.DammiMieCategorieProdotti</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DammiMieCategorie</servlet-name>
+		<url-pattern>/mycategories</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
 		<servlet-name>DammiProdottiPerCategorie</servlet-name>
 		<servlet-class>controllers.DammiProdottiPerCategoria</servlet-class>
 	</servlet>
@@ -64,6 +75,18 @@
 		<servlet-name>DammiProdottiPerCategorie</servlet-name>
 		<url-pattern>/productsForCategories</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DammiMieiProdottiPerCategorie</servlet-name>
+		<servlet-class>controllers.DammiMieiProdottiPerCategoria</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DammiMieiProdottiPerCategorie</servlet-name>
+		<url-pattern>/myproductsForCategories</url-pattern>
+	</servlet-mapping>
+	
+	
 	
 	<servlet>
 		<servlet-name>DammiProdotto</servlet-name>

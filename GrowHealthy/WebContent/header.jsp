@@ -43,13 +43,22 @@
 										</c:if>
 										<c:if test="${utente != null}">
 											<h1>
-												<strong>Benvenuto ${utente.email}</strong>
+												<strong>Ciao ${utente.email}</strong>
 											</h1>
+											
+											<c:if test="${ragioneSociale!=null}">
+											<input type="hidden" id="idUtente" value="${utente.email}"/>
+											<div class="form-group">
+											<button type="submit" class="btn-link" formmethod="get" formaction="mycategories">I miei prodotti</button>
 											<br>
+											<button type="submit" class="btn-link" formaction=userRegistration.jsp>I miei terreni</button>
+											</div>
+											<br>
+											</c:if>
 
-											<button type="submit" class="btn btn-default"
+											<button type="submit" class="btn btn-warning"
 												formaction="login" formmethod="get"
-												style="margin-left: 75px">Logout</button>
+												style="margin-left: 85px">Logout</button>
 
 										</c:if>
 									</form>

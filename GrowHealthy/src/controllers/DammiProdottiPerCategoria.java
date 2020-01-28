@@ -27,7 +27,7 @@ public class DammiProdottiPerCategoria extends HttpServlet {
 		String categoria = req.getParameter("categoria");
 
 		System.out.println("Categoria : " + req.getParameter("categoria"));
-
+		
 		List<Prodotto> prodotti = DBManager.getInstance().dammiProdottiPerCategoria(categoria);
 
 		JSONArray prodottiJSON = new JSONArray();
