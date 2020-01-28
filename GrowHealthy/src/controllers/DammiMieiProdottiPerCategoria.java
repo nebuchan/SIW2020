@@ -24,13 +24,10 @@ public class DammiMieiProdottiPerCategoria extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String categoria = req.getParameter("categoria");
 		
-		Azienda a= (Azienda) req.getSession().getAttribute("utente");
+		Azienda a= (Azienda) req.getSession().getAttribute("utente");		
 
-		System.out.println("Categoria : " + req.getParameter("categoria"));
-
-		List<Prodotto> prodotti = DBManager.getInstance().dammiProdottiPerCategoria(categoria);
+		List<Prodotto> prodotti = DBManager.getInstance().dammiProdotti();
 
 		JSONArray prodottiJSON = new JSONArray();
 

@@ -130,5 +130,10 @@ public class DBManager {
 		
 		return prodotti;
 	}
+	
+	public void eliminaProdotto(Prodotto p){
+		getProdottoDao().delete(p);
+		
+	}
 
 }

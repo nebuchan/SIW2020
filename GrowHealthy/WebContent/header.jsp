@@ -49,9 +49,9 @@
 											<c:if test="${ragioneSociale!=null}">
 											<input type="hidden" id="idUtente" value="${utente.email}"/>
 											<div class="form-group">
-											<button type="submit" class="btn-link" formmethod="get" formaction="mycategories">I miei prodotti</button>
+											<button type="submit" class="btn-link" formmethod="get" formaction="mycategories.jsp">I miei Prodotti </button>
 											<br>
-											<button type="submit" class="btn-link" formaction=userRegistration.jsp>I miei terreni</button>
+											<button type="submit" class="btn-link" formaction=userRegistration.jsp>Gestione Profilo</button>
 											</div>
 											<br>
 											</c:if>
