@@ -33,7 +33,6 @@ public class InserimentoProdotto extends HttpServlet {
 		String quantitaMinima = req.getParameter("quantitaMinima");
 		String descrizione = req.getParameter("descrizione");
 		String prezzo = req.getParameter("prezzo");
-		String email = req.getParameter("email");
 
 		Prodotto prodotto = new Prodotto();
 		List<Prodotto> prodotti=DBManager.getInstance().dammiProdotti();
@@ -56,7 +55,7 @@ public class InserimentoProdotto extends HttpServlet {
 		prodotto.setQuantitaMin(Integer.parseInt(quantitaMinima));
 		prodotto.setDescrizione(descrizione);
 		prodotto.setPrezzo(Integer.parseInt(prezzo));
-		prodotto.setEmailAzienda(email);
+		prodotto.setEmailAzienda(a.getEmail());
 		
 		DBManager.getInstance().inserisciProdotto(prodotto);
 		

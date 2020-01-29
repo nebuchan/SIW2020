@@ -71,12 +71,10 @@
 						<li><a href="javascript:void(0);"
 									id="mieiTerreni">I miei Terreni </a></li>
 									
-						<li><a href="insertProduct.jsp"
+						<li><a href="fillproduct?"
 									id="inserisciProdotto">Inserisci Prodotto </a></li>
 
 							
-							
-
 						</ul>
 					</div>
 				</div>
