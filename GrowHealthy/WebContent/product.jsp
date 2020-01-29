@@ -609,10 +609,9 @@
 						<ul class="list-unstyled productinfo-details-top">
 						
 							<li>
-								<h2 class="productpage-price" >Costo
-									&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								<h2 class="productpage-price" >Costo al kg
 								</h2>
-								<h2 id="productPrice"> € ${prezzoProdotto}</h2>								
+								<h2 id="productPrice">&#8364; ${prezzoProdotto}</h2>								
 							</li>
 							
 						</ul>
@@ -621,16 +620,14 @@
 						
 						<ul class="list-unstyled product_info">
 						
-							<li><label>Azienda</label> <span id="company">
-									${nomeAziendaProdotto}</span></li>
-							<li><label>Codice Prodotto</label> <span id="idProduct">
-									${idProdotto}</span></li>
-							<li><label>Quantità Disponibile</label> <span>
-									${quantitaProdotto}</span></li>
-							<li><label>Quantità Minima Da Acquistare</label> <span>
-									${quantitaMinimaProdotto}</span></li>
-							<li><label>Email Azienda</label> <span>
-									${emailAzienda}</span></li>
+							<li><label>Azienda</label> <span id="company"><strong>
+									${nomeAziendaProdotto}</strong></span></li>
+							<li><label>Codice Prodotto</label> <span id="idProduct"><strong>
+									${idProdotto}</strong></span></li>
+							<li><label>Quantità Disponibile</label><span><strong>
+									${quantitaProdotto}</strong></span><span>kg</span></li>
+							<li><label>Quantità Minima Da Acquistare</label> <span><strong>
+									${quantitaMinimaProdotto}</strong></span><span>kg</span></li>
 									
 						</ul>
 						
@@ -643,9 +640,8 @@
 							<div class="form-group">
 							
 								<label class="control-label qty-label" for="input-quantity">Quantità</label>
-								<input type="text" name="quantity" value="1" size="2"
-									id="input-quantity" class="form-control productpage-qty" /> <input
-									type="hidden" name="product_id" value="48" />
+								<input type="text" name="quantity" size="2"
+									id="input-quantity" class="form-control productpage-qty" /> <span>/kg</span>
 
 								<div class="btn-group">
 

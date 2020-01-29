@@ -19,8 +19,13 @@ $(document).ready(function() {
 		products = {
 					cart: Cookies.getJSON('products'+cliente)
 		};
-
 	}
+	if(products.cart.length > 0){
+		$("#totalCart").html(products.cart.length+" prodotto(i)");
+	}else{
+		$("#totalCart").html("0 prodotto(i)");
+	}
+	
 });
 
 function addToCart() {
@@ -56,11 +61,14 @@ function addToCart() {
 		});
 		
 		$("#alert_conferma_inserimento").show("slow").delay(3500).fadeOut();
+		$("#totalCart").html(products.cart.length+" prodotto(i)");
 
 		Cookies.set('products' + cliente, products.cart, {
 			expires : 7
 		});
 	}
+	
+	calcolaImporti();
 };
 
 function removeFromCart(row,id) {
@@ -76,6 +84,14 @@ function removeFromCart(row,id) {
 	}
 	
 	Cookies.set('products'+cliente, products.cart, { expires: 7 });
+	
+	if(products.cart.length > 0){
+		$("#totalCart").html(products.cart.length+" prodotto(i)");
+	}else{
+		$("#totalCart").html("0 prodotto(i)");
+	}
+	
+	calcolaImporti();
 	
 };
 
@@ -98,10 +114,10 @@ function showCart() {
 									+ "<td class='text-left'><a href='javascript:void(0);'>"
 									+ products.cart[i].nome
 									+ "</a></td>"
-									+ "<td class='text-left'>x"
+									+ "<td class='text-left'>"
 									+ products.cart[i].quantita
-									+ " kg</td>"
-									+ "<td class='text-center'>"
+									+ "</td>"
+									+ "<td class='text-center'>&#8364;"
 									+ products.cart[i].prezzo
 									+ "</td>"
 									+ "<td class='text-center'>"
@@ -115,4 +131,24 @@ function showCart() {
 						
 						$("#productsincart").append($product);
 	}
+	
+	calcolaImporti();
+};
+
+function calcolaImporti() {
+	
+	var somma = 0;
+	
+	for(var i = 0; i<products.cart.length; i++){
+		var tmp = parseFloat(products.cart[i].prezzo) * parseInt(products.cart[i].quantita);
+		somma+=tmp;
+	}
+	
+	var vat = (somma * 3) / 100;
+	var totale = somma + vat;
+	
+	$("#parziale").text("EUR "+somma);
+	$("#vat").text("EUR "+vat);
+	$("#totale").text("EUR "+totale);
+	
 };

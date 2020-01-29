@@ -105,7 +105,7 @@
 				<button type="button"
 					class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button" onclick="showCart()">
 					<span id="cart-total"><span class="cart-title">Carrello</span><br>
-						0 prodotti(s) - €0.00</span>
+						<span id="totalCart">0 prodotti</span></span>
 				</button>
 				
 				<ul class="dropdown-menu pull-right cart-dropdown-menu" >
@@ -140,20 +140,16 @@
 							
 								<tbody>
 									<tr>
-										<td class="text-right"><strong>Sub-Total</strong></td>
-										<td class="text-right">$210.00</td>
+										<td class="text-right"><strong>Parziale</strong></td>
+										<td class="text-right" id="parziale"></td>
 									</tr>
 									<tr>
-										<td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-										<td class="text-right">$2.00</td>
+										<td class="text-right"><strong>IVA (3%)</strong></td>
+										<td class="text-right" id="vat"></td>
 									</tr>
 									<tr>
-										<td class="text-right"><strong>VAT (20%)</strong></td>
-										<td class="text-right">$42.00</td>
-									</tr>
-									<tr>
-										<td class="text-right"><strong>Total</strong></td>
-										<td class="text-right">$254.00</td>
+										<td class="text-right"><strong>Totale</strong></td>
+										<td class="text-right" id="totale"></td>
 									</tr>
 								</tbody>
 								
