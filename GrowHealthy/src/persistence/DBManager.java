@@ -125,6 +125,10 @@ public class DBManager {
 		getAziendaDao().save(azienda);
 	}
 	
+	public void inserisciProdotto(Prodotto prodotto) {
+		getProdottoDao().save(prodotto);
+	}
+	
 	public List<Prodotto> dammiProdottiPerCategoria(String categoria){
 		List<Prodotto> prodotti = getProdottoDao().findByCategory(categoria);
 		

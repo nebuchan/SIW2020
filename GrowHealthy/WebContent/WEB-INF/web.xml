@@ -108,6 +108,15 @@
 		<url-pattern>/eliminaprodotto</url-pattern>
 	</servlet-mapping>
 
+<servlet>
+		<servlet-name>InserimentoProdotto</servlet-name>
+		<servlet-class>controllers.InserimentoProdotto</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>InserimentoProdotto</servlet-name>
+		<url-pattern>/insertproduct</url-pattern>
+	</servlet-mapping>
 
 	
 

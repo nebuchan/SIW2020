@@ -33,7 +33,6 @@ public class DammiProdotto extends HttpServlet {
 		req.setAttribute("quantitaProdotto", prodotto.getQuantitaMagazzino());
 		req.setAttribute("quantitaMinimaProdotto", prodotto.getQuantitaMin());
 		
-		
 		RequestDispatcher rd = req.getRequestDispatcher("product.jsp");
 		rd.forward(req, resp);
 	}

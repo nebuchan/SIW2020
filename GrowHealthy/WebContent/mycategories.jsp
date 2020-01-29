@@ -70,6 +70,9 @@
 									
 						<li><a href="javascript:void(0);"
 									id="mieiTerreni">I miei Terreni </a></li>
+									
+						<li><a href="insertProduct.jsp"
+									id="inserisciProdotto">Inserisci Prodotto </a></li>
 
 							
 							
