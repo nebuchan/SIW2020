@@ -73,9 +73,14 @@
 					</div>
 					<div class="form-group required">
 						<label for="input-categoria" class="col-sm-2 control-label">Categoria</label>
+						
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="input-categoria"
-								placeholder="Categoria" name="categoria">
+							<select name="categoria">
+								<c:forEach items="${categories}" var="category">
+									<option value="${category.categoria}">${category.categoria}</option>
+							</c:forEach>
+							
+							</select>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -104,14 +109,6 @@
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-prezzo"
 								placeholder="Prezzo" name="prezzo">
-						</div>
-					</div>
-
-					<div class="form-group required">
-						<label for="input-email" class="col-sm-2 control-label">Email Azienda</label>
-						<div class="col-sm-10">
-							<input type="email" class="form-control" id="input-email"
-								placeholder="Email" name="email">
 						</div>
 					</div>
 					<div class="form-group required">

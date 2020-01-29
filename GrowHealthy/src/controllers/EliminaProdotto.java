@@ -22,13 +22,11 @@ public class EliminaProdotto  extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
 		String id=req.getParameter("id");
 		Prodotto prodotto= DBManager.getInstance().dammiProdotto(Integer.parseInt(id));
 		DBManager.getInstance().eliminaProdotto(prodotto);
-			
-		RequestDispatcher rd = req.getRequestDispatcher("mycategories.jsp");
-		rd.forward(req, resp);
+		
+		resp.sendRedirect(req.getContextPath() + "/mycategories.jsp");
 	}
 
 }
