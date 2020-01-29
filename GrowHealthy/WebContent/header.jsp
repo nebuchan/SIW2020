@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<script src="javascript/chart.js" type="text/javascript"></script>
+<script src="javascript/cart.js" type="text/javascript"></script>
+<script src="javascript/js.cookie.js" type="text/javascript"></script>
 
 <div class="header-top">
 	<div class="container">
@@ -44,16 +45,18 @@
 										<c:if test="${utente != null}">
 											<h1>
 												<strong>Ciao ${utente.email}</strong>
+												<input type="hidden" id="emailUtente" value="${utente.email}"/>
 											</h1>
 											
 											<c:if test="${ragioneSociale!=null}">
-											<input type="hidden" id="idUtente" value="${utente.email}"/>
+											
 											<div class="form-group">
 											<button type="submit" class="btn-link" formmethod="get" formaction="mycategories.jsp">I miei Prodotti </button>
 											<br>
 											<button type="submit" class="btn-link" formaction=userRegistration.jsp>Gestione Profilo</button>
 											</div>
 											<br>
+											
 											</c:if>
 
 											<button type="submit" class="btn btn-warning"
@@ -100,15 +103,15 @@
 			<div id="cart" class="btn-group btn-block">
 			
 				<button type="button"
-					class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button">
+					class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button" onclick="showCart()">
 					<span id="cart-total"><span class="cart-title">Carrello</span><br>
 						0 prodotti(s) - €0.00</span>
 				</button>
 				
-				<ul class="dropdown-menu pull-right cart-dropdown-menu" id="productsInChart">
+				<ul class="dropdown-menu pull-right cart-dropdown-menu" >
 				
-					<!--  <li>
-						<table class="table table-striped">
+					  <li id="productsincart">
+						<!--<table class="table table-striped">
 							<tbody>
 								<tr>
 									<td class="text-center"><a href="#"><img
@@ -126,11 +129,15 @@
 										</button></td>
 								</tr>
 							</tbody>
-						</table>
-					</li>-->
+						</table>-->
+					</li>
+					
 					<li id="subtotal">
+					
 						<div>
+						
 							<table class="table table-bordered">
+							
 								<tbody>
 									<tr>
 										<td class="text-right"><strong>Sub-Total</strong></td>
@@ -149,7 +156,9 @@
 										<td class="text-right">$254.00</td>
 									</tr>
 								</tbody>
+								
 							</table>
+							
 							<p class="text-right">
 								<span class="btn-viewcart"><a href="cart.html"><strong><i
 											class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span

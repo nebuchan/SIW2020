@@ -56,7 +56,6 @@
 
 		<ul class="breadcrumb">
 			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
-			<li><a href="categories">I Nostri Prodotti</a></li>
 		</ul>
 
 		<div class="row">

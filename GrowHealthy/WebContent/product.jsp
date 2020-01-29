@@ -33,6 +33,8 @@
 <script src="javascript/common.js" type="text/javascript"></script>
 <script src="javascript/global.js" type="text/javascript"></script>
 <script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<script src="javascript/cart.js" type="text/javascript"></script>
+<script src="javascript/js.cookie.js" type="text/javascript"></script>
 </head>
 <body class="product col-2 left-col">
 
@@ -50,15 +52,15 @@
 	</nav>
 
 	<div class="container">
-	
+
 		<ul class="breadcrumb">
 			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
-			<li><a href="categories">Categorie</a></li>
+			<li><a href="categories">I Nostri Prodotti</a></li>
 			<!--  <li><a href="#">I nostri prodotti</a></li>-->
 		</ul>
-		
+
 		<div class="row">
-		
+
 			<!-- <div id="column-left" class="col-sm-3 hidden-xs column-left">
 				<div class="column-block">
 					<div class="column-block">
@@ -522,7 +524,7 @@
 					</div>
 				</div>
 			</div>-->
-			<div id="content" class="col-sm-9" style="margin-left: 100px ">
+			<div id="content" class="col-sm-9" style="margin-left: 100px">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="thumbnails">
@@ -599,42 +601,77 @@
 							</div>
 						</div>
 					</div>
+					
 					<div class="col-sm-6">
-						<h1 class="productpage-title">${nomeProdotto}</h1>
+					
+						<h1 class="productpage-title" id="productName">${nomeProdotto}</h1>
+						
 						<ul class="list-unstyled productinfo-details-top">
+						
 							<li>
-								<h2 class="productpage-price">Costo &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; € ${prezzoProdotto}</h2>
+								<h2 class="productpage-price" >Costo
+									&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								</h2>
+								<h2 id="productPrice"> € ${prezzoProdotto}</h2>								
 							</li>
+							
+						</ul>
+
+						<hr>
+						
+						<ul class="list-unstyled product_info">
+						
+							<li><label>Azienda</label> <span id="company">
+									${nomeAziendaProdotto}</span></li>
+							<li><label>Codice Prodotto</label> <span id="idProduct">
+									${idProdotto}</span></li>
+							<li><label>Quantità Disponibile</label> <span>
+									${quantitaProdotto}</span></li>
+							<li><label>Quantità Minima Da Acquistare</label> <span>
+									${quantitaMinimaProdotto}</span></li>
+							<li><label>Email Azienda</label> <span>
+									${emailAzienda}</span></li>
+									
 						</ul>
 						
 						<hr>
-						<ul class="list-unstyled product_info">
-							<li><label>Azienda</label> <span> ${nomeAziendaProdotto}</span></li>
-							<li><label>Codice Prodotto</label> <span> ${idProdotto}</span></li>
-							<li><label>Quantità Disponibile</label> <span> ${quantitaProdotto}</span></li>
-							<li><label>Quantità Minima Da Acquistare</label> <span> ${quantitaMinimaProdotto}</span></li>
-							<li><label>Email Azienda</label> <span> ${emailAzienda}</span></li>
-						</ul>
-						<hr>
+						
 						<p class="product-desc">${descrizioneProdotto}</p>
+						
 						<div id="product">
+						
 							<div class="form-group">
+							
 								<label class="control-label qty-label" for="input-quantity">Quantità</label>
 								<input type="text" name="quantity" value="1" size="2"
 									id="input-quantity" class="form-control productpage-qty" /> <input
 									type="hidden" name="product_id" value="48" />
+
 								<div class="btn-group">
-									
+
 									<button type="button" id="button-cart"
 										data-loading-text="Loading..."
-										class="btn btn-primary btn-lg btn-block addtocart">Aggiungi al carrello</button>
-									
+										class="btn btn-primary btn-lg btn-block addtocart"
+										onclick="addToCart()">Aggiungi al carrello</button>
+
+								</div>
+
+								<br>
+								
+								<div class="alert alert-success" id="alert_conferma_inserimento"
+									style="display: none !important; border-left: 25px;">
+									<strong>Prodotto inserito nel carrello</strong>
+								</div>
+
+								<div class="alert alert-warning" id="alert_gia_inserito"
+									style="display: none !important; border-left: 25px;">
+									<strong>Prodotto già inserito nel carrello!</strong>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				
+
 				<h3 class="productblock-title">Prodotti Correlati</h3>
 				<div class="box">
 					<div id="related-slidertab" class="row owl-carousel product-slider">
