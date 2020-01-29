@@ -114,10 +114,10 @@ function showCart() {
 									+ "<td class='text-left'><a href='javascript:void(0);'>"
 									+ products.cart[i].nome
 									+ "</a></td>"
-									+ "<td class='text-left'>"
+									+ "<td class='text-left'>x "
 									+ products.cart[i].quantita
-									+ "</td>"
-									+ "<td class='text-center'>&#8364;"
+									+ " kg</td>"
+									+ "<td class='text-center'>&#8364; "
 									+ products.cart[i].prezzo
 									+ "</td>"
 									+ "<td class='text-center'>"

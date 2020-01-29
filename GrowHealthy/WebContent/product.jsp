@@ -611,7 +611,7 @@
 							<li>
 								<h2 class="productpage-price" >Costo al kg
 								</h2>
-								<h2 id="productPrice">&#8364; ${prezzoProdotto}</h2>								
+								<h2 >&#8364; <span id="productPrice">${prezzoProdotto}</span></h2>								
 							</li>
 							
 						</ul>
