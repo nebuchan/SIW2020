@@ -28,11 +28,55 @@ $(document).ready(function() {
 	
 });
 
+$(document).ready(function showTableCart() {
+	if(products.cart.length == 0){
+		$("#tableCart tbody").append("<tr><td><span><strong>Nessun prodotto nel carrello</strong></span></td></tr>");
+	}else{
+		for(var i = 0; i<products.cart.length; i++){
+			var $productTr = (
+					"<tr>"
+						+ "<td class='text-center'>" 
+						+ "<a href='product.html'>"
+						+ "<img class='img-thumbnail' title='women's clothing' alt='women's clothing' src='image/product/2product50x59.jpg'>"
+						+"</a></td>" 
+						+ "<td class='text-center'><a href='product.html'>"+products.cart[i].nome+"</a></td>"
+						+ "<td class='text-center'>"+products.cart[i].categoria+"</td>"
+						+ "<td class='text-center'>"+products.cart[i].azienda+"</td>"
+						+ "<td class='text-left'>"
+						+ "<div style='max-width: 200px; left: 30px;' class='input-group btn-block'>"
+							+ "<input type='text' class='form-control quantity' size='1' value='"+products.cart[i].quantita+" kg' name='quantity'>" 
+							+ "<span class='input-group-btn'>"
+								+ "<button class='btn btn-primary' title='' data-toggle='tooltip' type='submit' data-original-title='Update'>"
+									+ "<i class='fa fa-refresh'></i>"
+								+ "</button>"
+								+ "<button class='btn btn-danger' title='' data-toggle='tooltip' type='button' data-original-title='Remove' onclick='removeFromCart(this,"+products.cart[i].id+")'>"
+									+ "<i class='fa fa-times-circle'></i>"
+								+ "</button>"
+							+ "</span>"
+						+ "</div>"
+					+ "</td>"
+					+ "<td class='text-center'>"+products.cart[i].prezzo+" €</td>"
+					+ "<td class='text-center'>"+parseFloat(products.cart[i].prezzo) * parseInt(products.cart[i].quantita)+" €</td>"
+				+ "</tr>")
+				
+			$("#tableCart tbody").append($productTr);
+		
+		}
+	
+	}
+	
+	calcolaImporti();
+});
+
+
+
 function addToCart() {
 
 	var id = $("#idProduct").text();
 
 	var name = $("#productName").text();
+	
+	var category = $("#productCategory").val();
 
 	var quantity = $("#input-quantity").val();
 
@@ -55,6 +99,7 @@ function addToCart() {
 		products.cart.push({
 			"id" : id,
 			"nome" : name,
+			"categoria" : category,
 			"quantita" : quantity,
 			"prezzo" : price,
 			"azienda" : company
@@ -73,7 +118,7 @@ function addToCart() {
 
 function removeFromCart(row,id) {
 	
-	$(row).closest("table").remove();
+	$(row).closest("tr").remove();
 	
 	for(var i = 0; i<products.cart.length; i++){
 		
@@ -97,39 +142,37 @@ function removeFromCart(row,id) {
 
 function showCart() {
 	
-	$("#productsincart").empty();
+	$("#productsincart tbody").empty();
 	
-	for (var i = 0; i < products.cart.length; i++) {
-		var $product = (
-						" <table class='table table-striped' id='table" +
-						+ products.cart[i].id
-						+"'>"
-							+ "<tbody>"
-								+ "<tr>"
-									+ "<td class='text-left'>"
-									+ "<a href='#'><img class='img-thumbnail' src="
-									+ "image/product/7product50x59.jpg"
-									+ "></a>"
-									+ "</td>"
-									+ "<td class='text-left'><a href='javascript:void(0);'>"
-									+ products.cart[i].nome
-									+ "</a></td>"
-									+ "<td class='text-left'>x "
-									+ products.cart[i].quantita
-									+ " kg</td>"
-									+ "<td class='text-center'>&#8364; "
-									+ products.cart[i].prezzo
-									+ "</td>"
-									+ "<td class='text-center'>"
-									+ "<button class='btn btn-danger btn-xs' title='Remove' type='button' onclick='removeFromCart(this," 
-									+ products.cart[i].id
-									+")'>"
-									+ "<i class='fa fa-times'></i>" + "</button></td>"
-								+ "</tr>"
-							+ "</tbody>" 
-						+ "</table>")
+	if(products.cart.length == 0){
+		$('#productsincart tbody').append("<span><strong>Nessun prodotto nel carrello</strong></span>");
+	}else{
+		for (var i = 0; i < products.cart.length; i++) {
+			var $product = (
+					"<tr>"
+					+ "<td class='text-left'>"
+					+ "<a href='#'><img class='img-thumbnail' src="
+					+ "image/product/7product50x59.jpg"
+					+ "></a>"
+					+ "</td>"
+					+ "<td class='text-left'><a href='javascript:void(0);'>"
+					+ products.cart[i].nome
+					+ "</a></td>"
+					+ "<td class='text-left'>x "
+					+ products.cart[i].quantita
+					+ " kg</td>"
+					+ "<td class='text-center'>&#8364; "
+					+ products.cart[i].prezzo
+					+ "</td>"
+					+ "<td class='text-center'>"
+					+ "<button class='btn btn-danger btn-xs' title='Remove' type='button' onclick='removeFromCart(this," 
+					+ products.cart[i].id
+					+")'>"
+					+ "<i class='fa fa-times'></i>" + "</button></td>"
+					+ "</tr>")
 						
-						$("#productsincart").append($product);
+					$("#productsincart tbody").append($product);
+		}
 	}
 	
 	calcolaImporti();
@@ -141,14 +184,19 @@ function calcolaImporti() {
 	
 	for(var i = 0; i<products.cart.length; i++){
 		var tmp = parseFloat(products.cart[i].prezzo) * parseInt(products.cart[i].quantita);
+		
 		somma+=tmp;
 	}
 	
-	var vat = (somma * 3) / 100;
-	var totale = somma + vat;
+	var tax = (somma * 3) / 100;
+	var totale = somma + tax;
 	
-	$("#parziale").text("EUR "+somma);
-	$("#vat").text("EUR "+vat);
-	$("#totale").text("EUR "+totale);
+	$("#parziale").text("EUR "+somma.toFixed(2));
+	$("#tax").text("EUR "+tax.toFixed(2));
+	$("#totale").text("EUR "+totale.toFixed(2));
+	
+	$("#parziale1").text("EUR "+somma.toFixed(2));
+	$("#tax1").text("EUR "+tax.toFixed(2));
+	$("#totale1").text("EUR "+totale.toFixed(2));
 	
 };

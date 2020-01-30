@@ -105,31 +105,21 @@
 				<button type="button"
 					class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button" onclick="showCart()">
 					<span id="cart-total"><span class="cart-title">Carrello</span><br>
-						<span id="totalCart">0 prodotti</span></span>
+						<span id="totalCart">0 prodotto(i)</span></span>
 				</button>
 				
 				<ul class="dropdown-menu pull-right cart-dropdown-menu" >
 				
-					  <li id="productsincart">
-						<!--<table class="table table-striped">
+					  <li >
+					  
+						<table class="table table-striped" id="productsincart">
+						
 							<tbody>
-								<tr>
-									<td class="text-center"><a href="#"><img
-											class="img-thumbnail" title="lorem ippsum dolor dummy"
-											alt="lorem ippsum dolor dummy"
-											src="image/product/7product50x59.jpg"></a></td>
-											
-									<td class="text-left"><a href="javascript:void(0);">lorem ippsum dolor
-											dummy</a></td>		
-									  <td class="text-right">x 1</td>
-									<td class="text-right">$254.00</td>
-									<td class="text-center"><button
-											class="btn btn-danger btn-xs" title="Remove" type="button">
-											<i class="fa fa-times"></i>
-										</button></td>
-								</tr>
+									
 							</tbody>
-						</table>-->
+							
+						</table>
+						
 					</li>
 					
 					<li id="subtotal">
@@ -144,8 +134,8 @@
 										<td class="text-right" id="parziale"></td>
 									</tr>
 									<tr>
-										<td class="text-right"><strong>IVA (3%)</strong></td>
-										<td class="text-right" id="vat"></td>
+										<td class="text-right"><strong>TAX (3%)</strong></td>
+										<td class="text-right" id="tax"></td>
 									</tr>
 									<tr>
 										<td class="text-right"><strong>Totale</strong></td>
@@ -156,10 +146,8 @@
 							</table>
 							
 							<p class="text-right">
-								<span class="btn-viewcart"><a href="cart.html"><strong><i
-											class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span
-									class="btn-checkout"><a href="checkout.html"><strong><i
-											class="fa fa-share"></i> Checkout</strong></a></span>
+								<span class="btn-viewcart"><a href="cart.jsp"><strong><i
+											class="fa fa-shopping-cart"></i> Vai al carrello</strong></a></span> 
 							</p>
 						</div>
 					</li>

@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -41,8 +42,8 @@
 	<div class="preloader loader"
 		style="display: block; background: #f2f2f2;">
 		<img src="image/loader.gif" alt="#" />
-
 	</div>
+	
 	<header>
 		<%@ include file="header.jsp"%>
 	</header>
@@ -601,47 +602,63 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="col-sm-6">
 					
+						<input type="hidden" id="productCategory" value="${categoriaProdotto}">
+
 						<h1 class="productpage-title" id="productName">${nomeProdotto}</h1>
-						
+
 						<ul class="list-unstyled productinfo-details-top">
-						
+
 							<li>
-								<h2 class="productpage-price" >Costo al kg
+								<h2>
+									&#8364; <span id="productPrice">${prezzoProdotto}</span>
+									<span>/kg</span>
 								</h2>
-								<h2 >&#8364; <span id="productPrice">${prezzoProdotto}</span></h2>								
 							</li>
-							
+
 						</ul>
 
 						<hr>
-						
+
 						<ul class="list-unstyled product_info">
-						
+
 							<li><label>Azienda</label> <span id="company"><strong>
-									${nomeAziendaProdotto}</strong></span></li>
+										${nomeAziendaProdotto}</strong></span></li>
+										
 							<li><label>Codice Prodotto</label> <span id="idProduct"><strong>
-									${idProdotto}</strong></span></li>
-							<li><label>Quantità Disponibile</label><span><strong>
-									${quantitaProdotto}</strong></span><span>kg</span></li>
+										${idProdotto}</strong></span></li>
+
 							<li><label>Quantità Minima Da Acquistare</label> <span><strong>
-									${quantitaMinimaProdotto}</strong></span><span>kg</span></li>
-									
-						</ul>
-						
-						<hr>
-						
-						<p class="product-desc">${descrizioneProdotto}</p>
-						
-						<div id="product">
-						
-							<div class="form-group">
+										${quantitaMinimaProdotto}</strong></span><span>kg</span></li>
+										
+							<br>
 							
+							<li><c:choose>
+
+									<c:when test="${quantitaProdotto > 0 }">
+										<h1 style="color: green;">DISPONIBILE</h1>
+									</c:when>
+
+									<c:otherwise>
+										<h1 style="color: red;">NON DISPONIBILE</h1>
+									</c:otherwise>
+
+								</c:choose></li>
+						</ul>
+
+						<hr>
+
+						<p class="product-desc">${descrizioneProdotto}</p>
+
+						<div id="product">
+
+							<div class="form-group">
+
 								<label class="control-label qty-label" for="input-quantity">Quantità</label>
-								<input type="text" name="quantity" size="2"
-									id="input-quantity" class="form-control productpage-qty" /> <span>/kg</span>
+								<input type="text" name="quantity" size="2" id="input-quantity"
+									class="form-control productpage-qty" /> <span>/kg</span>
 
 								<div class="btn-group">
 
@@ -653,7 +670,7 @@
 								</div>
 
 								<br>
-								
+
 								<div class="alert alert-success" id="alert_conferma_inserimento"
 									style="display: none !important; border-left: 25px;">
 									<strong>Prodotto inserito nel carrello</strong>

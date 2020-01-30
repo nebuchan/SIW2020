@@ -25,7 +25,7 @@ public class DammiProdotto extends HttpServlet {
 		Azienda aziendaProdotto = DBManager.getInstance().dammiAzienda(prodotto.getEmailAzienda());
 		
 		req.setAttribute("nomeAziendaProdotto", aziendaProdotto.getRagioneSociale());
-		req.setAttribute("emailAzienda", prodotto.getEmailAzienda());
+		req.setAttribute("categoriaProdotto", prodotto.getCategoria());
 		req.setAttribute("nomeProdotto", prodotto.getNome());
 		req.setAttribute("idProdotto", prodotto.getiD());
 		req.setAttribute("prezzoProdotto", prodotto.getPrezzo());

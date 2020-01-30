@@ -31,11 +31,11 @@
 					<li><a href="about-us.html">About us</a></li>
 					<li><a href="contact.html">Contact Us</a></li>
 					-->
-				<li><input class="input-text" placeholder="search.."
+				<!--  <li><input class="input-text" placeholder="search.."
 					type="text" id="search">
 					<button class="search-btn">
 						<i class="fa fa-search"></i>
-					</button></li>
+					</button></li>-->
 			</ul>
 
 		</div>
