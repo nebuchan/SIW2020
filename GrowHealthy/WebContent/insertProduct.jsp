@@ -62,7 +62,7 @@
 			<div class="col-sm-9" id="content">
 				<h1>Inserimento Prodotto</h1>
 				
-				<form class="form-horizontal" method="POST" action="insertproduct">
+				<form class="form-horizontal" method="POST" action="insertproduct" enctype="multipart/form-data">
 
 					<div class="form-group required">
 						<label for="input-nome" class="col-sm-2 control-label">Nome</label>
@@ -114,7 +114,7 @@
 					<div class="form-group required">
 						<label for="input-immagine" class="col-sm-2 control-label">Immagine Prodotto</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="input-immagine"
+							<input type="file" class="form-control" id="input-immagine" accept="image/jpeg"
 								placeholder="Immagine" name="immagine">
 						</div>
 					</div>

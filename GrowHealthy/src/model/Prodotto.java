@@ -10,6 +10,7 @@ public class Prodotto {
 	private double prezzo;
 	private String categoria;
 	private String emailAzienda;
+	private String immagine;
 
 	public int getiD() {
 		return iD;
@@ -75,4 +76,13 @@ public class Prodotto {
 		this.emailAzienda = emailAzienda;
 	}
 
+	public void setImmagine(String immagine)
+	{
+		this.immagine=immagine;
+		
+	}
+	public String getImmagine()
+	{
+		return immagine;
+	}
 }

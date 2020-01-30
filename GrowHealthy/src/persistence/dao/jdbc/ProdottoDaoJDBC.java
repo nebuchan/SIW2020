@@ -25,7 +25,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into prodotto(id, nome, categoria, quantita_magazzino, quantita_minima, descrizione, prezzo, azienda) values (?,?,?,?,?,?,?,?)";
+			String insert = "insert into prodotto(id, nome, categoria, quantita_magazzino, quantita_minima, descrizione, prezzo, azienda,immagine) values (?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, prodotto.getiD());
 			statement.setString(2, prodotto.getNome());
@@ -35,6 +35,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			statement.setString(6, prodotto.getDescrizione());
 			statement.setDouble(7, prodotto.getPrezzo());
 			statement.setString(8, prodotto.getEmailAzienda());
+			statement.setString(9, prodotto.getImmagine());
 			statement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -70,6 +71,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setDescrizione(result.getString("descrizione"));
 				prodotto.setPrezzo(result.getInt("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
+				prodotto.setImmagine(result.getString("immagine"));
 
 			}
 		} catch (SQLException e) {
@@ -105,6 +107,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setDescrizione(result.getString("descrizione"));
 				prodotto.setPrezzo(result.getInt("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
+				prodotto.setImmagine(result.getString("immagine"));
 
 				prodotti.add(prodotto);
 			}
@@ -125,7 +128,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update prodotto SET nome = ?, categoria = ?, quantita_magazzino = ?, quantita_minima = ?, descrizione = ?, prezzo = ?, azienda = ? WHERE id = ?";
+			String update = "update prodotto SET nome = ?, categoria = ?, quantita_magazzino = ?, quantita_minima = ?, descrizione = ?, prezzo = ?, azienda = ?, immagine = ? WHERE id = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, prodotto.getNome());
 			statement.setString(2, prodotto.getCategoria());
@@ -135,6 +138,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			statement.setDouble(6, prodotto.getPrezzo());
 			statement.setInt(7, prodotto.getiD());
 			statement.setString(8, prodotto.getEmailAzienda());
+			statement.setString(9, prodotto.getImmagine());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {
@@ -191,7 +195,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setDescrizione(result.getString("descrizione"));
 				prodotto.setPrezzo(result.getInt("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
-
+				prodotto.setImmagine(result.getString("immagine"));
 				prodotti.add(prodotto);
 			}
 		} catch (SQLException e) {
