@@ -38,15 +38,14 @@ public class InserimentoProdotto extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		Azienda a= (Azienda) req.getSession().getAttribute("utente");	
-		
 		if(a!=null)
 		{
-		String nome = req.getParameter("nome");
-		String categoria = req.getParameter("categoria");
-		String quantitaMagazzino = req.getParameter("quantitaMagazzino");
-		String quantitaMinima = req.getParameter("quantitaMinima");
-		String descrizione = req.getParameter("descrizione");
-		String prezzo = req.getParameter("prezzo");
+		String nome = (String) req.getSession().getAttribute("name");
+		String categoria = (String) req.getSession().getAttribute("category");
+		String quantitaMagazzino = (String) req.getSession().getAttribute("stockQuantity");
+		String quantitaMinima = (String) req.getSession().getAttribute("minimumQuantity");
+		String descrizione = (String) req.getSession().getAttribute("description");
+		String prezzo = (String) req.getSession().getAttribute("price");
 		Prodotto prodotto = new Prodotto();
 		List<Prodotto> prodotti=DBManager.getInstance().dammiProdotti();
 		
@@ -70,22 +69,8 @@ public class InserimentoProdotto extends HttpServlet {
 		prodotto.setPrezzo(Integer.parseInt(prezzo));
 		prodotto.setEmailAzienda(a.getEmail());
 		
-		File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
 		
-		String user_dir=System.getProperty("user.dir");
 		
-		File file = new File(user_dir+"/git/"+"SIW2020"+req.getContextPath()+"/WebContent/image/", prodotto.getiD()+".jpg");
-		Part part=req.getPart("immagine");
-	    part.write("Ciao.png");
-	    
-	    
-	    InputStream is = part.getInputStream();
-	    FileUtils.copyInputStreamToFile(is, file);
-	   // Image image = new Image(file.toURI().toString());
-	    
-	    System.out.println(file.getAbsolutePath());
-	    String relative_path="image/"+Integer.toString(prodotto.getiD())+".jpg";
-	    prodotto.setImmagine(relative_path);
 	    
 		DBManager.getInstance().inserisciProdotto(prodotto);
 		

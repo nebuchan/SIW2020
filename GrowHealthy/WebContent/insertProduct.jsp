@@ -35,6 +35,39 @@
 <script src="javascript/global.js" type="text/javascript"></script>
 <script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+function popup() 
+{
+	var nomeProdotto=document.getElementById('inputnome').value;
+	var categoriaProdotto=document.getElementById('inputcategoria').value;
+	var quantitaMagazzino=document.getElementById('inputquantitamagazzino').value;
+	var quantitaMinima=document.getElementById('inputquantitaminima').value;
+	var descrizioneProdotto=document.getElementById('inputdescrizione').value;
+	var prezzoProdotto=document.getElementById('inputprezzo').value;
+
+
+	var w = 640;
+	var h = 480;
+	var l = Math.floor((screen.width-w)/2);
+	var t = Math.floor((screen.height-h)/2);
+	var newWindow = window.open("","","width=" + w + ",height=" + h + ",top=" + t + ",left=" + l);
+	
+	$.ajax({
+         type: 'GET',
+         url: 'checkproduct',
+         data : {"nomeProdotto": nomeProdotto,
+        	 	"categoriaProdotto": categoriaProdotto,
+        	 	"quantitaMagazzino": quantitaMagazzino,
+        	 	"quantitaMinima": quantitaMinima,
+        	 	"descrizioneProdotto": descrizioneProdotto,
+        	 	"prezzoProdotto": prezzoProdotto,},
+         success: function(result) {
+        		newWindow.location.href = "popupInsertProduct.jsp";
+        	}
+     });
+}
+</script>
+
 </head>
 <body class="account-register col-2">
 	<div class="preloader loader"
@@ -58,16 +91,16 @@
 			<li><a href="userRegistration.jsp">Inserimento Prodotto</a></li>
 		</ul>
 		<div class="row">
-			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>
+			<div class="col-sm-3 hidden-xs column-left"  id="column-left"></div>
 			<div class="col-sm-9" id="content">
 				<h1>Inserimento Prodotto</h1>
 				
-				<form class="form-horizontal" method="POST" action="insertproduct" enctype="multipart/form-data">
+				<form class="form-horizontal" method="POST" action="checkproduct" enctype="multipart/form-data">
 
 					<div class="form-group required">
 						<label for="input-nome" class="col-sm-2 control-label">Nome</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="input-nome"
+							<input type="text" class="form-control" id="inputnome"
 								placeholder="Nome" name="nome">
 						</div>
 					</div>
@@ -75,7 +108,7 @@
 						<label for="input-categoria" class="col-sm-2 control-label">Categoria</label>
 						
 						<div class="col-sm-10">
-							<select name="categoria">
+							<select name="categoria" id="inputcategoria">
 								<c:forEach items="${categories}" var="category">
 									<option value="${category.categoria}">${category.categoria}</option>
 							</c:forEach>
@@ -86,52 +119,45 @@
 					<div class="form-group required">
 						<label for="input-quantitaMagazzino" class="col-sm-2 control-label">Quantità Magazzino</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="input-quantitaMagazzino"
+							<input type="text" class="form-control" id="inputquantitamagazzino"
 								placeholder="Quantita Magazzino" name="quantitaMagazzino">
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-quantitaMinima" class="col-sm-2 control-label">Quantità Minima</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="input-quantitaMinima"
+							<input type="text" class="form-control" id="inputquantitaminima"
 								placeholder="Quantita Minima" name="quantitaMinima">
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-descrizione" class="col-sm-2 control-label">Descrizione</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inpur-descrizione"
+							<input type="text" class="form-control" id="inputdescrizione"
 								placeholder="Descrizone" name="descrizione">
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-prezzo" class="col-sm-2 control-label">Prezzo</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="input-prezzo"
+							<input type="text" class="form-control" id="inputprezzo"
 								placeholder="Prezzo" name="prezzo">
 						</div>
 					</div>
-					<div class="form-group required">
-						<label for="input-immagine" class="col-sm-2 control-label">Immagine Prodotto</label>
-						<div class="col-sm-10">
-							<input type="file" class="form-control" id="input-immagine" accept="image/jpeg"
-								placeholder="Immagine" name="immagine">
-						</div>
-					</div>
 					
-
 					
-					</fieldset>
-					<div class="buttons">
+				</form>
+				<div class="buttons">
 						<div class="pull-right">
 							I have read and agree to the <a class="agree" href="#"><b>Privacy
 									Policy</b></a> <input type="checkbox" value="1" name="agree">
 							&nbsp;
 							<button type="submit" class="btn btn-primary"
-								value="InserimentoProdotto">Continue</button>
+								value="InserimentoProdotto" onclick="javascript:popup()">Continue</button>
 						</div>
-					</div>
-				</form>
+				</div>
+				
+					
 			</div>
 		</div>
 	</div>

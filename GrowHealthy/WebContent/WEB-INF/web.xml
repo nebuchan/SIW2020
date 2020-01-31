@@ -107,6 +107,16 @@
 		<servlet-name>RiempiCampiProdotto</servlet-name>
 		<url-pattern>/fillproduct</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControllaProdotto</servlet-name>
+		<servlet-class>controllers.ControllaProdotto</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ControllaProdotto</servlet-name>
+		<url-pattern>/checkproduct</url-pattern>
+	</servlet-mapping>
 
 <servlet>
 		<servlet-name>EliminaProdotto</servlet-name>
