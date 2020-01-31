@@ -57,21 +57,23 @@
 	</nav>
 
 	<div class="container">
-	
+
 		<br>
 
 		<div class="row">
 
-			<div class="col-sm-9" id="content" style="margin-left: 60px;">
+			<div class="col-sm-9" id="content" style="margin-left: 100px;">
 
-				<h1 style="text-align: center;">Carrello</h1>
+				<h1 style="text-align: center;">
+					<strong>Carrello</strong>
+				</h1>
 
 				<br>
 
 				<form enctype="multipart/form-data" method="post" action="#">
-				
+
 					<div class="table-responsive">
-					
+
 						<table class="table table-bordered" id="tableCart">
 
 							<thead>
@@ -87,18 +89,20 @@
 							</thead>
 
 							<tbody>
-								
+
 							</tbody>
-							
+
 						</table>
-						
+
 					</div>
-					
+
 				</form>
 
 
-				<div class="panel panel-default">
+				<!--<div class="panel panel-default">
+
 					<div class="panel-heading">
+
 						<h4 class="panel-title">
 							<a data-parent="#accordion" data-toggle="collapse"
 								class="accordion-toggle" href="#collapse-shipping">Scegli la
@@ -106,11 +110,14 @@
 							</a>
 						</h4>
 					</div>
+
 					<div class="panel-collapse collapse" id="collapse-shipping">
+
 						<div class="panel-body">
-							<p>Enter your destination to get a shipping estimate.</p>
-							<form class="form-horizontal">
-								<div class="form-group required">
+
+
+
+							  <div class="form-group required">
 									<label for="input-country" class="col-sm-2 control-label">Country</label>
 									<div class="col-sm-10">
 										<select class="form-control" id="input-country"
@@ -491,78 +498,53 @@
 										</select>
 									</div>
 								</div>
-								
-								<div class="form-group required">
-								
-									<label for="input-postcode" class="col-sm-2 control-label">Post
-										Code</label>
-										
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="input-postcode"
-											placeholder="Post Code" value="" name="postcode">
-									</div>
-									
-								</div>
-								
-								<input type="button" class="btn btn-primary"
-									data-loading-text="Loading..." id="button-quote"
-									value="Get Quotes">
-							</form>
 						</div>
 					</div>
-				</div>
+				</div>-->
+
 			</div>
-			
-			<br>
-			
-			<div class="row">
-			
-				<div class="col-sm-4 col-sm-offset-8">
-				
-					<table class="table table-bordered">
-					
-						<tbody>
-						
-							<tr>
-								<td class="text-center"><strong>Parziale: </strong></td>
-								<td class="text-right" id="parziale1"></td>
-							</tr>
-							
-							<tr>
-								<td class="text-center"><strong>TAX (3%): </strong></td>
-								<td class="text-right" id="tax1"></td>
-							</tr>
-							
-							<tr>
-								<td class="text-center"><strong>Spedizione: </strong></td>
-								<td class="text-right" id="spedizione"></td>
-							</tr>
-							
-							<tr>
-								<td class="text-center"><strong>Totale: </strong></td>
-								<td class="text-right" id="totale1"></td>
-							</tr>
-							
-						</tbody>
-						
-					</table>
-					
-				</div>
-				
+
+			<div class="col-sm-4 col-sm-offset-8">
+
+				<table class="table table-bordered">
+
+					<tbody>
+
+						<tr>
+							<td class="text-center"><strong>Parziale: </strong></td>
+							<td class="text-right" id="parziale1"></td>
+						</tr>
+
+						<tr>
+							<td class="text-center"><strong>TAX (3%): </strong></td>
+							<td class="text-right" id="tax1"></td>
+						</tr>
+
+						<tr>
+							<td class="text-center"><strong>Totale: </strong></td>
+							<td class="text-right">EUR <span id="totale1"></span></td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
 			</div>
-			
+
 			<div class="buttons">
-			
+
 				<div class="pull-left">
 					<a class="btn btn-default" href="categories">Continua lo shopping</a>
 				</div>
-				
-				<!--  <div class="pull-right">
-					<a class="btn btn-primary" href="checkout.html">Checkout</a>
-				</div>-->
+
+				<div class="pull-right">
+					<a class="btn btn-default" href="checkout.jsp">Checkout</a>
+				</div>
+
 			</div>
-			
+
 		</div>
+
 	</div>
 
 	<footer>

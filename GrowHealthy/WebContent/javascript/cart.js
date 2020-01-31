@@ -189,6 +189,7 @@ function calcolaImporti() {
 	}
 	
 	var tax = (somma * 3) / 100;
+	
 	var totale = somma + tax;
 	
 	$("#parziale").text("EUR "+somma.toFixed(2));
@@ -197,6 +198,6 @@ function calcolaImporti() {
 	
 	$("#parziale1").text("EUR "+somma.toFixed(2));
 	$("#tax1").text("EUR "+tax.toFixed(2));
-	$("#totale1").text("EUR "+totale.toFixed(2));
+	$("#totale1").text(totale.toFixed(2));
 	
 };
