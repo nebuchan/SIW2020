@@ -72,7 +72,22 @@ public class InserimentoProdotto extends HttpServlet {
 		prodotto.setPrezzo(Integer.parseInt(prezzo));
 		prodotto.setEmailAzienda(a.getEmail());
 		
+		File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
 		
+		String user_dir=System.getProperty("user.dir");
+		
+		File file = new File(user_dir+"/git/"+"SIW2020"+req.getContextPath()+"/WebContent/image/", prodotto.getiD()+".jpg");
+		Part part=req.getPart("immagine");
+	    //part.write("Ciao.png");
+	    
+	    
+	    InputStream is = part.getInputStream();
+	    FileUtils.copyInputStreamToFile(is, file);
+	   // Image image = new Image(file.toURI().toString());
+	    
+	    System.out.println(file.getAbsolutePath());
+	    String relative_path="image/"+Integer.toString(prodotto.getiD())+".jpg";
+	    prodotto.setImmagine(relative_path);
 		
 	    
 		DBManager.getInstance().inserisciProdotto(prodotto);

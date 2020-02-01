@@ -83,6 +83,17 @@
 						<label for="input-prezzo" class="col-sm-2 control-label">Prezzo:&nbsp;&nbsp;<strong>
 										${price}</strong></label>
 					</div>
+					
+					<div class="form-group required">
+						<label for="input-immagine" class="col-sm-2 control-label">Immagine Prodotto</label>
+						<div class="col-sm-10">
+							<input type="file" class="form-control" id="input-immagine" accept="image/jpeg"
+								placeholder="Immagine" name="immagine">
+						</div>
+					</div>
+					
+					
+					
 					<div class="buttons">
 						<div class="pull-right">
 							PER L'INSERIMENTO CLICCARE SU CONFERMA
