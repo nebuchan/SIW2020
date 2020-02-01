@@ -50,7 +50,7 @@
 		<div class="row">
 			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>
 			<div class="col-sm-9" id="content">
-				
+				<strong><br>RIEPILOGO DATI PRODOTTO</strong>
 				<form class="form-horizontal" method="POST" action="insertproduct" enctype="multipart/form-data">
 
 					<div class="form-group required">
@@ -84,19 +84,22 @@
 										${price}</strong></label>
 					</div>
 					
+					
+					
+					
+					
+					<div class="buttons">
 					<div class="form-group required">
-						<label for="input-immagine" class="col-sm-2 control-label">Immagine Prodotto</label>
+					<br>
+						<label for="input-immagine" class="col-sm-2 control-label"><strong>INSERISCI IMMAGINE PRODOTTO</strong></label>
 						<div class="col-sm-10">
 							<input type="file" class="form-control" id="input-immagine" accept="image/jpeg"
 								placeholder="Immagine" name="immagine">
 						</div>
 					</div>
-					
-					
-					
-					<div class="buttons">
 						<div class="pull-right">
-							PER L'INSERIMENTO CLICCARE SU CONFERMA
+						<br>
+							<strong>Prima di CONFERMARE si scelga l'immagine che si vuole inserire</strong>
 							&nbsp;
 							<button type="submit" class="btn btn-primary"
 								value="InserimentoProdotto">Conferma</button>
@@ -104,7 +107,6 @@
 				</div>
 					
 				</form>
-				
 				
 			</div>
 		</div>
