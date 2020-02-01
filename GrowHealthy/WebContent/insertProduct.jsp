@@ -63,6 +63,8 @@ function popup()
         	 	"prezzoProdotto": prezzoProdotto,},
          success: function(result) {
         		newWindow.location.href = "popupInsertProduct.jsp";
+        		location.href = "fillproduct?";
+        		
         	}
      });
 }

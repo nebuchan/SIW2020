@@ -51,7 +51,7 @@
 			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>
 			<div class="col-sm-9" id="content">
 				
-				<form class="form-horizontal" method="POST" action="insertproduct" enctype="multipart/form-data">
+				<form class="form-horizontal">
 
 					<div class="form-group required">
 						<label for="input-nome" class="col-sm-2 control-label">Nome:&nbsp;&nbsp; <strong>
@@ -85,10 +85,9 @@
 					</div>
 					<div class="buttons">
 						<div class="pull-right">
-							PER L'INSERIMENTO CLICCARE SU CONFERMA
 							&nbsp;
 							<button type="submit" class="btn btn-primary"
-								value="InserimentoProdotto">Conferma</button>
+								value="InserimentoProdotto" onclick="window.close()">Chiudi Popup</button>
 						</div>
 				</div>
 					

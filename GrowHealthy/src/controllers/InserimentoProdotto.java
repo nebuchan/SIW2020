@@ -38,6 +38,9 @@ public class InserimentoProdotto extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		Azienda a= (Azienda) req.getSession().getAttribute("utente");	
+		PrintWriter out = resp.getWriter();
+		RequestDispatcher rd = req.getRequestDispatcher("successPageInsertProduct.jsp");
+		
 		if(a!=null)
 		{
 		String nome = (String) req.getSession().getAttribute("name");
@@ -73,10 +76,17 @@ public class InserimentoProdotto extends HttpServlet {
 		
 	    
 		DBManager.getInstance().inserisciProdotto(prodotto);
-		
-		
-		resp.sendRedirect(req.getContextPath() + "/mycategories.jsp");
+		out.println("<div class=\"alert alert-success\">\r\n" +
+				" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
+				"  <strong>Prodotto inserito con successo!</strong> \r\n" + 
+				"</div>");
+	
+		rd.include(req, resp);
 		}
-		
+		else
+			out.println("<div class=\"alert alert-danger\">\r\n" +
+					" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
+					"  <strong>Accesso Negato!</strong> Attenzione, Non hai fatto il login. Accedi con il tuo account aziendale per poter inserire un prodotto\r\n" + 
+					"</div>");
 	}
 }
