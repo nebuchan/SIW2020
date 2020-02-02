@@ -77,16 +77,20 @@
 							<h4 class="panel-title">
 								<a class="accordion-toggle" data-parent="#accordion"
 									data-toggle="collapse" href="#collapse-shipping-data"
-									aria-expanded="true">Step 1: Inserisci dati per la consegna<i
-									class="fa fa-caret-down"></i>
+									aria-expanded="true">Step 1: Inserisci i dati per la
+									consegna<i class="fa fa-caret-down"></i>
 								</a>
 							</h4>
 						</div>
 
 						<div id="collapse-shipping-data" role="heading"
 							class="panel-collapse collapse in" aria-expanded="true" style="">
+
 							<div class="panel-body">
-								<form class="form-horizontal">
+
+								<form class="form-horizontal" id="formDeliveryData"
+									name="formDeliveryData">
+
 									<div class="form-group required">
 
 										<label for="input-nome" class="col-sm-2 control-label">Nome:
@@ -110,6 +114,19 @@
 										</div>
 
 									</div>
+
+									<div class="form-group required">
+
+										<label for="input-regione" class="col-sm-2 control-label">Regione:
+										</label>
+
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="input-regione"
+												placeholder="Regione" value="" name="regione">
+										</div>
+
+									</div>
+
 
 									<div class="form-group required">
 
@@ -171,6 +188,22 @@
 
 									</div>
 
+									<br>
+
+									<div class="alert alert-warning" id="alert-form"
+										style="display: none !important;">
+										<strong>Prego inserire tutti i campi!</strong>
+									</div>
+
+									<div class="alert alert-success" id="success-form"
+										style="display: none !important;">
+										<strong>Dati per la spedizione correttamente
+											inseriti!</strong>
+									</div>
+
+									<button class="btn btn-default pull-right" type="button"
+										onclick="fillDeliveryData()">Conferma</button>
+
 								</form>
 
 							</div>
@@ -202,7 +235,7 @@
 										<tr>
 
 											<td><input type="radio" name="spedizione"
-												value="standard" onchange="addDeliveryCost()"><strong
+												value="standard" onchange="addDeliveryCost()" required><strong
 												style="margin-left: 10px;">+ 0,99 &#8364;</strong></td>
 
 											<td style="padding-left: 25px;"><strong>Standard</strong><strong
@@ -214,16 +247,16 @@
 											<td><input type="radio" name="spedizione" value="prime"
 												onchange="addDeliveryCost()"><strong
 												style="margin-left: 10px;">+ 3,99 &#8364;</strong></td>
-												
+
 											<td style="padding-left: 25px;"><strong>Prime</strong><strong
 												style="color: green;">- 5gg lavorativi</strong></td>
 										</tr>
-										
+
 										<tr>
-											<td><input type="radio" name="spedizione" value="primeUltra"
-												onchange="addDeliveryCost()"><strong
+											<td><input type="radio" name="spedizione"
+												value="primeUltra" onchange="addDeliveryCost()"><strong
 												style="margin-left: 10px;">+ 6,99 &#8364;</strong></td>
-												
+
 											<td style="padding-left: 25px;"><strong>PrimeUtra</strong><strong
 												style="color: green;">- 2gg lavorativi</strong></td>
 										</tr>
@@ -251,28 +284,65 @@
 							class="panel-collapse collapse" aria-expanded="false"
 							style="height: 0px;">
 							<div class="panel-body">
-								<p>Please select the preferred payment method to use on this
-									order.</p>
+
+								<p>Selezionare modalità di pagamento</p>
+
 								<div class="radio">
-									<label> <input type="radio" checked="checked"
-										value="cod" name="payment_method"> Cash On Delivery
+									<label> <input type="radio" name="payment_method"
+										value="cardPayment" onchange="showCardDiv()">
+										Pagamento con carta
+									</label> <label> <input type="radio" name="payment_method"
+										value="cashOnDelivery"> Pagamento alla consegna
 									</label>
+
 								</div>
-								<p>
-									<strong>Add Comments About Your Order</strong>
-								</p>
-								<p>
-									<textarea class="form-control" rows="8" name="comment"></textarea>
-								</p>
-								<div class="buttons">
-									<div class="pull-right">
-										I have read and agree to the <a class="agree" href="#"><b>Terms
-												&amp; Conditions</b></a> <input type="checkbox" value="1"
-											name="agree"> &nbsp; <input type="button"
-											class="btn btn-primary" data-loading-text="Loading..."
-											id="button-payment-method" value="Continue">
-									</div>
+
+								<div id="divCardPayment" style="display: none;">
+
+									<form id="formCardData">
+
+										<div class="form-group required">
+
+											<label for="input-titolare">Titolare:</label> <input
+												type="text" id="input-titolare" value="" name="titolare">
+
+
+										</div>
+										<div class="form-group required">
+
+											<label for="input-dataScadenza">Scadenza:</label> <input
+												type="date" id="input-dataScadenza" value=""
+												name="dataScadenza">
+
+
+										</div>
+
+										<div class="form-group required">
+
+											<label for="input-numeroCarta">Numero carta:</label> <input
+												type="text" id="input-numeroCarta" value=""
+												name="numeroCarta">
+
+
+										</div>
+
+										<div class="alert alert-warning" id="alert-formPayment"
+											style="display: none !important;">
+											<strong>Prego inserire tutti i campi!</strong>
+										</div>
+
+										<div class="alert alert-success" id="success-formPayment"
+											style="display: none !important;">
+											<strong>Dati della carta inseriti correttamente!</strong>
+										</div>
+
+										<button class="btn btn-default pull-left" type="button"
+											onclick="fillCardPayment()">Conferma</button>
+
+									</form>
 								</div>
+
+
 							</div>
 						</div>
 					</div>
@@ -314,6 +384,26 @@
 
 								</div>
 
+								<br>
+
+								<div id="column-left">
+
+									<h1>Dati per la spedizione:</h1>
+
+									<h2 id="hDeliveryData" style="color: green;"></h2>
+
+									<h1>
+										Spedizione :
+										<h2 id="hDeliveryOption" style="color: green;"></h2>
+									</h1>
+
+									<h1>
+										Modalità di pagamento:
+										<h1 id="paymentMethod"></h1>
+									</h1>
+
+								</div>
+
 								<div class="col-sm-4 col-sm-offset-8">
 
 									<table class="table table-bordered">
@@ -343,6 +433,8 @@
 										</tbody>
 
 									</table>
+
+
 
 								</div>
 								<div class="buttons">

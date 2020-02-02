@@ -9,17 +9,17 @@
 		<servlet-name>Login</servlet-name>
 		<servlet-class>controllers.Login</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>RegistrazioneCliente</servlet-name>
 		<servlet-class>controllers.RegistrazioneCliente</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>RegistrazioneCliente</servlet-name>
 		<url-pattern>/clientRegister</url-pattern>
@@ -34,111 +34,119 @@
 		<servlet-name>RegistrazioneAzienda</servlet-name>
 		<url-pattern>/companyRegister</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>Home</servlet-name>
 		<servlet-class>controllers.Home</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>Home</servlet-name>
 		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>DammiCategorie</servlet-name>
 		<servlet-class>controllers.DammiCategorieProdotti</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>DammiCategorie</servlet-name>
 		<url-pattern>/categories</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>DammiMieCategorie</servlet-name>
 		<servlet-class>controllers.DammiMieCategorieProdotti</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>DammiMieCategorie</servlet-name>
 		<url-pattern>/mycategories</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<servlet>
 		<servlet-name>DammiProdottiPerCategorie</servlet-name>
 		<servlet-class>controllers.DammiProdottiPerCategoria</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>DammiProdottiPerCategorie</servlet-name>
 		<url-pattern>/productsForCategories</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>DammiMieiProdottiPerCategorie</servlet-name>
 		<servlet-class>controllers.DammiMieiProdottiPerCategoria</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>DammiMieiProdottiPerCategorie</servlet-name>
 		<url-pattern>/myproductsForCategories</url-pattern>
 	</servlet-mapping>
-	
-	
-	
+
+
+
 	<servlet>
 		<servlet-name>DammiProdotto</servlet-name>
 		<servlet-class>controllers.DammiProdotto</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>DammiProdotto</servlet-name>
 		<url-pattern>/product</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>RiempiCampiProdotto</servlet-name>
 		<servlet-class>controllers.RiempiCampiProdotto</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>RiempiCampiProdotto</servlet-name>
 		<url-pattern>/fillproduct</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>ControllaProdotto</servlet-name>
 		<servlet-class>controllers.ControllaProdotto</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>ControllaProdotto</servlet-name>
 		<url-pattern>/checkproduct</url-pattern>
 	</servlet-mapping>
 
-<servlet>
+	<servlet>
 		<servlet-name>EliminaProdotto</servlet-name>
 		<servlet-class>controllers.EliminaProdotto</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>EliminaProdotto</servlet-name>
 		<url-pattern>/eliminaprodotto</url-pattern>
 	</servlet-mapping>
 
-<servlet>
+	<servlet>
 		<servlet-name>InserimentoProdotto</servlet-name>
 		<servlet-class>controllers.InserimentoProdotto</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>InserimentoProdotto</servlet-name>
 		<url-pattern>/insertproduct</url-pattern>
 	</servlet-mapping>
 
-	
+	<servlet>
+		<servlet-name>DatiSpedizione</servlet-name>
+		<servlet-class>controllers.DatiSpedizione</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DatiSpedizione</servlet-name>
+		<url-pattern>/deliveryData</url-pattern>
+	</servlet-mapping>
 
 
 </web-app>
