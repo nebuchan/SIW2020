@@ -43,7 +43,7 @@
 		style="display: block; background: #f2f2f2;">
 		<img src="image/loader.gif" alt="#" />
 	</div>
-	
+
 	<header>
 		<%@ include file="header.jsp"%>
 	</header>
@@ -604,8 +604,9 @@
 					</div>
 
 					<div class="col-sm-6">
-					
-						<input type="hidden" id="productCategory" value="${categoriaProdotto}">
+
+						<input type="hidden" id="productCategory"
+							value="${categoriaProdotto}">
 
 						<h1 class="productpage-title" id="productName">${nomeProdotto}</h1>
 
@@ -613,8 +614,7 @@
 
 							<li>
 								<h2>
-									&#8364; <span id="productPrice">${prezzoProdotto}</span>
-									<span>/kg</span>
+									&#8364; <span id="productPrice">${prezzoProdotto}</span> <span>/kg</span>
 								</h2>
 							</li>
 
@@ -624,20 +624,21 @@
 
 						<ul class="list-unstyled product_info">
 
-							<li><label>Azienda</label> <span id="company"><strong>
+							<li><label>Azienda: </label> <span id="company"><strong>
 										${nomeAziendaProdotto}</strong></span></li>
-										
-							<li><label>Codice Prodotto</label> <span id="idProduct"><strong>
+
+							<li><label>Codice Prodotto: </label> <span id="idProduct"><strong>
 										${idProdotto}</strong></span></li>
 
-							<li><label>Quantità Minima Da Acquistare</label> <span><strong>
-										${quantitaMinimaProdotto}</strong></span><span>kg</span></li>
-										
-							<br>
-							
+							<li><label>Quantità Minima Da Acquistare: </label> <span><strong
+									id="sQMin"> ${quantitaMinimaProdotto}</strong></span><span>kg</span></li>
+
 							<li><c:choose>
 
 									<c:when test="${quantitaProdotto > 0 }">
+										<label>Quantità disponibile: </label>
+										<span><strong id="sQMax">${quantitaProdotto}</strong></span>
+										<br>
 										<h1 style="color: green;">DISPONIBILE</h1>
 									</c:when>
 
@@ -652,36 +653,58 @@
 
 						<p class="product-desc">${descrizioneProdotto}</p>
 
-						<div id="product">
+						<c:if test="${utente == null }">
 
-							<div class="form-group">
+							<span><strong style="color: red;">Devi aver
+									effettuato l'accesso al sito per poter acquistare prodotti</strong></span>
 
-								<label class="control-label qty-label" for="input-quantity">Quantità</label>
-								<input type="text" name="quantity" size="2" id="input-quantity"
-									class="form-control productpage-qty" /> <span>/kg</span>
+						</c:if>
 
-								<div class="btn-group">
+						<c:if test="${utente != null }">
+							<div id="product">
 
-									<button type="button" id="button-cart"
-										data-loading-text="Loading..."
-										class="btn btn-primary btn-lg btn-block addtocart"
-										onclick="addToCart()">Aggiungi al carrello</button>
+								<div class="form-group">
 
-								</div>
+									<label class="control-label qty-label" for="input-quantity">Quantità</label>
+									<input type="text" name="quantity" size="2" id="input-quantity"
+										class="form-control productpage-qty" /> <span>/kg</span>
 
-								<br>
+									<div class="btn-group">
 
-								<div class="alert alert-success" id="alert_conferma_inserimento"
-									style="display: none !important; border-left: 25px;">
-									<strong>Prodotto inserito nel carrello</strong>
-								</div>
+										<button type="button" id="button-cart"
+											data-loading-text="Loading..."
+											class="btn btn-primary btn-lg btn-block addtocart"
+											onclick="addToCart()">Aggiungi al carrello</button>
 
-								<div class="alert alert-warning" id="alert_gia_inserito"
-									style="display: none !important; border-left: 25px;">
-									<strong>Prodotto già inserito nel carrello!</strong>
+									</div>
+
+									<br>
+
+									<div class="alert alert-success"
+										id="alert_conferma_inserimento"
+										style="display: none !important; border-left: 25px;">
+										<strong>Prodotto inserito nel carrello</strong>
+									</div>
+
+									<div class="alert alert-warning" id="alert_quantita_max"
+										style="display: none !important; border-left: 25px;">
+										<strong>La quantità selezionata supera quella
+											disponibile</strong>
+									</div>
+
+									<div class="alert alert-warning" id="alert_quantita_min"
+										style="display: none !important; border-left: 25px;">
+										<strong>La quantità selezionata non raggiunge la
+											quantità minima per questo prodotto</strong>
+									</div>
+
+									<div class="alert alert-warning" id="alert_gia_inserito"
+										style="display: none !important; border-left: 25px;">
+										<strong>Prodotto già inserito nel carrello</strong>
+									</div>
 								</div>
 							</div>
-						</div>
+						</c:if>
 					</div>
 				</div>
 

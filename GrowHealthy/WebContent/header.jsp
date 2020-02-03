@@ -44,19 +44,21 @@
 										</c:if>
 										<c:if test="${utente != null}">
 											<h1>
-												<strong>Ciao ${utente.email}</strong>
-												<input type="hidden" id="emailUtente" value="${utente.email}"/>
+												<strong>Ciao ${utente.email}</strong> <input type="hidden"
+													id="emailUtente" value="${utente.email}" />
 											</h1>
-											
+
 											<c:if test="${ragioneSociale!=null}">
-											
-											<div class="form-group">
-											<button type="submit" class="btn-link" formmethod="get" formaction="mycategories.jsp">I miei Prodotti </button>
-											<br>
-											<button type="submit" class="btn-link" formaction=userRegistration.jsp>Gestione Profilo</button>
-											</div>
-											<br>
-											
+
+												<div class="form-group">
+													<button type="submit" class="btn-link" formmethod="get"
+														formaction="mycategories.jsp">I miei Prodotti</button>
+													<br>
+													<button type="submit" class="btn-link"
+														formaction=userRegistration.jsp>Gestione Profilo</button>
+												</div>
+												<br>
+
 											</c:if>
 
 											<button type="submit" class="btn btn-warning"
@@ -66,9 +68,6 @@
 										</c:if>
 									</form>
 							</ul></li>
-
-						<li><a href="#" id="wishlist-total" title="Wish List (0)"><i
-								class="fa fa-heart"></i><span>Wish List</span><span> (0)</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -97,60 +96,65 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="col-sm-4 col-xs-12 header-right">
-		
+
 			<div id="cart" class="btn-group btn-block">
-			
+
 				<button type="button"
-					class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button" onclick="showCart()">
+					class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button"
+					onclick="showCart()">
 					<span id="cart-total"><span class="cart-title">Carrello</span><br>
 						<span id="totalCart">0 prodotto(i)</span></span>
 				</button>
-				
-				<ul class="dropdown-menu pull-right cart-dropdown-menu" >
-				
-					  <li >
-					  
+
+				<ul class="dropdown-menu pull-right cart-dropdown-menu">
+
+					<li>
+
 						<table class="table table-striped" id="productsincart">
-						
+
 							<tbody>
-									
+
 							</tbody>
-							
+
 						</table>
-						
+
 					</li>
-					
-					<li id="subtotal">
-					
-						<div>
-						
-							<table class="table table-bordered">
-							
-								<tbody>
-									<tr>
-										<td class="text-right"><strong>Parziale</strong></td>
-										<td class="text-right" id="parziale"></td>
-									</tr>
-									<tr>
-										<td class="text-right"><strong>TAX (3%)</strong></td>
-										<td class="text-right" id="tax"></td>
-									</tr>
-									<tr>
-										<td class="text-right"><strong>Totale</strong></td>
-										<td class="text-right" id="totale"></td>
-									</tr>
-								</tbody>
-								
-							</table>
-							
-							<p class="text-right">
-								<span class="btn-viewcart"><a href="cart.jsp"><strong><i
-											class="fa fa-shopping-cart"></i> Vai al carrello</strong></a></span> 
-							</p>
-						</div>
-					</li>
+					<c:if test="${utente != null }">
+
+						<li id="subtotal">
+
+							<div>
+
+								<table class="table table-bordered">
+
+									<tbody>
+										<tr>
+											<td class="text-right"><strong>Parziale</strong></td>
+											<td class="text-right" id="parziale"></td>
+										</tr>
+										<tr>
+											<td class="text-right"><strong>TAX (3%)</strong></td>
+											<td class="text-right" id="tax"></td>
+										</tr>
+										<tr>
+											<td class="text-right"><strong>Totale</strong></td>
+											<td class="text-right" id="totale"></td>
+										</tr>
+									</tbody>
+
+								</table>
+
+
+								<p class="text-right">
+									<span class="btn-viewcart"><a href="cart.jsp"><strong><i
+												class="fa fa-shopping-cart"></i> Vai al carrello</strong></a></span>
+								</p>
+
+							</div>
+						</li>
+					</c:if>
 				</ul>
 			</div>
 		</div>

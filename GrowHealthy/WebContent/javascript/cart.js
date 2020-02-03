@@ -10,25 +10,27 @@ $(document).ready(function() {
 	cliente = $("#emailUtente").val();
 
 	console.log(cliente);
-
-	if (Cookies.getJSON('products'+cliente).length == 0) {
-		products = {
-					cart: []
-		};
-	} else {
-		products = {
-					cart: Cookies.getJSON('products'+cliente)
-		};
-	}
-	if(products.cart.length > 0){
-		$("#totalCart").html(products.cart.length+" prodotto(i)");
-	}else{
-		$("#totalCart").html("0 prodotto(i)");
-	}
 	
+	if(cliente != null){
+		if (Cookies.getJSON('products'+cliente).length == 0) {
+			products = {
+						cart: []
+			};
+		} else {
+			products = {
+						cart: Cookies.getJSON('products'+cliente)
+			};
+		}
+		if(products.cart.length > 0){
+			$("#totalCart").html(products.cart.length+" prodotto(i)");
+		}else{
+			$("#totalCart").html("0 prodotto(i)");
+		}
+	}
 });
 
 $(document).ready(function showTableCart() {
+	
 	if(products.cart.length == 0){
 		$("#tableCart tbody").append("<tr><td><span><strong>Nessun prodotto nel carrello</strong></span></td></tr>");
 	}else{
@@ -39,7 +41,7 @@ $(document).ready(function showTableCart() {
 						+ "<a href='product.html'>"
 						+ "<img class='img-thumbnail' title='women's clothing' alt='women's clothing' src='image/product/2product50x59.jpg'>"
 						+"</a></td>" 
-						+ "<td class='text-center'><a href='product.html'>"+products.cart[i].nome+"</a></td>"
+						+ "<td class='text-center'><a href='javascript:void(0);'>"+products.cart[i].nome+"</a></td>"
 						+ "<td class='text-center'>"+products.cart[i].categoria+"</td>"
 						+ "<td class='text-center'>"+products.cart[i].azienda+"</td>"
 						+ "<td class='text-left'>"
@@ -94,8 +96,11 @@ function addToCart() {
 	
 	if(presente == true){
 		$("#alert_gia_inserito").show("slow").delay(3500).fadeOut();
-	}
-	else{
+	}else if(parseInt(quantity) < parseInt($("#sQMin").text())){
+		$("#alert_quantita_min").show("slow").delay(3500).fadeOut();
+	}else if(parseInt(quantity) > parseInt($("#sQMax").text())){
+		$("#alert_quantita_max").show("slow").delay(3500).fadeOut();
+	}else{
 		products.cart.push({
 			"id" : id,
 			"nome" : name,
@@ -144,7 +149,12 @@ function showCart() {
 	
 	$("#productsincart tbody").empty();
 	
-	if(products.cart.length == 0){
+	cliente = $("#emailUtente").val();
+	
+	if(cliente == null){
+		$("#productsincart tbody").append("<tr><td><span><strong style='color: red;'>Devi effettuare l'accesso sul sito per usufruire del carrello</strong></span></td></tr>");
+	}
+	else if(products.cart.length == 0){
 		$('#productsincart tbody').append("<span><strong>Nessun prodotto nel carrello</strong></span>");
 	}else{
 		for (var i = 0; i < products.cart.length; i++) {

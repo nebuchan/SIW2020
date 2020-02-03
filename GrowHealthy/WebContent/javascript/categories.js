@@ -45,9 +45,7 @@ $(document)
 												+ "<br>"
 												+ "<br>"
 												+ "</div>"
-												+ "<div class='button-group'>"
-												+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
-												+ "</div>" + "</div>" + "</div>")
+												+ "</div>" + "</div>")
 
 										$("#divProdotti" + category).append(
 												$product);
@@ -113,9 +111,6 @@ $(document)
 																	+ " />"
 																	+ "<br>"
 																	+ "<br>"
-																	+ "</div>"
-																	+ "<div class='button-group'>"
-																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
 																	+ "</div>"
 																	+ "</div>" + "</div>")
 
@@ -190,9 +185,6 @@ $(document)
 																	+ "<br>"
 																	+ "<br>"
 																	+ "</div>"
-																	+ "<div class='button-group'>"
-																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
-																	+ "</div>"
 																	+ "</div>" + "</div>")
 
 															$(
@@ -266,9 +258,6 @@ $(document)
 																	+ "<br>"
 																	+ "<br>"
 																	+ "</div>"
-																	+ "<div class='button-group'>"
-																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
-																	+ "</div>"
 																	+ "</div>" + "</div>")
 
 															$(
@@ -341,9 +330,6 @@ $(document)
 																	+ " />"
 																	+ "<br>"
 																	+ "<br>"
-																	+ "</div>"
-																	+ "<div class='button-group'>"
-																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
 																	+ "</div>"
 																	+ "</div>" + "</div>")
 

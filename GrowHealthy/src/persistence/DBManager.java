@@ -1,19 +1,22 @@
 package persistence;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import model.Acquisto;
 import model.Azienda;
 import model.CategoriaProdotto;
 import model.Cliente;
 import model.Prodotto;
 import model.Seme;
 import model.Terreno;
+import persistence.dao.AcquistoDao;
 import persistence.dao.AziendaDao;
 import persistence.dao.CategoriaProdottoDao;
 import persistence.dao.ClienteDao;
 import persistence.dao.ProdottoDao;
 import persistence.dao.SemeDao;
 import persistence.dao.TerrenoDao;
+import persistence.dao.jdbc.AcquistoDaoJDBC;
 import persistence.dao.jdbc.AziendaDaoJDBC;
 import persistence.dao.jdbc.CategoriaProdottoDaoJDBC;
 import persistence.dao.jdbc.ClienteDaoJDBC;
@@ -22,6 +25,7 @@ import persistence.dao.jdbc.SemeDaoJDBC;
 import persistence.dao.jdbc.TerrenoDaoJDBC;
 
 public class DBManager {
+
 	private static DataSource dataSource;
 
 	public static DBManager instance = null;
@@ -64,9 +68,13 @@ public class DBManager {
 	private SemeDao getSemeDao() {
 		return new SemeDaoJDBC(dataSource);
 	}
-	
+
 	private CategoriaProdottoDao getCategoriaProdottoDao() {
 		return new CategoriaProdottoDaoJDBC(dataSource);
+	}
+
+	private AcquistoDao getAcquistoDao() {
+		return new AcquistoDaoJDBC(dataSource);
 	}
 
 	public List<Cliente> dammiClienti() {
@@ -108,36 +116,48 @@ public class DBManager {
 	public Seme dammiSeme(int iD) {
 		return getSemeDao().findByPrimaryKey(iD);
 	}
-	
+
 	public CategoriaProdotto dammiCategoriaProdotto(String categoria) {
 		return getCategoriaProdottoDao().findByPrimaryKey(categoria);
 	}
-	
-	public List<CategoriaProdotto> dammiCategorieProdotti(){
+
+	public List<CategoriaProdotto> dammiCategorieProdotti() {
 		return getCategoriaProdottoDao().findAll();
+	}
+
+	public Acquisto dammiAcquisto(int iD) {
+		return getAcquistoDao().findByPrimaryKey(iD);
+	}
+
+	public List<Acquisto> dammiAcquisti() {
+		return getAcquistoDao().findAll();
 	}
 
 	public void inserisciCliente(Cliente cliente) {
 		getClienteDao().save(cliente);
 	}
-	
+
 	public void inserisciAzienda(Azienda azienda) {
 		getAziendaDao().save(azienda);
 	}
-	
+
 	public void inserisciProdotto(Prodotto prodotto) {
 		getProdottoDao().save(prodotto);
 	}
 	
-	public List<Prodotto> dammiProdottiPerCategoria(String categoria){
+	public void inserisciAcquisto(Acquisto acquisto) {
+		getAcquistoDao().save(acquisto);
+	}
+
+	public List<Prodotto> dammiProdottiPerCategoria(String categoria) {
 		List<Prodotto> prodotti = getProdottoDao().findByCategory(categoria);
-		
+
 		return prodotti;
 	}
-	
-	public void eliminaProdotto(Prodotto p){
+
+	public void eliminaProdotto(Prodotto p) {
 		getProdottoDao().delete(p);
-		
+
 	}
 
 }

@@ -285,9 +285,9 @@
 							style="height: 0px;">
 							<div class="panel-body">
 
-								<p>Selezionare modalità di pagamento</p>
+								<p><strong>Inserire dati della carta</strong></p>
 
-								<div class="radio">
+								<!--  <div class="radio">
 									<label> <input type="radio" name="payment_method"
 										value="cardPayment" onchange="showCardDiv()">
 										Pagamento con carta
@@ -295,9 +295,9 @@
 										value="cashOnDelivery"> Pagamento alla consegna
 									</label>
 
-								</div>
+								</div>-->
 
-								<div id="divCardPayment" style="display: none;">
+								<div id="divCardPayment">
 
 									<form id="formCardData">
 
@@ -439,9 +439,9 @@
 								</div>
 								<div class="buttons">
 									<div class="pull-right">
-										<input type="button" data-loading-text="Loading..."
-											class="btn btn-default" id="button-confirm"
-											value="Conferma ordine">
+										<button type="button" data-loading-text="Loading..."
+											class="btn btn-default" id="button-confirm" onclick="">Conferma
+											ordine</button>
 									</div>
 								</div>
 							</div>
