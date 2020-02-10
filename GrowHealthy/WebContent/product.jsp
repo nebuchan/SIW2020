@@ -27,7 +27,6 @@
 		rel="stylesheet" media="screen" />
 	<link href="owl-carousel/owl.transitions.css" type="text/css"
 		rel="stylesheet" media="screen" />
-	<link rel="stylesheet" href="search-box/css/searchstyle.css" media="screen">
 	
 	<script src="javascript/jquery-2.1.1.min.js" type="text/javascript"></script>
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

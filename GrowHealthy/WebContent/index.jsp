@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="E-commerce prodotti agricoli" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
+
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
 		media="screen" />
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
@@ -25,7 +25,6 @@
 		rel="stylesheet" media="screen" />
 	<link href="owl-carousel/owl.transitions.css" type="text/css"
 		rel="stylesheet" media="screen" />
-	<link rel="stylesheet" href="search-box/css/searchstyle.css" media="screen">
 	
 	<!-- SCRIPT  -->
 	<script src="javascript/jquery-2.1.1.min.js" type="text/javascript"></script>

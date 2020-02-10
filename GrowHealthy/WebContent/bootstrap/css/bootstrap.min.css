@@ -3260,7 +3260,7 @@ input[type=submit].btn-block,input[type=reset].btn-block,input[type=button].btn-
 
 .dropdown-menu-right {
     left: auto;
-    right: 0;
+    right: -15px;
 }
 
 .dropdown-menu-left {

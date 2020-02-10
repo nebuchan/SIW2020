@@ -70,7 +70,7 @@
 						<h5 class="contact-title footer-title">Contact Us</h5>
 						<ul class="ul-wrapper">
 							<li><i class="fa fa-map-marker"></i><span class="location2">
-									Warehouse & Offices,<br> 12345 Street name, California<br>
+									Warehouse and Offices,<br> 12345 Street name, California<br>
 									USA
 							</span></li>
 							<li><i class="fa fa-envelope"></i><span class="mail2"><a
