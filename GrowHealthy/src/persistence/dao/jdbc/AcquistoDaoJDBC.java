@@ -70,7 +70,7 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setCliente(result.getString("cliente"));
 				acquisto.setProdotto(result.getInt("prodotto"));
 				acquisto.setQuantita(result.getInt("quantita_p"));
-				acquisto.setCosto(result.getInt("totale"));
+				acquisto.setCosto(result.getInt("costo"));
 
 				long tmpData = result.getDate("data").getTime();
 
@@ -106,7 +106,7 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setCliente(result.getString("cliente"));
 				acquisto.setProdotto(result.getInt("prodotto"));
 				acquisto.setQuantita(result.getInt("quantita_p"));
-				acquisto.setCosto(result.getInt("totale"));
+				acquisto.setCosto(result.getInt("costo"));
 
 				long tmpData = result.getDate("data").getTime();
 

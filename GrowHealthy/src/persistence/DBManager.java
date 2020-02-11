@@ -159,5 +159,13 @@ public class DBManager {
 		getProdottoDao().delete(p);
 
 	}
+	
+	public void aggiornaProdotto(Prodotto p) {
+		getProdottoDao().update(p);
+	}
+	
+	public void salvaAcquisto(Acquisto a) {
+		getAcquistoDao().save(a);
+	}
 
 }

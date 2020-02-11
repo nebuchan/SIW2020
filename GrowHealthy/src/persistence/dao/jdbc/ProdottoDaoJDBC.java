@@ -136,9 +136,9 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			statement.setInt(4, prodotto.getQuantitaMin());
 			statement.setString(5, prodotto.getDescrizione());
 			statement.setDouble(6, prodotto.getPrezzo());
-			statement.setInt(7, prodotto.getiD());
-			statement.setString(8, prodotto.getEmailAzienda());
-			statement.setString(9, prodotto.getImmagine());
+			statement.setString(7, prodotto.getEmailAzienda());
+			statement.setString(8, prodotto.getImmagine());
+			statement.setInt(9, prodotto.getiD());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {

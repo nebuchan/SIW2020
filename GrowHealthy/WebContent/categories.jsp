@@ -59,7 +59,7 @@
 		</ul>
 		<div class="row">
 			<div id="column-left" class="col-sm-3 hidden-xs column-left">
-				<div class="column-block">
+				<div class="column-block" style="margin-top: 26px;">
 					<div class="columnblock-title">Categorie</div>
 					<div class="category_block">
 						<ul class="box-category treeview-list treeview">

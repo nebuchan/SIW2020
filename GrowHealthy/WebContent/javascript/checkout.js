@@ -115,23 +115,46 @@ function fillCardPayment() {
 		titolare = $("#input-titolare").val();
 		numCarta = $("#input-numeroCarta").val();
 		
-		$("#paymentMethod").html("<h2>Carta numero: <h3 style='color : green;'>" + numCarta + "</h3></h2> <h2>Titolare: <h3 style='color : green;'>" + titolare + "</h3></h2>");
+		$("#hPaymentMethod").html("<h2>Carta numero: <h3 style='color : green;'>" + numCarta + "</h3></h2> <h2>Titolare: <h3 style='color : green;'>" + titolare + "</h3></h2>");
 	}else{
 		$("#alert-formPayment").show("slow").delay(3500).fadeOut();
 	}
 };
 
 function salvaAcquisto(){
-	$.ajax({
-		type: "post",
-		url: "savePayment",
-		datatype: "json",
-		data: JSON.stringify(prodotti.carrello),
-		success: function(data) {
+	if(isEmpty($("#hDeliveryData")) || isEmpty($("#hDeliveryOption")) || isEmpty($("#hPaymentMethod"))){
+		$("#alert-confirm").show("slow").delay(3500).fadeOut();
+	}
+	else{
+		$.ajax({
+			type: "post",
+			url: "savePayment",
+			data: JSON.stringify(products.cart),
+			success: function(data) {
+				
+				for(var i = 0; i<products.cart.length; i++){
+						
+						products.cart.splice(i,1);
+					}
+				
+				Cookies.set('products'+cliente, products.cart, { expires: 7 });
+				
+				if(products.cart.length > 0){
+					$("#totalCart").html(products.cart.length+" prodotto(i)");
+				}else{
+					$("#totalCart").html("0 prodotto(i)");
+				}
+				
+				calcolaImporti();
 			
-			window.location.href = "confirmPurchase.jsp";
+				window.location.href = "confirmPurchase.jsp";
 			
-		}
-	});
-	
+			}
+		});
+	}
 };
+
+function isEmpty(el){
+    return !$.trim(el.html())
+    
+}

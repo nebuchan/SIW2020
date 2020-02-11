@@ -615,11 +615,11 @@
 						</ul>
 						<hr>
 						<ul class="list-unstyled product_info">
-							<li><label>Azienda: </label> <span id="company"><strong>
-										${nomeAziendaProdotto}</strong></span></li>
+							<li><label>Azienda: </label> <span id="company">
+										${nomeAziendaProdotto}</span></li>
 										
-							<li><label>Codice Prodotto: </label> <span id="idProduct"><strong>
-										${idProdotto}</strong></span></li>
+							<li><label>Codice Prodotto:</label><span id="idProduct">
+										${idProdotto}</span></li>
 
 							<li><label>Quantità Minima Da Acquistare: </label> <span><strong
 									id="sQMin"> ${quantitaMinimaProdotto}</strong></span><span>kg</span></li>

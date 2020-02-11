@@ -500,7 +500,7 @@
 						shopping</a>
 				</div>
 				<div class="pull-right">
-					<a class="btn btn-default" href="checkout.jsp">Checkout</a>
+					<a class="btn btn-default" href="checkout.jsp" id="btnCheckout" style="display: none;">Checkout</a>
 				</div>
 			</div>
 		</div>

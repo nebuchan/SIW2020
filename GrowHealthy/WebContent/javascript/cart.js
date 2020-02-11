@@ -1,5 +1,5 @@
 var products = {
-			cart: []
+				cart: []
 };
 
 
@@ -14,11 +14,11 @@ $(document).ready(function() {
 	if(cliente != null){
 		if (Cookies.getJSON('products'+cliente).length == 0) {
 			products = {
-						cart: []
+							cart: []
 			};
 		} else {
 			products = {
-						cart: Cookies.getJSON('products'+cliente)
+							cart: Cookies.getJSON('products'+cliente)
 			};
 		}
 		if(products.cart.length > 0){
@@ -68,6 +68,16 @@ $(document).ready(function showTableCart() {
 	}
 	
 	calcolaImporti();
+});
+
+$(document).ready(function(){
+	if(products.cart.length > 0){
+		$("#btnCheckout").show();
+	}
+	else if(products.cart.lenght == 0){
+		$("#btnCheckout").hide();
+	}
+	
 });
 
 
