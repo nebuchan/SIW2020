@@ -32,7 +32,7 @@ $(document).ready(function() {
 $(document).ready(function showTableCart() {
 	
 	if(products.cart.length == 0){
-		$("#tableCart tbody").append("<tr><td><span><strong>Nessun prodotto nel carrello</strong></span></td></tr>");
+		$("#tableCart tbody").append("<tr><td></td><td></td><td></td><td class='text-center'><span><strong>Nessun prodotto nel carrello</strong></span></td><td></td><td></td><td></td></tr>");
 	}else{
 		for(var i = 0; i<products.cart.length; i++){
 			var $productTr = (
@@ -152,7 +152,7 @@ function showCart() {
 	cliente = $("#emailUtente").val();
 	
 	if(cliente == null){
-		$("#productsincart tbody").append("<tr><td><span><strong style='color: red;'>Devi effettuare l'accesso sul sito per usufruire del carrello</strong></span></td></tr>");
+		$("#productsincart tbody").append("<span><strong style='color: red;'>Devi effettuare l'accesso sul sito per usufruire del carrello</strong></span>");
 	}
 	else if(products.cart.length == 0){
 		$('#productsincart tbody').append("<span><strong>Nessun prodotto nel carrello</strong></span>");

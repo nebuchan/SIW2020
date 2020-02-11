@@ -24,9 +24,6 @@ $(document)
 												+ "<a href='product?id="
 												+ prodotti[i].id
 												+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
-												+ "<div class='button-group'>"
-												+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
-												+ "</div>"
 												+ "</div>"
 												+ "<div class='caption product-detail'>"
 												+ "<h4 class='product-name'>"
@@ -88,9 +85,6 @@ $(document)
 																	+ "<a href='product?id="
 																	+ prodotti[i].id
 																	+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
-																	+ "<div class='button-group'>"
-																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
-																	+ "</div>"
 																	+ "</div>"
 																	+ "<div class='caption product-detail'>"
 																	+ "<h4 class='product-name'>"
@@ -161,9 +155,6 @@ $(document)
 																	+ "<a href='product?id="
 																	+ prodotti[i].id
 																	+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
-																	+ "<div class='button-group'>"
-																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
-																	+ "</div>"
 																	+ "</div>"
 																	+ "<div class='caption product-detail'>"
 																	+ "<h4 class='product-name'>"
@@ -234,9 +225,6 @@ $(document)
 																	+ "<a href='product?id="
 																	+ prodotti[i].id
 																	+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
-																	+ "<div class='button-group'>"
-																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
-																	+ "</div>"
 																	+ "</div>"
 																	+ "<div class='caption product-detail'>"
 																	+ "<h4 class='product-name'>"
@@ -307,9 +295,6 @@ $(document)
 																	+ "<a href='product?id="
 																	+ prodotti[i].id
 																	+ "'> <img src='image/product/pro-2-220x294.jpg' class='img-responsive'/> </a>"
-																	+ "<div class='button-group'>"
-																	+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
-																	+ "</div>"
 																	+ "</div>"
 																	+ "<div class='caption product-detail'>"
 																	+ "<h4 class='product-name'>"

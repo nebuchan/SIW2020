@@ -147,6 +147,16 @@
 		<servlet-name>DatiSpedizione</servlet-name>
 		<url-pattern>/deliveryData</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SalvaAcquisto</servlet-name>
+		<servlet-class>controllers.SalvaAcquisto</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SalvaAcquisto</servlet-name>
+		<url-pattern>/savePayment</url-pattern>
+	</servlet-mapping>
 
 
 </web-app>

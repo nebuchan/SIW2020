@@ -1,6 +1,7 @@
 package persistence.dao.jdbc;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,10 +15,10 @@ import persistence.dao.AcquistoDao;
 public class AcquistoDaoJDBC implements AcquistoDao {
 
 	private DataSource dataSource;
-	
+
 	public AcquistoDaoJDBC(DataSource dataSource) {
 		this.dataSource = dataSource;
-		
+
 	}
 
 	@Override
@@ -26,13 +27,17 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into acquisto(id, cliente, prodotto, quantita_p, totale) values (?,?,?,?,?)";
+			String insert = "insert into acquisto(id, cliente, prodotto, quantita_p, costo, data) values (?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, acquisto.getiD());
 			statement.setString(2, acquisto.getCliente());
 			statement.setInt(3, acquisto.getProdotto());
 			statement.setInt(4, acquisto.getQuantita());
-			statement.setInt(5, acquisto.getTotale());
+			statement.setInt(5, acquisto.getCosto());
+
+			long tmpData = acquisto.getData().getTime();
+
+			statement.setDate(6, new Date(tmpData));
 
 			statement.executeUpdate();
 
@@ -65,7 +70,11 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setCliente(result.getString("cliente"));
 				acquisto.setProdotto(result.getInt("prodotto"));
 				acquisto.setQuantita(result.getInt("quantita_p"));
-				acquisto.setTotale(result.getInt("totale"));
+				acquisto.setCosto(result.getInt("totale"));
+
+				long tmpData = result.getDate("data").getTime();
+
+				acquisto.setData(new java.util.Date(tmpData));
 
 			}
 		} catch (SQLException e) {
@@ -97,7 +106,11 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setCliente(result.getString("cliente"));
 				acquisto.setProdotto(result.getInt("prodotto"));
 				acquisto.setQuantita(result.getInt("quantita_p"));
-				acquisto.setTotale(result.getInt("totale"));
+				acquisto.setCosto(result.getInt("totale"));
+
+				long tmpData = result.getDate("data").getTime();
+
+				acquisto.setData(new java.util.Date(tmpData));
 
 				acquisti.add(acquisto);
 			}
