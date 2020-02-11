@@ -120,3 +120,18 @@ function fillCardPayment() {
 		$("#alert-formPayment").show("slow").delay(3500).fadeOut();
 	}
 };
+
+function salvaAcquisto(){
+	$.ajax({
+		type: "post",
+		url: "savePayment",
+		datatype: "json",
+		data: JSON.stringify(prodotti.carrello),
+		success: function(data) {
+			
+			window.location.href = "confirmPurchase.jsp";
+			
+		}
+	});
+	
+};

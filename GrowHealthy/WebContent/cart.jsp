@@ -503,7 +503,7 @@
 				</div>-->
 
 			</div>
-
+			
 			<div class="col-sm-4 col-sm-offset-8">
 
 				<table class="table table-bordered">
@@ -534,7 +534,8 @@
 			<div class="buttons">
 
 				<div class="pull-left">
-					<a class="btn btn-default" href="categories">Continua lo shopping</a>
+					<a class="btn btn-default" href="categories">Continua lo
+						shopping</a>
 				</div>
 
 				<div class="pull-right">

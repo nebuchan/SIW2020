@@ -285,7 +285,9 @@
 							style="height: 0px;">
 							<div class="panel-body">
 
-								<p><strong>Inserire dati della carta</strong></p>
+								<p>
+									<strong>Inserire dati della carta</strong>
+								</p>
 
 								<!--  <div class="radio">
 									<label> <input type="radio" name="payment_method"
@@ -386,55 +388,61 @@
 
 								<br>
 
-								<div id="column-left">
-
-									<h1>Dati per la spedizione:</h1>
-
-									<h2 id="hDeliveryData" style="color: green;"></h2>
-
-									<h1>
-										Spedizione :
-										<h2 id="hDeliveryOption" style="color: green;"></h2>
-									</h1>
-
-									<h1>
-										Modalità di pagamento:
-										<h1 id="paymentMethod"></h1>
-									</h1>
-
-								</div>
-
-								<div class="col-sm-4 col-sm-offset-8">
-
-									<table class="table table-bordered">
-
-										<tbody>
-
-											<tr>
-												<td class="text-center"><strong>Parziale: </strong></td>
-												<td class="text-right" id="parziale1"></td>
-											</tr>
-
-											<tr>
-												<td class="text-center"><strong>TAX (3%): </strong></td>
-												<td class="text-right" id="tax1"></td>
-											</tr>
-
-											<tr>
-												<td class="text-center"><strong>Spedizione: </strong></td>
-												<td class="text-right" id="sped"></td>
-											</tr>
-
-											<tr>
-												<td class="text-center"><strong>Totale: </strong></td>
-												<td class="text-right">EUR <span id="totale1"></span></td>
-											</tr>
-
-										</tbody>
-
-									</table>
 
 
+								<div>
+
+									<div>
+
+										<h1>Dati per la spedizione:</h1>
+
+										<h2 id="hDeliveryData" style="color: green;"></h2>
+
+										<h1>
+											Spedizione:
+											<h2 id="hDeliveryOption" style="color: green;"></h2>
+										</h1>
+
+										<h1>
+											Modalità di pagamento:
+											<h1 id="paymentMethod"></h1>
+										</h1>
+
+									</div>
+
+									<div class="col-sm-4 col-sm-offset-8">
+
+
+
+										<table class="table table-bordered">
+
+											<tbody>
+
+												<tr>
+													<td class="text-center"><strong>Parziale: </strong></td>
+													<td class="text-right" id="parziale1"></td>
+												</tr>
+
+												<tr>
+													<td class="text-center"><strong>TAX (3%): </strong></td>
+													<td class="text-right" id="tax1"></td>
+												</tr>
+
+												<tr>
+													<td class="text-center"><strong>Spedizione: </strong></td>
+													<td class="text-right" id="sped"></td>
+												</tr>
+
+												<tr>
+													<td class="text-center"><strong>Totale: </strong></td>
+													<td class="text-right">EUR <span id="totale1"></span></td>
+												</tr>
+
+											</tbody>
+
+										</table>
+
+									</div>
 
 								</div>
 								<div class="buttons">

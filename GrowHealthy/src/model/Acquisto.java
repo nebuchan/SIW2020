@@ -1,12 +1,15 @@
 package model;
 
+import java.util.Date;
+
 public class Acquisto {
 
 	private int iD;
 	private String cliente;
 	private int prodotto;
 	private int quantita;
-	private int totale;
+	private int costo;
+	private Date data;
 
 	public int getiD() {
 		return iD;
@@ -40,12 +43,20 @@ public class Acquisto {
 		this.quantita = quantita;
 	}
 
-	public int getTotale() {
-		return totale;
+	public int getCosto() {
+		return costo;
 	}
 
-	public void setTotale(int totale) {
-		this.totale = totale;
+	public void setCosto(int totale) {
+		this.costo = totale;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
 	}
 
 }

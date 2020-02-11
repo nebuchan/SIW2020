@@ -388,22 +388,6 @@
 							garantire sempre freschezza e qualità.</div>
 					</div>
 
-					<div class="category-page-wrapper">
-						<div class="col-md-6 list-grid-wrapper">
-							<div class="btn-group btn-list-grid">
-								<button type="button" id="list-view"
-									class="btn btn-default list active" data-toggle="tooltip" title="List">
-									<i class="fa fa-th-list"></i>
-								</button>
-								<button type="button" id="grid-view"
-									class="btn btn-default grid" data-toggle="tooltip" title="Grid">
-									<i class="fa fa-th"></i>
-								</button>
-							</div>
-						</div>
-					</div>
-
-
 					<div class="grid-list-wrapper" id="divProdottiFrutta"></div>
 
 				</div>
@@ -420,21 +404,6 @@
 							fresca per un apporto extra di fibre e vitamine.I prodotti sono
 							selezionati settimanalmente insieme ai nostri fornitori per
 							garantire sempre freschezza e qualità.</div>
-					</div>
-
-					<div class="category-page-wrapper">
-						<div class="col-md-6 list-grid-wrapper">
-							<div class="btn-group btn-list-grid">
-								<button type="button" id="list-view"
-									class="btn btn-default list active" data-toggle="tooltip" title="List">
-									<i class="fa fa-th-list"></i>
-								</button>
-								<button type="button" id="grid-view"
-									class="btn btn-default grid" data-toggle="tooltip" title="Grid">
-									<i class="fa fa-th"></i>
-								</button>
-							</div>
-						</div>
 					</div>
 
 					<div class="grid-list-wrapper" id="divProdottiVerdura"></div>
@@ -455,21 +424,6 @@
 							garantire sempre freschezza e qualità.</div>
 					</div>
 
-					<div class="category-page-wrapper">
-						<div class="col-md-6 list-grid-wrapper">
-							<div class="btn-group btn-list-grid">
-								<button type="button" id="list-view"
-									class="btn btn-default list active" data-toggle="tooltip" title="List">
-									<i class="fa fa-th-list"></i>
-								</button>
-								<button type="button" id="grid-view"
-									class="btn btn-default grid " data-toggle="tooltip" title="Grid">
-									<i class="fa fa-th"></i>
-								</button>
-							</div>
-						</div>
-					</div>
-
 					<div class="grid-list-wrapper" id="divProdottiLegumi"></div>
 
 				</div>
@@ -485,21 +439,6 @@
 							ideale per avere sempre prodotti freschi a disposizione.I
 							prodotti sono selezionati settimanalmente insieme ai nostri
 							fornitori per garantire sempre freschezza e qualità.</div>
-					</div>
-
-					<div class="category-page-wrapper">
-						<div class="col-md-6 list-grid-wrapper">
-							<div class="btn-group btn-list-grid">
-								<button type="button" id="list-view"
-									class="btn btn-default list active" data-toggle="tooltip" title="List">
-									<i class="fa fa-th-list"></i>
-								</button>
-								<button type="button" id="grid-view"
-									class="btn btn-default grid" data-toggle="tooltip" title="Grid">
-									<i class="fa fa-th"></i>
-								</button>
-							</div>
-						</div>
 					</div>
 
 					<div class="grid-list-wrapper" id="divProdottiTuberi"></div>
@@ -553,7 +492,7 @@
 						-->
 			</div>
 		</div>
-		<br />
+		<br>
 
 		<!--  <div class="grid-list-wrapper">
 
