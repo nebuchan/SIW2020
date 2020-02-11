@@ -20,7 +20,6 @@
 		rel="stylesheet">
 	<link href="css/stylesheet.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
-	<link href="css/loginForm.css" rel="stylesheet">
 	<link href="owl-carousel/owl.carousel.css" type="text/css"
 		rel="stylesheet" media="screen" />
 	<link href="owl-carousel/owl.transitions.css" type="text/css"
