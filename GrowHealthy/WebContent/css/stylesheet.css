@@ -695,8 +695,8 @@ border-radius: 0px;
 
 footer {
 	background:#262626;
-	margin-top: 35px;
-	padding: 65px 0;
+	margin-top: 0px;
+	padding: 10px 0;
 	color: #aaabab;
 
 }
@@ -729,6 +729,7 @@ footer h5 {
 	color: #fff;
 	line-height:25px;
 	font-weight: 600;
+	text-align: center;
 }
 footer ul {
 	margin: 15px 0 0;
@@ -1991,8 +1992,8 @@ span.review-count, span.review-edit {
 	margin: 9px 0 0;
 }
 .footer-bottom .copyright {
-	float: left;
-	margin:10px 0px;
+	float: right;
+	margin:0px 0px;
 }
 /* CSS for Footer-Top CMS end */
 

@@ -24,6 +24,10 @@
 		rel="stylesheet" media="screen" />
 	<link href="owl-carousel/owl.transitions.css" type="text/css"
 		rel="stylesheet" media="screen" />
+		
+		
+			<link href="css/footer.css" rel="stylesheet">
+		
 	
 	<!-- SCRIPT  -->
 	<script src="javascript/jquery-2.1.1.min.js" type="text/javascript"></script>

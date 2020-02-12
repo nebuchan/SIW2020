@@ -1,97 +1,98 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <footer>
 	<div class="container">
+		<div class="footer-top-cms"></div>
 		<div class="row">
-			<div class="footer-top-cms">
-				<div class="col-sm-7">
-					<div class="newslatter">
-						<form>
-							<h5>Newsletter</h5>
-							<div class="input-group">
-								<input type="text" class=" form-control"
-									placeholder="Email Here......">
-								<button type="submit" value="Sign up"
-									class="btn btn-large btn-primary">Subscribe</button>
-							</div>
-						</form>
+			<div class="col-sm-4 footer-block">
+				<div class="my-footer-widget my-about-widget">
+					<!-- <h2 class="my-widget-title">About</h2> -->
+					<h5 class="footer-title">About Us</h5>
+					<p> torem ipsum sit amet, torem ipsum sit amet, torem ipsum sit amet, torem ipsum sit amet, vtorem ipsum sit amet,v</p>
+					<p style="text-align:center"><span><i class="fas fa-lock"></i></span>Pagamenti Sicuri</p>
+					<div class="my-cards">
+						<i class="fab fa-cc-mastercard"></i>
+						<i class="fab fa-cc-paypal"></i>
+						<i class="fab fa-cc-amex"></i>
+						<i class="fab fa-cc-visa"></i>
+						<i class="fab fa-cc-discover"></i>
 					</div>
-				</div>
-				<div class="col-sm-5">
-					<div class="footer-social">
-						<h5>Social</h5>
-						<ul>
-							<li class="facebook"><a href="#"><i
-									class="fa fa-facebook"></i></a></li>
-							<li class="linkedin"><a href="#"><i
-									class="fa fa-linkedin"></i></a></li>
-							<li class="twitter"><a href="#"><i
-									class="fa fa-twitter"></i></a></li>
-							<li class="gplus"><a href="#"><i
-									class="fa fa-google-plus"></i></a></li>
-							<li class="youtube"><a href="#"><i
-									class="fa fa-youtube-play"></i></a></li>
-						</ul>
-					</div>
+					<br>
+					<br>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-3 footer-block">
-				<h5 class="footer-title">Information</h5>
-				<ul class="list-unstyled ul-wrapper">
-					<li><a href="about-us.html">About Us</a></li>
-					<li><a href="checkout.html">Delivery Information</a></li>
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Terms &amp; Conditions</a></li>
-				</ul>
+			<div class="col-sm-2 footer-block">
+				<div class="my-footer-widget my-categories-widget">
+					<!-- <h2 class="my-widget-title">Categories</h2> -->
+					<h5 class="footer-title">Categorie</h5>
+					<ul class="list-unstyled ul-wrapper">
+						<li><a href="about-us.html">Terreni</a></li>
+						<li><a href="checkout.html">Ortaggi</a></li>
+						<li><a href="checkout.html">Prodotti agricoli</a></li>
+					</ul>
+					<br>
+				</div>
 			</div>
-			<div class="col-sm-3 footer-block">
-				<h5 class="footer-title">Customer Service</h5>
-				<ul class="list-unstyled ul-wrapper">
-					<li><a href="contact.html">Contact Us</a></li>
-					<li><a href="#">Returns</a></li>
-					<li><a href="#">Site Map</a></li>
-					<li><a href="#">Wish List</a></li>
-				</ul>
+			<div class="col-sm-2 footer-block">
+				<div class="my-footer-widget my-information-widget">
+					<!-- <h2 class="my-widget-title">Informations</h2> -->
+					<h5 class="footer-title">Informazioni</h5>
+					<ul class="list-unstyled ul-wrapper">
+						<li><a href="#">Chi siamo</a></li>
+						<li><a href="gift.html">Contattaci</a></li>
+						<li><a href="affiliate.html">Termini & Condizioni</a></li>
+						<li><a href="#">Spedizione</a></li>
+					</ul>
+					<br>
+				</div>
 			</div>
-			<div class="col-sm-3 footer-block">
-				<h5 class="footer-title">Extras</h5>
-				<ul class="list-unstyled ul-wrapper">
-					<li><a href="#">Brands</a></li>
-					<li><a href="gift.html">Gift Vouchers</a></li>
-					<li><a href="affiliate.html">Affiliates</a></li>
-					<li><a href="#">Specials</a></li>
-				</ul>
-			</div>
-			<div class="col-sm-3 footer-block">
-				<div class="content_footercms_right">
-					<div class="footer-contact">
-						<h5 class="contact-title footer-title">Contact Us</h5>
-						<ul class="ul-wrapper">
-							<li><i class="fa fa-map-marker"></i><span class="location2">
-									Warehouse and Offices,<br> 12345 Street name, California<br>
-									USA
-							</span></li>
-							<li><i class="fa fa-envelope"></i><span class="mail2"><a
-									href="#">info@localhost.com</a></span></li>
-							<li><i class="fa fa-mobile"></i><span class="phone2">+91
-									0987-654-321</span></li>
-						</ul>
+			<div class="col-sm-4 footer-block">
+				<div class="my-footer-widget">
+					<!-- <h2 class="my-widget-title">Contact</h2> -->
+					<h5 class="my-contact-title my-footer-title">Contatti</h5>
+					
+					<div class="my-contact-address">
+						<i class="fas fa-map-marker-alt"></i> Indirizzo : Ponte Pietro Bucci (Cubo 31B), &#09; &#09; &#09; Arcavacata di Rende (CS) 87036
+					</div>
+									
+					<div class="my-contact-number">
+						<i class="fas fa-phone-square-alt"></i> Phone : +91 123456789
+					</div>
+					
+					<div class="my-contact-email">
+						<i class="fas fa-envelope"></i> Email : contact@growhealthy.com
+					</div>
+					
+					<div class="my-social-widget">
+						<!-- <p style="text-align:center"> -->
+						<a href="#"><i class="fab fa-facebook-square"></i></a>
+						<a href="#"><i class="fab fa-google-plus-square"></i></a>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+						<a href="#"><i class="fab fa-youtube-square"></i></a>
+						<a href="#"><i class="fab fa-twitter"></i></a>
+						<!-- </p> -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<br>
+	<!-- SCROLL CAROTINA -->
 	<a id="scrollup">Scroll</a>
-</footer>
-<div class="footer-bottom">
-	<div class="container">
-		<div class="copyright">
-			Powered By &nbsp;<a class="yourstore" href="http://www.lionode.com/">lionode
-				&copy; 2017 </a>
-		</div>
-		<div class="footer-bottom-cms">
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="my-copyright">
+				<p align="right">
+					>Copyright c <script type="text/javascript">document.write(new Date().getFullYear());</script>
+					All Rights reserved | Design made with <i class="fas fa-heart"></i> by UnicalIT DEV
+				</p>
+			</div>
+			<div class="copyright">
+					>Powered By &nbsp;<a class="yourstore" href="http://www.lionode.com/">lionode
+					&copy; 2017 </a>
+			</div>
+		
+<!-- 		<div class="footer-bottom-cms">
 			<div class="footer-payment">
 				<ul>
 					<li class="mastero"><a href="#"><img alt=""
@@ -106,6 +107,12 @@
 							src="image/payment/bank.jpg"></a></li>
 				</ul>
 			</div>
+		</div> -->
 		</div>
 	</div>
-</div>
+	<br>
+</footer>
+
+
+
+
