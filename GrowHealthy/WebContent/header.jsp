@@ -13,7 +13,6 @@
 							class="dropdown-toggle" data-toggle="dropdown"> <i
 								class="fa fa-user"></i><span>My Account</span> <span
 								class="caret"></span></a>
-
 							<ul class="dropdown-menu dropdown-menu-right">
 								<li>
 
@@ -25,28 +24,51 @@
 											</div>
 											<div class="form-group">
 												<label class="loginForm">Password</label> <input
-													type="password" class="form-control " name="password">
+													type="password" class="form-control " name="password"
+													required>
 											</div>
 
 											<div class="form-group">
 												<input type="radio" name="tipo" value="Cliente" checked>
-												Cliente <input type="radio" name="tipo" value="Azienda">
-												Azienda
+												Cliente <input type="radio" name="tipo" value="Azienda"
+													style="margin-left: 15px;"> Azienda
 											</div>
 
 											<div class="form-group">
-												<button type="submit" class="btn btn-default">Accedi</button>
+												<button type="submit" class="btn btn-default"
+													style="margin-left: 40px;">Accedi</button>
 											</div>
 											<div class="form-group">
 												<button type="submit" class="btn btn-default"
-													formaction="userRegistration.jsp">Registrati</button>
+													formaction="userRegistration.jsp"
+													style="margin-left: 30px;">Registrati</button>
 											</div>
 										</c:if>
 										<c:if test="${utente != null}">
+
 											<h1>
-												<strong>Ciao ${utente.email}</strong> <input type="hidden"
-													id="emailUtente" value="${utente.email}" />
+												<strong style="margin-left: 53px;">Benvenuto <span>${utente.email}</span></strong> <input
+													type="hidden" id="emailUtente" value="${utente.email}" />
 											</h1>
+
+
+											<li>
+												<button type="submit" class="btn-link">
+													<h3 style="margin-left: 55px;">
+														<strong>I Miei Dati</strong>
+													</h3>
+												</button>
+											</li>
+
+
+											<li>
+												<button type="submit" class="btn-link">
+													<h3 style="margin-left: 48px;">
+														<strong>I Miei Ordini</strong>
+													</h3>
+												</button>
+											</li>
+
 
 											<c:if test="${ragioneSociale!=null}">
 
@@ -60,13 +82,13 @@
 												<br>
 
 											</c:if>
-
-											<button type="submit" class="btn btn-warning"
-												formaction="login" formmethod="get"
-												style="margin-left: 85px">Logout</button>
-
+											
+												<button type="submit" class="btn btn-warning"
+													formaction="login" formmethod="get" style="margin-left: 66px;">Logout</button>
+											
 										</c:if>
 									</form>
+								</li>
 							</ul></li>
 					</ul>
 				</div>
