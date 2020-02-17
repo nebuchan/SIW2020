@@ -7,22 +7,16 @@ import model.Azienda;
 import model.CategoriaProdotto;
 import model.Cliente;
 import model.Prodotto;
-import model.Seme;
-import model.Terreno;
 import persistence.dao.AcquistoDao;
 import persistence.dao.AziendaDao;
 import persistence.dao.CategoriaProdottoDao;
 import persistence.dao.ClienteDao;
 import persistence.dao.ProdottoDao;
-import persistence.dao.SemeDao;
-import persistence.dao.TerrenoDao;
 import persistence.dao.jdbc.AcquistoDaoJDBC;
 import persistence.dao.jdbc.AziendaDaoJDBC;
 import persistence.dao.jdbc.CategoriaProdottoDaoJDBC;
 import persistence.dao.jdbc.ClienteDaoJDBC;
 import persistence.dao.jdbc.ProdottoDaoJDBC;
-import persistence.dao.jdbc.SemeDaoJDBC;
-import persistence.dao.jdbc.TerrenoDaoJDBC;
 
 public class DBManager {
 
@@ -61,14 +55,6 @@ public class DBManager {
 		return new ProdottoDaoJDBC(dataSource);
 	}
 
-	private TerrenoDao getTerrenoDao() {
-		return new TerrenoDaoJDBC(dataSource);
-	}
-
-	private SemeDao getSemeDao() {
-		return new SemeDaoJDBC(dataSource);
-	}
-
 	private CategoriaProdottoDao getCategoriaProdottoDao() {
 		return new CategoriaProdottoDaoJDBC(dataSource);
 	}
@@ -99,22 +85,6 @@ public class DBManager {
 
 	public Prodotto dammiProdotto(int iD) {
 		return getProdottoDao().findByPrimaryKey(iD);
-	}
-
-	public List<Terreno> dammiTerreni() {
-		return getTerrenoDao().findAll();
-	}
-
-	public Terreno dammiTerreno(int iD) {
-		return getTerrenoDao().findByPrimaryKey(iD);
-	}
-
-	public List<Seme> dammiSemi() {
-		return getSemeDao().findAll();
-	}
-
-	public Seme dammiSeme(int iD) {
-		return getSemeDao().findByPrimaryKey(iD);
 	}
 
 	public CategoriaProdotto dammiCategoriaProdotto(String categoria) {

@@ -8,8 +8,9 @@ public class Acquisto {
 	private String cliente;
 	private int prodotto;
 	private int quantita;
-	private int costo;
 	private Date data;
+	private double importo;
+	private double totale;
 
 	public int getiD() {
 		return iD;
@@ -43,20 +44,28 @@ public class Acquisto {
 		this.quantita = quantita;
 	}
 
-	public int getCosto() {
-		return costo;
-	}
-
-	public void setCosto(int totale) {
-		this.costo = totale;
-	}
-
 	public Date getData() {
 		return data;
 	}
 
 	public void setData(Date data) {
 		this.data = data;
+	}
+
+	public double getImporto() {
+		return importo;
+	}
+
+	public void setImporto(double importo) {
+		this.importo = importo;
+	}
+
+	public double getTotale() {
+		return totale;
+	}
+
+	public void setTotale(double totale) {
+		this.totale = totale;
 	}
 
 }

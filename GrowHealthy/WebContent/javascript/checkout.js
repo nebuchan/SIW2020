@@ -126,18 +126,20 @@ function salvaAcquisto(){
 		$("#alert-confirm").show("slow").delay(3500).fadeOut();
 	}
 	else{
+		var tot = $("#totale1").text();
+		
+		var data = {
+					"values": products.cart,
+					"totale": tot
+		}
+		
 		$.ajax({
 			type: "post",
 			url: "savePayment",
-			data: JSON.stringify(products.cart),
+			data: JSON.stringify(data),
 			success: function(data) {
 				
-				for(var i = 0; i<products.cart.length; i++){
-						
-						products.cart.splice(i,1);
-					}
-				
-				Cookies.set('products'+cliente, products.cart, { expires: 7 });
+				Cookies.remove('products'+cliente);
 				
 				if(products.cart.length > 0){
 					$("#totalCart").html(products.cart.length+" prodotto(i)");

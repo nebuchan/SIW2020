@@ -27,17 +27,18 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into acquisto(id, cliente, prodotto, quantita_p, costo, data) values (?,?,?,?,?,?)";
+			String insert = "insert into acquisto(id, cliente, prodotto, quantita_p, data, importo, totale) values (?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, acquisto.getiD());
 			statement.setString(2, acquisto.getCliente());
 			statement.setInt(3, acquisto.getProdotto());
 			statement.setInt(4, acquisto.getQuantita());
-			statement.setInt(5, acquisto.getCosto());
 
 			long tmpData = acquisto.getData().getTime();
 
-			statement.setDate(6, new Date(tmpData));
+			statement.setDate(5, new Date(tmpData));
+			statement.setDouble(6, acquisto.getImporto());
+			statement.setDouble(7, acquisto.getTotale());
 
 			statement.executeUpdate();
 
@@ -70,11 +71,12 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setCliente(result.getString("cliente"));
 				acquisto.setProdotto(result.getInt("prodotto"));
 				acquisto.setQuantita(result.getInt("quantita_p"));
-				acquisto.setCosto(result.getInt("costo"));
 
 				long tmpData = result.getDate("data").getTime();
 
 				acquisto.setData(new java.util.Date(tmpData));
+				acquisto.setImporto(result.getDouble("importo"));
+				acquisto.setTotale(result.getDouble("totale"));
 
 			}
 		} catch (SQLException e) {
@@ -106,11 +108,12 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setCliente(result.getString("cliente"));
 				acquisto.setProdotto(result.getInt("prodotto"));
 				acquisto.setQuantita(result.getInt("quantita_p"));
-				acquisto.setCosto(result.getInt("costo"));
 
 				long tmpData = result.getDate("data").getTime();
 
 				acquisto.setData(new java.util.Date(tmpData));
+				acquisto.setImporto(result.getDouble("importo"));
+				acquisto.setTotale(result.getDouble("totale"));
 
 				acquisti.add(acquisto);
 			}

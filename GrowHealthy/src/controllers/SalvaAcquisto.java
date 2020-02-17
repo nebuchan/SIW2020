@@ -43,7 +43,10 @@ public class SalvaAcquisto extends HttpServlet{
 		jsonReceived = jsonReceived.replaceAll("\\\\t", "");
 		
 		try {
-			JSONArray jsonArray = new JSONArray(jsonReceived);
+			JSONObject tmp = new JSONObject(jsonReceived);
+			
+			JSONArray jsonArray = new JSONArray(tmp.get("values").toString());
+			
 			
 			for(int i = 0; i < jsonArray.length(); i++) {
 				JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -51,8 +54,9 @@ public class SalvaAcquisto extends HttpServlet{
 				String emailCliente = cliente.getEmail();
 				int idProdotto = Integer.parseInt(jsonObject.getString("id"));
 				int quantita = Integer.parseInt(jsonObject.getString("quantita"));
-				double costo = Double.parseDouble(jsonObject.getString("prezzo")) * quantita;
 				Date data = new Date();
+				double importo = Double.parseDouble(jsonObject.getString("prezzo")) * quantita;
+				double totale = Double.parseDouble(tmp.getString("totale"));
 				
 				Acquisto acquisto = new Acquisto();
 				Prodotto prodotto = DBManager.getInstance().dammiProdotto(idProdotto);
@@ -67,13 +71,14 @@ public class SalvaAcquisto extends HttpServlet{
 						j=-1;
 						id++;
 					}
-				acquisto.setiD(id);
 				
+				acquisto.setiD(id);
 				acquisto.setCliente(emailCliente);
-				acquisto.setCosto((int) costo);
-				acquisto.setData(data);
 				acquisto.setProdotto(idProdotto);
 				acquisto.setQuantita(quantita);
+				acquisto.setData(data);
+				acquisto.setImporto(importo);
+				acquisto.setTotale(totale);
 				
 				prodotto.setQuantitaMagazzino(prodotto.getQuantitaMagazzino() - quantita);
 				DBManager.getInstance().aggiornaProdotto(prodotto);
