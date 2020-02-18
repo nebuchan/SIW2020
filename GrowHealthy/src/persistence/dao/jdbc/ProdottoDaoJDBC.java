@@ -128,7 +128,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update prodotto SET nome = ?, categoria = ?, quantita_magazzino = ?, quantita_minima = ?, descrizione = ?, prezzo = ?, azienda = ?, immagine = ? WHERE id = ?";
+			String update = "update prodotto SET nome = ?, categoria = ?, quantita_magazzino = ?, quantita_minima = ?, descrizione = ?, prezzo = ?, azienda = ? WHERE id = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, prodotto.getNome());
 			statement.setString(2, prodotto.getCategoria());
@@ -137,8 +137,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			statement.setString(5, prodotto.getDescrizione());
 			statement.setDouble(6, prodotto.getPrezzo());
 			statement.setString(7, prodotto.getEmailAzienda());
-			statement.setString(8, prodotto.getImmagine());
-			statement.setInt(9, prodotto.getiD());
+			statement.setInt(8, prodotto.getiD());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {

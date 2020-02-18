@@ -41,7 +41,7 @@ function myProducts()
 					 			+ "<br>"
 								+ "</div>"
 								+ "<div class='button-group'>"
-								+"<a href='eliminaprodotto?id="+prodotti[i].id+"'>"+"<button type='button' class='addtocart-btn'>Modifica</button></a>"
+								+"<a href='modificaprodotto?id="+prodotti[i].id+"'>"+"<button type='button' class='addtocart-btn'>Modifica</button></a>"
 								+"<a href='eliminaprodotto?id="+prodotti[i].id+"'>"+"<button type='button' class='addtocart-btn'>Elimina</button></a>"
 								+"</div>")
 								+ "</div>"

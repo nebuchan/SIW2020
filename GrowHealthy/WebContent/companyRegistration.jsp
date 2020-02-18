@@ -74,7 +74,7 @@
 							Iva</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-pIva"
-								placeholder="Partita Iva" name="pIva">
+								placeholder="Partita Iva" name="pIva" required>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -82,7 +82,7 @@
 							Sociale</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-ragioneSociale"
-								placeholder="Ragione Sociale" name="ragioneSociale">
+								placeholder="Ragione Sociale" name="ragioneSociale" required>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -90,14 +90,14 @@
 							Legale</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-sedeLegale"
-								placeholder="Sede Legale" name="sedeLegale">
+								placeholder="Sede Legale" name="sedeLegale" required>
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-referente" class="col-sm-2 control-label">Referente</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-referente"
-								placeholder="Referente" name="referente">
+								placeholder="Referente" name="referente" required>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -105,7 +105,7 @@
 							Telefono</label>
 						<div class="col-sm-10">
 							<input type="tel" class="form-control" id="input-telephone"
-								placeholder="Numero Telefono" name="telefono">
+								placeholder="Numero Telefono" name="telefono" required>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -121,14 +121,14 @@
 						<label for="input-email" class="col-sm-2 control-label">E-Mail</label>
 						<div class="col-sm-10">
 							<input type="email" class="form-control" id="input-email"
-								placeholder="E-Mail" name="email">
+								placeholder="E-Mail" name="email" required>
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-password" class="col-sm-2 control-label">Password</label>
 						<div class="col-sm-10">
 							<input type="password" class="form-control" id="input-password"
-								placeholder="Password" name="password">
+								placeholder="Password" name="password" required>
 						</div>
 					</div>
 					<!--   <div class="form-group required">

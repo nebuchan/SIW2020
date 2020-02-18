@@ -74,7 +74,7 @@ public class InserimentoProdotto extends HttpServlet {
 		
 		File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
 		
-		String user_dir=System.getProperty("user.dir");
+		String user_dir=System.getProperty("user.home");
 		
 		File file = new File(user_dir+"/git/"+"SIW2020"+req.getContextPath()+"/WebContent/image/", prodotto.getiD()+".jpg");
 		Part part=req.getPart("immagine");

@@ -24,8 +24,8 @@
 											</div>
 											<div class="form-group">
 												<label class="loginForm">Password</label> <input
-													type="password" class="form-control " name="password"
-													required>
+													type="password" class="form-control " name="password">
+													
 											</div>
 
 											<div class="form-group">
@@ -45,13 +45,14 @@
 											</div>
 										</c:if>
 										<c:if test="${utente != null}">
+										
 
 											<h1>
 												<strong style="margin-left: 53px;">Benvenuto <span>${utente.email}</span></strong> <input
 													type="hidden" id="emailUtente" value="${utente.email}" />
 											</h1>
 
-
+											<c:if test="${ragioneSociale==null}">
 											<li>
 												<button type="submit" class="btn-link">
 													<h3 style="margin-left: 55px;">
@@ -68,7 +69,7 @@
 													</h3>
 												</button>
 											</li>
-
+											</c:if>
 
 											<c:if test="${ragioneSociale!=null}">
 
@@ -77,7 +78,7 @@
 														formaction="mycategories.jsp">I miei Prodotti</button>
 													<br>
 													<button type="submit" class="btn-link"
-														formaction=userRegistration.jsp>Gestione Profilo</button>
+														formaction=companyManagement.jsp>Gestione Profilo</button>
 												</div>
 												<br>
 

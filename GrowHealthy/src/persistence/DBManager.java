@@ -137,5 +137,10 @@ public class DBManager {
 	public void salvaAcquisto(Acquisto a) {
 		getAcquistoDao().save(a);
 	}
+	
+	public void modificaAzienda(Azienda a){
+		
+		getAziendaDao().update(a);
+	}
 
 }

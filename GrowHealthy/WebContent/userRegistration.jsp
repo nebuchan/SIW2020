@@ -72,14 +72,14 @@
 						<label for="input-firstname" class="col-sm-2 control-label">Nome</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-firstname"
-								placeholder="Nome" name="nome">
+								placeholder="Nome" name="nome" required>
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-lastname" class="col-sm-2 control-label">Cognome</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-lastname"
-								placeholder="Cognome" name="cognome">
+								placeholder="Cognome" name="cognome" required>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -87,7 +87,7 @@
 							Fiscale</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-email"
-								placeholder="Codice Fiscale" name="cf">
+								placeholder="Codice Fiscale" name="cf" required>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -95,14 +95,14 @@
 							di Nascita</label>
 						<div class="col-sm-10">
 							<input type="date" class="form-control" id=input-date
-								placeholder="Data di Nascita" name="data">
+								placeholder="Data di Nascita" name="data" required>
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-email" class="col-sm-2 control-label">E-Mail</label>
 						<div class="col-sm-10">
 							<input type="email" class="form-control" id="input-email"
-								placeholder="E-Mail" name="email">
+								placeholder="E-Mail" name="email" required>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -110,7 +110,7 @@
 							Telefono</label>
 						<div class="col-sm-10">
 							<input type="tel" class="form-control" id="input-telephone"
-								placeholder="Numero Telefono" name="telefono">
+								placeholder="Numero Telefono" name="telefono" required>
 						</div>
 					</div>
 
@@ -119,21 +119,21 @@
 						<label for="input-address-1" class="col-sm-2 control-label">Via</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-address-1"
-								placeholder="Via" name="via">
+								placeholder="Via" name="via" required>
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-city" class="col-sm-2 control-label">Città</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-city"
-								placeholder="Città" name="citta">
+								placeholder="Città" name="citta" required>
 						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-postcode" class="col-sm-2 control-label">CAP</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-postcode"
-								placeholder="CAP" name="cap">
+								placeholder="CAP" name="cap" required>
 						</div>
 					</div>
 
@@ -142,7 +142,7 @@
 						<label for="input-password" class="col-sm-2 control-label">Password</label>
 						<div class="col-sm-10">
 							<input type="password" class="form-control" id="input-password"
-								placeholder="Password" name="password">
+								placeholder="Password" name="password" required>
 						</div>
 					</div>
 					<!--   <div class="form-group required">

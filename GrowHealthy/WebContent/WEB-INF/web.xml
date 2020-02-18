@@ -158,5 +158,35 @@
 		<url-pattern>/savePayment</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>ModificaProfiloAzienda</servlet-name>
+		<servlet-class>controllers.ModificaProfiloAzienda</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ModificaProfiloAzienda</servlet-name>
+		<url-pattern>/editInformationCompany</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ModificaProdotto</servlet-name>
+		<servlet-class>controllers.ModificaProdotto</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ModificaProdotto</servlet-name>
+		<url-pattern>/modificaprodotto</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AggiornaProdotto</servlet-name>
+		<servlet-class>controllers.AggiornaProdotto</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>AggiornaProdotto</servlet-name>
+		<url-pattern>/aggiornaProdotto</url-pattern>
+	</servlet-mapping>
+
 
 </web-app>
