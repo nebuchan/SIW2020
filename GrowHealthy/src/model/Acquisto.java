@@ -5,6 +5,7 @@ import java.util.Date;
 public class Acquisto {
 
 	private int iD;
+	private int codiceAcquisto;
 	private String cliente;
 	private int prodotto;
 	private int quantita;
@@ -14,6 +15,14 @@ public class Acquisto {
 
 	public int getiD() {
 		return iD;
+	}
+
+	public int getCodiceAcquisto() {
+		return codiceAcquisto;
+	}
+
+	public void setCodiceAcquisto(int cod) {
+		this.codiceAcquisto = cod;
 	}
 
 	public void setiD(int iD) {

@@ -59,6 +59,7 @@
 		</ul>
 		<div class="row">
 			<div id="column-left" class="col-sm-3 hidden-xs column-left">
+			
 				<div class="column-block" style="margin-top: 26px;">
 					<div class="columnblock-title">Categorie</div>
 					<div class="category_block">
@@ -67,40 +68,10 @@
 								<li><a href="javascript:void(0);"
 									id="${category.categoria}">${category.categoria}</a></li>
 							</c:forEach>
-							<!--  <li><a href="#">Frutta</a>
-							<li><a href="#">Verdura</a></li>
-							<li><a href="#">Legumi</a></li>
-							<li><a href="#">Tuberi</a></li>-->
-							<!-- 
-								<ul>
-									<li><a href="#">Macs</a></li>
-									<li><a href="#">Windows</a></li>
-								</ul>
-								<ul>
-									<li><a href="#">Frutta</a></li>
-									<li><a href="#">Verdura</a></li>
-									<li><a href="#">Legumi</a></li>
-								</ul></li>
-							<li><a href="#" class="activSub">Components</a>
-								<ul>
-									<li><a href="#">Mice and Trackballs</a></li>
-									<li><a href="#" class="activSub">Monitors</a>
-										<ul>
-											<li><a href="#">test 1</a></li>
-											<li><a href="#">test 2</a></li>
-										</ul></li>
-									<li><a href="#">Windows</a></li>
-								</ul></li>
-							<li><a href="#">Tablets</a></li>
-							<li><a href="#">Software</a></li>
-							<li><a href="#">Phones & PDAs</a></li>
-							<li><a href="#">Cameras</a></li>
-							<li><a href="#">MP3 Players</a></li>
-							 -->
-
 						</ul>
 					</div>
 				</div>
+				
 				<!--  <div class="panel panel-default filter">
 					<div class="panel-heading columnblock-title">Refine Search</div>
 					<div class="filter-block">

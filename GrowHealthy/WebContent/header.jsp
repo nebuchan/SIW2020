@@ -25,7 +25,7 @@
 											<div class="form-group">
 												<label class="loginForm">Password</label> <input
 													type="password" class="form-control " name="password">
-													
+
 											</div>
 
 											<div class="form-group">
@@ -45,30 +45,53 @@
 											</div>
 										</c:if>
 										<c:if test="${utente != null}">
-										
-
-											<h1>
-												<strong style="margin-left: 53px;">Benvenuto <span>${utente.email}</span></strong> <input
-													type="hidden" id="emailUtente" value="${utente.email}" />
-											</h1>
 
 											<c:if test="${ragioneSociale==null}">
-											<li>
-												<button type="submit" class="btn-link">
-													<h3 style="margin-left: 55px;">
-														<strong>I Miei Dati</strong>
-													</h3>
-												</button>
-											</li>
+
+												<h1>
+													<strong style="margin-left: 7px;">Benvenuto <span
+														style="padding-left: 25px;">${utente.nome}</span></strong> <input
+														type="hidden" id="emailUtente" value="${utente.email}" />
+												</h1>
+
+											</c:if>
+
+											<c:if test="${ragioneSociale!=null}">
+												<h1>
+													<strong style="padding-left: 53px;">Benvenuto <span>${utente.email}</span></strong>
+													<input type="hidden" id="emailUtente"
+														value="${utente.email}" />
+												</h1>
+											</c:if>
+
+											<c:if test="${ragioneSociale==null}">
+												<li>
+													<button type="submit" class="btn-link"
+														formaction="userProfile.jsp" style="margin-left: 18px;">
+														<h3>
+															<strong>I Miei Dati</strong>
+														</h3>
+													</button>
+												</li>
+
+												<li>
+													<button type="submit" class="btn-link"
+														formaction="userProfile.jsp">
+														<h3>
+															<strong>Il Mio Indirizzo</strong>
+														</h3>
+													</button>
+												</li>
 
 
-											<li>
-												<button type="submit" class="btn-link">
-													<h3 style="margin-left: 48px;">
-														<strong>I Miei Ordini</strong>
-													</h3>
-												</button>
-											</li>
+												<li>
+													<button type="submit" class="btn-link"
+														style="margin-left: 10px;">
+														<h3>
+															<strong>I Miei Ordini</strong>
+														</h3>
+													</button>
+												</li>
 											</c:if>
 
 											<c:if test="${ragioneSociale!=null}">
@@ -83,10 +106,11 @@
 												<br>
 
 											</c:if>
-											
-												<button type="submit" class="btn btn-warning"
-													formaction="login" formmethod="get" style="margin-left: 66px;">Logout</button>
-											
+
+											<button type="submit" class="btn btn-warning"
+												formaction="login" formmethod="get"
+												style="margin-left: 28px;">Logout</button>
+
 										</c:if>
 									</form>
 								</li>

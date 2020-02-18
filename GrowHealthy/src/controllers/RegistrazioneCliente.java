@@ -27,8 +27,10 @@ public class RegistrazioneCliente extends HttpServlet {
 		String dataNascita = req.getParameter("data");
 		String email = req.getParameter("email");
 		String telefono = req.getParameter("telefono");
-		String via = req.getParameter("via");
+		String regione = req.getParameter("regione");
+		String provincia = req.getParameter("provincia");
 		String citta = req.getParameter("citta");
+		String via = req.getParameter("via");
 		String cap = req.getParameter("cap");
 		String password = req.getParameter("password");
 
@@ -38,8 +40,10 @@ public class RegistrazioneCliente extends HttpServlet {
 		cliente.setNome(nome);
 		cliente.setCognome(cognome);
 		cliente.setDataDiNascita(dataNascita);
-		cliente.setVia(via);
+		cliente.setRegione(regione);
+		cliente.setProvincia(provincia);
 		cliente.setCitta(citta);
+		cliente.setVia(via);
 		cliente.setCap(cap);
 		cliente.setTelefono(telefono);
 		cliente.setEmail(email);

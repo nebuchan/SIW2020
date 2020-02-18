@@ -5,6 +5,8 @@ public class Cliente {
 	private String codiceFiscale;
 	private String nome;
 	private String cognome;
+	private String regione;
+	private String provincia;
 	private String via;
 	private String citta;
 	private String cap;
@@ -31,6 +33,22 @@ public class Cliente {
 
 	public String getCognome() {
 		return cognome;
+	}
+
+	public String getRegione() {
+		return regione;
+	}
+
+	public void setRegione(String regione) {
+		this.regione = regione;
+	}
+
+	public String getProvincia() {
+		return provincia;
+	}
+
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
 	}
 
 	public void setCognome(String cognome) {

@@ -25,7 +25,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into Cliente(codice_fiscale, nome, cognome, telefono, email, password, via, citta, cap, data_nascita) values (?,?,?,?,?,?,?,?,?,?)";
+			String insert = "insert into Cliente(codice_fiscale, nome, cognome, telefono, email, password, via, citta, cap, data_nascita, regione, provincia) values (?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, cliente.getCodiceFiscale());
 			statement.setString(2, cliente.getNome());
@@ -37,6 +37,8 @@ public class ClienteDaoJDBC implements ClienteDao {
 			statement.setString(8, cliente.getCitta());
 			statement.setString(9, cliente.getCap());
 			statement.setString(10, cliente.getDataDiNascita());
+			statement.setString(11, cliente.getRegione());
+			statement.setString(12, cliente.getProvincia());
 			
 			statement.executeUpdate();
 
@@ -77,6 +79,8 @@ public class ClienteDaoJDBC implements ClienteDao {
 				cliente.setTelefono(result.getString("telefono"));
 				cliente.setEmail(result.getString("email"));
 				cliente.setPassword(result.getString("password"));
+				cliente.setRegione(result.getString("regione"));
+				cliente.setProvincia(result.getString("provincia"));
 
 			}
 		} catch (SQLException e) {
@@ -114,6 +118,8 @@ public class ClienteDaoJDBC implements ClienteDao {
 				cliente.setTelefono(result.getString("telefono"));
 				cliente.setEmail(result.getString("email"));
 				cliente.setPassword(result.getString("password"));
+				cliente.setRegione(result.getString("regione"));
+				cliente.setProvincia(result.getString("provincia"));
 
 				clienti.add(cliente);
 			}
@@ -134,7 +140,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update cliente SET nome = ?, cognome = ?, via = ?, citta = ?, cap = ?, data_nascita = ?, telefono = ?, codice_fiscale = ?, password = ? WHERE email = ?";
+			String update = "update cliente SET nome = ?, cognome = ?, via = ?, citta = ?, cap = ?, data_nascita = ?, telefono = ?, codice_fiscale = ?, password = ?. regione = ?, provincia = ? WHERE email = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, cliente.getNome());
 			statement.setString(2, cliente.getCognome());
@@ -145,7 +151,9 @@ public class ClienteDaoJDBC implements ClienteDao {
 			statement.setString(7, cliente.getTelefono());
 			statement.setString(8, cliente.getCodiceFiscale());
 			statement.setString(9, cliente.getPassword());
-			statement.setString(10, cliente.getEmail());
+			statement.setString(10, cliente.getRegione());
+			statement.setString(11, cliente.getProvincia());
+			statement.setString(12, cliente.getEmail());
 
 			statement.executeUpdate();
 		} catch (SQLException e) {

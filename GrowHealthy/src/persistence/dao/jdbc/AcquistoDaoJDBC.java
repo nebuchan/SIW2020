@@ -27,7 +27,7 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into acquisto(id, cliente, prodotto, quantita_p, data, importo, totale) values (?,?,?,?,?,?,?)";
+			String insert = "insert into acquisto(id, cliente, prodotto, quantita_p, data, importo, totale, codice_acquisto) values (?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, acquisto.getiD());
 			statement.setString(2, acquisto.getCliente());
@@ -39,6 +39,7 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 			statement.setDate(5, new Date(tmpData));
 			statement.setDouble(6, acquisto.getImporto());
 			statement.setDouble(7, acquisto.getTotale());
+			statement.setInt(8, acquisto.getCodiceAcquisto());
 
 			statement.executeUpdate();
 
@@ -77,6 +78,7 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setData(new java.util.Date(tmpData));
 				acquisto.setImporto(result.getDouble("importo"));
 				acquisto.setTotale(result.getDouble("totale"));
+				acquisto.setCodiceAcquisto(result.getInt("codice_acquisto"));
 
 			}
 		} catch (SQLException e) {
@@ -114,6 +116,7 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setData(new java.util.Date(tmpData));
 				acquisto.setImporto(result.getDouble("importo"));
 				acquisto.setTotale(result.getDouble("totale"));
+				acquisto.setCodiceAcquisto(result.getInt("codice_acquisto"));
 
 				acquisti.add(acquisto);
 			}
