@@ -142,5 +142,13 @@ public class DBManager {
 		
 		getAziendaDao().update(a);
 	}
+	
+	public void modificaDatiCliente(Cliente cliente) {
+		getClienteDao().update(cliente);
+	}
+	
+	public List<Acquisto> dammiAcquistiPerCliente(Cliente cliente) {
+		return getAcquistoDao().findByClient(cliente);
+	}
 
 }

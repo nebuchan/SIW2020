@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Date;
-
 public class Acquisto {
 
 	private int iD;
@@ -9,7 +7,7 @@ public class Acquisto {
 	private String cliente;
 	private int prodotto;
 	private int quantita;
-	private Date data;
+	private String data;
 	private double importo;
 	private double totale;
 
@@ -53,11 +51,11 @@ public class Acquisto {
 		this.quantita = quantita;
 	}
 
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 

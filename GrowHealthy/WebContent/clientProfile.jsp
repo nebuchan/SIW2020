@@ -38,7 +38,7 @@
 <script src="javascript/common.js" type="text/javascript"></script>
 <script src="javascript/global.js" type="text/javascript"></script>
 <script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
-<script src="javascript/userProfile.js" type="text/javascript"></script>
+<script src="javascript/clientProfile.js" type="text/javascript"></script>
 
 </head>
 
@@ -78,7 +78,8 @@
 									Dati</a></li>
 							<li><a href="javascript:void(0);" id="myData1">Il Mio
 									Indirizzo</a></li>
-							<li><a href="javascript:void(0);">I Miei Acquisti</a></li>
+							<li><a href="javascript:void(0);" id="myData2">I Miei
+									Acquisti</a></li>
 
 						</ul>
 					</div>
@@ -102,28 +103,54 @@
 						</label> <br> <label>Telefono: <strong>${utente.telefono}</strong>
 						</label> <br> <label>Email: <strong>${utente.email}</strong>
 						</label> <br>
-						<form class="form-vertical" method="post" action="">
+						<form class="form-vertical" id="formModifyPwd" method="post"
+							action="">
 
 							<h1 align="center">
 								<strong>Cambio Password</strong>
 							</h1>
 
 							<div class="form-group required">
+								<input type="hidden" id="oldPwd" value="${utente.password}">
 								<label for="input-oldpwd" class="col-sm-2 control-label"
 									style="padding-left: 0px;">Vecchia Password: </label> <input
 									type="password" class="form-control" id="input-oldpwd"
 									placeholder="Vecchia Password" name="oldpwd" required>
 							</div>
 							<div class="form-group required">
-								<label for="input-newpwd" class="col-sm-2 control-label" style="padding-left: 0px;">Nuova
-									Password: </label> <input type="password" class="form-control"
-									id="input-newpwd" placeholder="Nuova Password" name="newpwd"
-									required>
+								<label for="input-newpwd" class="col-sm-2 control-label"
+									style="padding-left: 0px;">Nuova Password: </label> <input
+									type="password" class="form-control" id="input-newpwd"
+									placeholder="Nuova Password" name="newpwd" required>
 							</div>
 
 							<div class="buttons">
+
+								<div class="alert alert-warning" id="warning1-modifyPwd"
+									style="display: none !important;">
+									<strong>Inserire tutti i campi per la modifica</strong>
+								</div>
+
+								<div class="alert alert-warning" id="warning2-modifyPwd"
+									style="display: none !important;">
+									<strong>La vecchia password non corrisponde,prego
+										inserire la password corretta</strong>
+								</div>
+
+								<div class="alert alert-warning" id="warning3-modifyPwd"
+									style="display: none !important;">
+									<strong>Inserire una nuova password diversa da quella
+										precedente</strong>
+								</div>
+
+								<div class="alert alert-success" id="success-modifyPwd"
+									style="display: none !important;">
+									<strong>Password modificata con successo</strong>
+								</div>
+
 								<div class="pull-right">
-									<button class="btn btn-default">Conferma</button>
+									<button type="button" form="formModifyPwd"
+										class="btn btn-default" id="changePwdBtn">Conferma</button>
 								</div>
 							</div>
 
@@ -182,17 +209,14 @@
 
 								<div class="alert alert-success" id="success-modify"
 									style="display: none !important;">
-									<strong>Dati dell'indirizzo di spedizione correttamente modicati</strong>
-								</div>
-								
-								<div class="alert alert-warning" id="alert-modify"
-									style="display: none !important;">
-									<strong>Prego modificare i dati</strong>
+									<strong>Dati dell'indirizzo di spedizione
+										correttamente modicati</strong>
 								</div>
 
 								<div class="pull-right">
 
-									<input type="submit" form="formDeliveryData" class="btn btn-default" value="Modifica" id="modifyBtn" style="display: none;">
+									<button type="button" class="btn btn-default" id="modifyBtn"
+										style="display: none;">Modifica</button>
 
 								</div>
 
@@ -202,6 +226,37 @@
 						</form>
 
 					</div>
+				</div>
+
+				<div id="divMyData2" style="display: none;">
+
+					<h1 align="center">
+						<strong>I Miei Acquisti</strong>
+					</h1>
+
+					<table class="table table-bordered" id="tableMyData2">
+					
+						<thead>
+						
+							<tr>
+
+								<th class="text-center">Codice</th>
+								<th class="text-center">Prodotti</th>
+								<th class="text-center">Data</th>
+								<th class="text-center">Totale</th>
+
+							</tr>
+							
+						</thead>
+						
+						<tbody>	
+						
+							
+						
+						</tbody>
+						
+					</table>
+
 				</div>
 
 			</div>

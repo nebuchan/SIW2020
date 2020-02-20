@@ -140,7 +140,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String update = "update cliente SET nome = ?, cognome = ?, via = ?, citta = ?, cap = ?, data_nascita = ?, telefono = ?, codice_fiscale = ?, password = ?. regione = ?, provincia = ? WHERE email = ?";
+			String update = "update cliente SET nome = ?, cognome = ?, via = ?, citta = ?, cap = ?, data_nascita = ?, telefono = ?, codice_fiscale = ?, password = ?, regione = ?, provincia = ? WHERE email = ?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			statement.setString(1, cliente.getNome());
 			statement.setString(2, cliente.getCognome());

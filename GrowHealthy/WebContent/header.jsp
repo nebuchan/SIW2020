@@ -49,7 +49,7 @@
 											<c:if test="${ragioneSociale==null}">
 
 												<h1>
-													<strong style="margin-left: 7px;">Benvenuto <span
+													<strong style="margin-left: 12px;">Benvenuto <span
 														style="padding-left: 25px;">${utente.nome}</span></strong> <input
 														type="hidden" id="emailUtente" value="${utente.email}" />
 												</h1>
@@ -67,7 +67,7 @@
 											<c:if test="${ragioneSociale==null}">
 												<li>
 													<button type="submit" class="btn-link"
-														formaction="userProfile.jsp" style="margin-left: 18px;">
+														formaction="clientProfile.jsp" style="margin-left: 18px;">
 														<h3>
 															<strong>I Miei Dati</strong>
 														</h3>
@@ -76,7 +76,7 @@
 
 												<li>
 													<button type="submit" class="btn-link"
-														formaction="userProfile.jsp">
+														formaction="clientProfile.jsp">
 														<h3>
 															<strong>Il Mio Indirizzo</strong>
 														</h3>
@@ -86,7 +86,7 @@
 
 												<li>
 													<button type="submit" class="btn-link"
-														style="margin-left: 10px;">
+														style="margin-left: 10px;" formaction="clientProfile.jsp">
 														<h3>
 															<strong>I Miei Ordini</strong>
 														</h3>

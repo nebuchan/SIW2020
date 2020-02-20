@@ -62,7 +62,9 @@
 				<form enctype="multipart/form-data" method="post" action="#">
 					<div class="table-responsive">
 						<table class="table table-bordered" id="tableCart">
+						
 							<thead>
+							
 								<tr>
 									<td class="text-center">Image</td>
 									<td class="text-center">Nome</td>
@@ -72,9 +74,13 @@
 									<td class="text-center">Prezzo(/kg)</td>
 									<td class="text-center">Totale</td>
 								</tr>
+								
 							</thead>
+							
 							<tbody>
+							
 							</tbody>
+							
 						</table>
 					</div>
 				</form>

@@ -187,6 +187,36 @@
 		<servlet-name>AggiornaProdotto</servlet-name>
 		<url-pattern>/aggiornaProdotto</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ModificaDatiSpedizione</servlet-name>
+		<servlet-class>controllers.ModificaDatiSpedizioneCliente</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ModificaDatiSpedizione</servlet-name>
+		<url-pattern>/modifyDeliveryData</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ModificaPasswordCliente</servlet-name>
+		<servlet-class>controllers.ModificaPasswordCliente</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ModificaPasswordCliente</servlet-name>
+		<url-pattern>/modifyClientPwd</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DammiAcquistiCliente</servlet-name>
+		<servlet-class>controllers.DammiAcquistiCliente</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DammiAcquistiCliente</servlet-name>
+		<url-pattern>/clientPurchases</url-pattern>
+	</servlet-mapping>
 
 
 </web-app>
