@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -25,6 +26,16 @@ public class EliminaProdotto  extends HttpServlet {
 		String id=req.getParameter("id");
 		Prodotto prodotto= DBManager.getInstance().dammiProdotto(Integer.parseInt(id));
 		DBManager.getInstance().eliminaProdotto(prodotto);
+		
+
+		//File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
+		
+		//String user_dir=System.getProperty("user.home");
+		
+		//File file = new File(user_dir+"/git/"+"SIW2020"+req.getContextPath()+"/WebContent/image/", id+".jpg");
+		
+		//file.delete();
+		
 		
 		resp.sendRedirect(req.getContextPath() + "/mycategories.jsp");
 	}

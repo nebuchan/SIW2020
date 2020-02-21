@@ -18,7 +18,7 @@ function myProducts()
 								+ "<div class='image product-imageblock'>"
 								+ "<a href='product?id="
 								+ prodotti[i].id
-								+ "'> <img src='"+prodotti[i].immagine+"' class='img-responsive' /> </a>"
+								+ "'> <img src='"+prodotti[i].immagine+"' id='img_dim1' class='img-responsive' /> </a>"
 								+ "<div class='button-group'>"
 								+ "<button type='button' class='addtocart-btn'>Add to Cart</button>"
 								+ "</div>"
