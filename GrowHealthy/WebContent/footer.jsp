@@ -4,74 +4,78 @@
 	<div class="container">
 		<div class="footer-top-cms"></div>
 		<div class="row">
-			<div class="col-sm-4 footer-block">
+			<div class="col-sm-4 footer-block" style="text-align:center">
 				<div class="my-footer-widget my-about-widget">
-					<!-- <h2 class="my-widget-title">About</h2> -->
-					<h5 class="footer-title">About Us</h5>
-					<p> torem ipsum sit amet, torem ipsum sit amet, torem ipsum sit amet, torem ipsum sit amet, vtorem ipsum sit amet,v</p>
-					<p style="text-align:center"><span><i class="fas fa-lock"></i></span>Pagamenti Sicuri</p>
-					<div class="my-cards">
-						<i class="fab fa-cc-mastercard"></i>
-						<i class="fab fa-cc-paypal"></i>
-						<i class="fab fa-cc-amex"></i>
-						<i class="fab fa-cc-visa"></i>
-						<i class="fab fa-cc-discover"></i>
-					</div>
+ 					<h5 class="footer-title">About Us</h5>
+ 					<ul class="list-unstyled ul-wrapper">
+ 						<li>
+ 							<!-- DESCRIZIONE -->
+							<p>Grow Healthy è una piattaforma creata con l'obiettivo di instaurare relazioni commerciali
+									in modo semplice e costruttivo fra aziende e clienti</p>
+							<!-- PAGAMENTI -->
+							<p><span><i class="fas fa-lock"></i></span> Pagamenti Sicuri</p>
+							<div class="my-cards" style="font-size:35px">
+								<a href="https://www.mastercard.it/" target="_blank"><i class="fab fa-cc-mastercard"></i></a>
+								<a href="https://www.paypal.com/" target="_blank"><i class="fab fa-cc-paypal"></i></a>
+								<a href="https://www.americanexpress.com/" target="_blank"><i class="fab fa-cc-amex"></i></a>
+								<a href="https://www.visa.com/" target="_blank"><i class="fab fa-cc-visa"></i></a>
+								<a href="https://www.discover.com/" target="_blank"><i class="fab fa-cc-discover"></i></a>
+							</div>
+						</li>
+					</ul>
 					<br>
 					<br>
 				</div>
 			</div>
-			<div class="col-sm-2 footer-block">
+			<div class="col-sm-2 footer-block" style="text-align:center">
 				<div class="my-footer-widget my-categories-widget">
-					<!-- <h2 class="my-widget-title">Categories</h2> -->
 					<h5 class="footer-title">Categorie</h5>
 					<ul class="list-unstyled ul-wrapper">
-						<li><a href="about-us.html">Terreni</a></li>
-						<li><a href="checkout.html">Ortaggi</a></li>
-						<li><a href="checkout.html">Prodotti agricoli</a></li>
+						<li style="list-style:square"><a href="about-us.jsp">Terreni</a></li>
+						<li style="list-style:square"><a href="product.jsp">Ortaggi</a></li>
+						<li style="list-style:square"><a href="growproduct.jsp">Prodotti agricoli</a></li>
 					</ul>
 					<br>
 				</div>
 			</div>
-			<div class="col-sm-2 footer-block">
+			<div class="col-sm-2 footer-block" style="text-align:center">
 				<div class="my-footer-widget my-information-widget">
-					<!-- <h2 class="my-widget-title">Informations</h2> -->
 					<h5 class="footer-title">Informazioni</h5>
 					<ul class="list-unstyled ul-wrapper">
-						<li><a href="#">Chi siamo</a></li>
-						<li><a href="gift.html">Contattaci</a></li>
-						<li><a href="affiliate.html">Termini & Condizioni</a></li>
-						<li><a href="#">Spedizione</a></li>
+						<li style="list-style:square"><a href="#">Chi siamo</a></li>
+						<li style="list-style:square"><a href="gift.html">Contattaci</a></li>
+						<li style="list-style:square"><a href="affiliate.html">Termini & Condizioni</a></li>
+						<li style="list-style:square"><a href="#">Spedizione</a></li>
 					</ul>
 					<br>
 				</div>
 			</div>
-			<div class="col-sm-4 footer-block">
-				<div class="my-footer-widget">
-					<!-- <h2 class="my-widget-title">Contact</h2> -->
-					<h5 class="my-contact-title my-footer-title">Contatti</h5>
-					
-					<div class="my-contact-address">
-						<i class="fas fa-map-marker-alt"></i> Indirizzo : Ponte Pietro Bucci (Cubo 31B), &#09; &#09; &#09; Arcavacata di Rende (CS) 87036
-					</div>
-									
-					<div class="my-contact-number">
-						<i class="fas fa-phone-square-alt"></i> Phone : +91 123456789
-					</div>
-					
-					<div class="my-contact-email">
-						<i class="fas fa-envelope"></i> Email : contact@growhealthy.com
-					</div>
-					
-					<div class="my-social-widget">
-						<!-- <p style="text-align:center"> -->
-						<a href="#"><i class="fab fa-facebook-square"></i></a>
-						<a href="#"><i class="fab fa-google-plus-square"></i></a>
-						<a href="#"><i class="fab fa-instagram"></i></a>
-						<a href="#"><i class="fab fa-youtube-square"></i></a>
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<!-- </p> -->
-					</div>
+			<div class="col-sm-4 footer-block" style="text-align:center">
+				<div class="my-footer-widget">						
+					<h5 class="footer-title">Contatti</h5>					
+					<ul class="list-unstyled ul-wrapper">
+						<li>
+							<!-- INDIRIZZO CON REDIRECT SU GOOGLE STREET VIEW -->
+							<a href="https://www.google.com/maps/@39.3630069,16.2264394,3a,38.3y,317.09h,83.48t/data=!3m6!1e1!3m4!1s-c5GxZAjZYLkk66MQ176gg!2e0!7i13312!8i6656" target="_blank">
+									<i class="fas fa-map-marker-alt"> Indirizzo : Ponte Pietro Bucci (Cubo 31B), &#09; &#09; &#09; Arcavacata di Rende (CS) 87036</i></a>
+							<!-- TELEFONO -->
+							<i class="fas fa-phone-square-alt"> Phone : +39 0984-123456</i>
+							<!-- E-MAIL -->
+							<a href="mailto:contact@growhealthy.com">
+								<i class="fas fa-envelope" > Email : contact@growhealthy.com</i>
+							</a>
+							<br>
+							<br>
+							<!-- SOCIAL WIDGET -->
+							<div class="my-social-widget" style="font-size:35px; margin-top:12px;">
+								<a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
+								<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+								<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+								<a href="#" target="_blank"><i class="fab fa-google-plus-square"></i></a>
+								<a href="#" target="_blank"><i class="fab fa-youtube-square"></i></a>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -79,35 +83,16 @@
 	<br>
 	<!-- SCROLL CAROTINA -->
 	<a id="scrollup">Scroll</a>
-	<div class="footer-bottom">
+	<!-- FOOTER-BOTTOM - COPYRIGHT -->
+	<div class="footer-bottom" style="margin-top:-30px; margin-bottom:-25px;">
 		<div class="container">
 			<div class="my-copyright">
-				<p align="right">
-					>Copyright c <script type="text/javascript">document.write(new Date().getFullYear());</script>
-					All Rights reserved | Design made with <i class="fas fa-heart"></i> by UnicalIT DEV
-				</p>
+					Copyright c 2020 All Rights reserved | Design made with <i class="fas fa-heart"></i> by UnicalIT DEV
 			</div>
 			<div class="copyright">
-					>Powered By &nbsp;<a class="yourstore" href="http://www.lionode.com/">lionode
+					> Powered By &nbsp;<a class="yourstore" href="http://www.lionode.com/">lionode
 					&copy; 2017 </a>
 			</div>
-		
-<!-- 		<div class="footer-bottom-cms">
-			<div class="footer-payment">
-				<ul>
-					<li class="mastero"><a href="#"><img alt=""
-							src="image/payment/mastero.jpg"></a></li>
-					<li class="visa"><a href="#"><img alt=""
-							src="image/payment/visa.jpg"></a></li>
-					<li class="currus"><a href="#"><img alt=""
-							src="image/payment/currus.jpg"></a></li>
-					<li class="discover"><a href="#"><img alt=""
-							src="image/payment/discover.jpg"></a></li>
-					<li class="bank"><a href="#"><img alt=""
-							src="image/payment/bank.jpg"></a></li>
-				</ul>
-			</div>
-		</div> -->
 		</div>
 	</div>
 	<br>

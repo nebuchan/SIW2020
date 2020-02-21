@@ -63,7 +63,7 @@
 	
 	<h1 align="center" style="color: green; margin-top: 50px;">Pagamento avvenuto con successo!</h1>
 	<div class="container" align="center" style="margin-top: 5%">
-		<a href="index.jsp" class="btn btn-default">OK! </a>
+		<a href="index" class="btn btn-default">OK! </a>
 	</div>
 	
 	</div>

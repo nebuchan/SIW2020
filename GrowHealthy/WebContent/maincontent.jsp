@@ -1,4 +1,6 @@
-<div class="container">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
+	<div class="container" >
 		<div class="row">
 
 			<div class="cms_banner ">
@@ -1189,7 +1191,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="parallax">
+				<!-- <div class="parallax">
 					<ul id="testimonial" class="row owl-carousel product-slider">
 						<li class="item">
 							<div class="panel-default">
@@ -1264,7 +1266,7 @@
 							</div>
 						</li>
 					</ul>
-				</div>
+				</div> -->
 				<div class="row">
 					<div class="cms_banner">
 						<div class="col-md-4 cms-banner-left">
@@ -1556,161 +1558,48 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="blog">
 					<div class="blog-heading">
-						<h3>Latest Blogs</h3>
+						<h3>Ultime Notizie dal mondo dell'agricoltura</h3>
 					</div>
 					<div class="blog-inner box">
-						<ul class="list-unstyled blog-wrapper" id="latest-blog">
-							<li class="item blog-slider-item">
-								<div class="panel-default">
-									<div class="blog-image">
-										<a href="#" class="blog-imagelink"><img
-											src="image/blog/blog_1.jpg" alt="#"></a> <span
-											class="blog-hover"></span> <span class="blog-date">06/07/2015</span>
-										<span class="blog-readmore-outer"><a href="#"
-											class="blog-readmore">Read More</a></span>
+						<form action="RSSController" method="GET">
+							<ul class="list-unstyled blog-wrapper" id="latest-blog">
+								<c:forEach items="${feeder}" var="item">
+									<div class="item blog-slider-item" style="display: inline-block;">
+										<div class="panel-default">
+											<div class="blog-image">
+												<a href="${item.link}" class="blog-imagelink"> <img
+													src="${item.image}" alt="#"
+													style="width: 400px; height: 266px;">
+												</a>
+												<span class="blog-hover"></span>
+												<span class="blog-date">28/02/2020</span>
+												<span class="blog-readmore-outer"><a
+													href="${item.link}" target="_blank" class="blog-readmore">Read
+														More</a>
+												</span>
+											</div>
+											<div class="blog-content">
+												<a href="${item.link}" target="_blank" class="blog-name">
+													<h2>${item.title}</h2>
+												</a>
+											</div>
+										</div>
 									</div>
-									<div class="blog-content">
-										<a href="#" class="blog-name">
-											<h2>Nunc rutrum scel potent</h2>
-										</a>
-										<div class="blog-desc">Rem ipsum doLorem ipsum ut labore
-											et dolore magna.Lorem ipsum doLorem ipsum dolor sit amet,
-											consectetur adipisicing...</div>
-										<a href="#" class="blog-readmore">Read More</a> <span
-											class="blog-date">06/07/2015</span>
-									</div>
-								</div>
-							</li>
-							<li class="item blog-slider-item">
-								<div class="panel-default">
-									<div class="blog-image">
-										<a href="#" class="blog-imagelink"><img
-											src="image/blog/blog_2.jpg" alt="#"></a> <span
-											class="blog-hover"></span> <span class="blog-date">06/07/2015</span>
-										<span class="blog-readmore-outer"><a href="#"
-											class="blog-readmore">Read More</a></span>
-									</div>
-									<div class="blog-content">
-										<a href="#" class="blog-name">
-											<h2>Nunc rutrum scel potent</h2>
-										</a>
-										<div class="blog-desc">Rem ipsum doLorem ipsum ut labore
-											et dolore magna.Lorem ipsum doLorem ipsum dolor sit amet,
-											consectetur adipisicing...</div>
-										<a href="singale-blog.html" class="blog-readmore">Read
-											More</a> <span class="blog-date">06/07/2015</span>
-									</div>
-								</div>
-							</li>
-							<li class="item blog-slider-item">
-								<div class="panel-default">
-									<div class="blog-image">
-										<a href="#" class="blog-imagelink"><img
-											src="image/blog/blog_3.jpg" alt="#"></a> <span
-											class="blog-hover"></span> <span class="blog-date">06/07/2015</span>
-										<span class="blog-readmore-outer"><a
-											href="singale-blog.html" class="blog-readmore">Read More</a></span>
-									</div>
-									<div class="blog-content">
-										<a href="#" class="blog-name">
-											<h2>Nunc rutrum scel potent</h2>
-										</a>
-										<div class="blog-desc">Rem ipsum doLorem ipsum ut labore
-											et dolore magna.Lorem ipsum doLorem ipsum dolor sit amet,
-											consectetur adipisicing...</div>
-										<a href="singale-blog.html" class="blog-readmore">Read
-											More</a> <span class="blog-date">06/07/2015</span>
-									</div>
-								</div>
-							</li>
-							<li class="item blog-slider-item">
-								<div class="panel-default">
-									<div class="blog-image">
-										<a href="#" class="blog-imagelink"><img
-											src="image/blog/blog_4.jpg" alt="#"></a> <span
-											class="blog-hover"></span> <span class="blog-date">06/07/2015</span>
-										<span class="blog-readmore-outer"><a href="#"
-											class="blog-readmore">Read More</a></span>
-									</div>
-									<div class="blog-content">
-										<a href="#" class="blog-name">
-											<h2>Nunc rutrum scel potent</h2>
-										</a>
-										<div class="blog-desc">Rem ipsum doLorem ipsum ut labore
-											et dolore magna.Lorem ipsum doLorem ipsum dolor sit amet,
-											consectetur adipisicing...</div>
-										<a href="#" class="blog-readmore">Read More</a> <span
-											class="blog-date">06/07/2015</span>
-									</div>
-								</div>
-							</li>
-							<li class="item blog-slider-item">
-								<div class="panel-default">
-									<div class="blog-image">
-										<a href="#" class="blog-imagelink"><img
-											src="image/blog/blog_5.jpg" alt="#"></a> <span
-											class="blog-hover"></span> <span class="blog-date">06/07/2015</span>
-										<span class="blog-readmore-outer"><a href="#"
-											class="blog-readmore">Read More</a></span>
-									</div>
-									<div class="blog-content">
-										<a href="#" class="blog-name">
-											<h2>Nunc rutrum scel potent</h2>
-										</a>
-										<div class="blog-desc">Rem ipsum doLorem ipsum ut labore
-											et dolore magna.Lorem ipsum doLorem ipsum dolor sit amet,
-											consectetur adipisicing...</div>
-										<a href="#" class="blog-readmore">Read More</a> <span
-											class="blog-date">06/07/2015</span>
-									</div>
-								</div>
-							</li>
-						</ul>
+								</c:forEach>
+							</ul>
+						</form>
 					</div>
 				</div>
 				<div id="brand_carouse" class="owl-carousel brand-logo">
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand1.png" alt="Disney"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand2.png" alt="Dell"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand3.png" alt="Harley"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand4.png" alt="Canon"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand5.png" alt="Canon"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand6.png" alt="Canon"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand7.png" alt="Canon"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand8.png" alt="Canon"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand9.png" alt="Canon"
-							class="img-responsive" /></a>
-					</div>
-					<div class="item text-center">
-						<a href="#"><img src="image/brand/brand5.png" alt="Canon"
-							class="img-responsive" /></a>
-					</div>
+				    <c:forEach var = "i" begin = "1" end = "9">
+				    	<div class="item text-center">
+							<a href="#"><img src="image/brand/brand${i}.png"
+								class="img-responsive" /></a>
+						</div>
+					</c:forEach>
 				</div>
 			</div>
 		</div>

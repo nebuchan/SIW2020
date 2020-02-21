@@ -136,7 +136,7 @@
 		<div class="col-sm-4 col-xs-12 header-middle">
 			<div class="header-middle-top">
 				<div id="logo">
-					<a href="index.jsp"><img src="image/newlogo.png
+					<a href="index"><img src="image/newlogo.png
             "
 						title="E-Commerce" alt="E-Commerce" class="img-responsive"
 						style="margin-left: 35 px" /></a>

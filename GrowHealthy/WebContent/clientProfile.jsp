@@ -63,7 +63,7 @@
 	<div class="container">
 
 		<ul class="breadcrumb">
-			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
+			<li><a href="index"><i class="fa fa-home"></i></a></li>
 		</ul>
 
 		<div class="row">

@@ -54,7 +54,7 @@
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
+			<li><a href="index"><i class="fa fa-home"></i></a></li>
 			<li><a href="#">Account</a></li>
 			<li><a href="companyRegistration.jsp">Registrazione Azienda</a></li>
 		</ul>

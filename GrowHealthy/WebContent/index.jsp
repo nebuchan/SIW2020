@@ -23,11 +23,7 @@
 	<link href="owl-carousel/owl.carousel.css" type="text/css"
 		rel="stylesheet" media="screen" />
 	<link href="owl-carousel/owl.transitions.css" type="text/css"
-		rel="stylesheet" media="screen" />
-		
-		
-			<link href="css/footer.css" rel="stylesheet">
-		
+		rel="stylesheet" media="screen" />		
 	
 	<!-- SCRIPT  -->
 	<script src="javascript/jquery-2.1.1.min.js" type="text/javascript"></script>
