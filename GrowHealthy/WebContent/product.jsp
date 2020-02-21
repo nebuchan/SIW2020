@@ -530,17 +530,17 @@
 					<div class="col-sm-6">
 						<div class="thumbnails">
 							<div>
-								<a class="thumbnail" href="image/product/product8.jpg"
-									title="lorem ippsum dolor dummy"><img
-									src="image/product/product1.jpg"
-									title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" /></a>
+								<a class="thumbnail" href="${immagine}">
+									<img
+									src="${immagine}"
+									alt="${nomeProdotto}" id="img_dim2"/></a>
 							</div>
 							<div id="product-thumbnail" class="owl-carousel">
 								<div class="item">
 									<div class="image-additional">
-										<a class="thumbnail  " href="image/product/product1.jpg"
+										<a class="thumbnail  " href="${immagine}"
 											title="lorem ippsum dolor dummy"> <img
-											src="image/product/pro-1-220x294.jpg"
+											src="${immagine}"
 											title="lorem ippsum dolor dummy"
 											alt="lorem ippsum dolor dummy" /></a>
 									</div>

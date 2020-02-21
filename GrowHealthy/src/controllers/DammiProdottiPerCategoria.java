@@ -45,6 +45,7 @@ public class DammiProdottiPerCategoria extends HttpServlet {
 
 				tmp.put("azienda", ragioneSociale);
 				tmp.put("id", prodotto.getiD());
+				tmp.put("immagine", prodotto.getImmagine());
 
 				prodottiJSON.put(tmp);
 			} catch (JSONException e) {
