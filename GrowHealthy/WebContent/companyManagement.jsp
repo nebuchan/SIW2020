@@ -37,7 +37,7 @@
 	<script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 	
 	<script src="https://kit.fontawesome.com/efd0a43034.js" crossorigin="anonymous"></script>
-
+	
 </head>
 
 <body class="account-register col-2">
@@ -141,7 +141,7 @@
 									Policy</b></a> <input type="checkbox" value="1" name="agree">
 							&nbsp;
 							<button type="submit" class="btn btn-primary"
-								value="Continue">Continue</button>
+								value="Continue" onclick="return confirm('Sicuro di voler confermare la modifica dei dati?')">Continue</button>
 						</div>
 					</div>
 				</form>

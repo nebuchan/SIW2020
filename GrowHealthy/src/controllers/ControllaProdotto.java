@@ -19,7 +19,7 @@ public class ControllaProdotto extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println(req.getParameter("nomeProdotto"));
+		
 		req.getSession().setAttribute("name", req.getParameter("nomeProdotto"));
 		req.getSession().setAttribute("category", req.getParameter("categoriaProdotto"));
 		req.getSession().setAttribute("stockQuantity", req.getParameter("quantitaMagazzino"));

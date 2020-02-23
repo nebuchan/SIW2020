@@ -41,16 +41,6 @@
 
 <body class="account-register col-2">
 	
-	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
-	
-	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file= "navbar.jsp"%>
-	</nav>
-
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>
@@ -95,8 +85,6 @@
 		</div>
 	</div>
 	
-	<!-- FOOTER -->
-	<%@ include file="footer.jsp"%>
 	
 </body>
 </html>

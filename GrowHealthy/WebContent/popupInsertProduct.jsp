@@ -41,22 +41,13 @@
 
 <body class="account-register col-2">
 
-	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
-	
-	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file= "navbar.jsp"%>
-	</nav>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>
 			<div class="col-sm-9" id="content">
 				<strong><br>RIEPILOGO DATI PRODOTTO</strong>
-				<form class="form-horizontal" method="POST" action="insertproduct" enctype="multipart/form-data">
+				<form class="form-horizontal" method="POST" action="insertproduct" id="formPopup" enctype="multipart/form-data">
 					<div class="form-group required">
 						<label for="input-nome" class="col-sm-2 control-label">Nome:&nbsp;&nbsp; <strong>
 								${name}</strong> </label>
@@ -89,7 +80,7 @@
 							<label for="input-immagine" class="col-sm-2 control-label"><strong>INSERISCI IMMAGINE PRODOTTO</strong></label>
 							<div class="col-sm-10">
 								<input type="file" class="form-control" id="input-immagine" accept="image/jpeg"
-									placeholder="Immagine" name="immagine">
+									placeholder="Immagine" name="immagine" required>
 							</div>
 						</div>
 						<div class="pull-right">
@@ -105,8 +96,6 @@
 		</div>
 	</div>
 	
-	<!-- FOOTER -->
-	<%@ include file="footer.jsp"%>
 	
 </body>
 </html>
