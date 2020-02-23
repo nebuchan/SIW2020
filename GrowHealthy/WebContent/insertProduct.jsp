@@ -38,40 +38,7 @@
 
 	<script src="https://kit.fontawesome.com/efd0a43034.js" crossorigin="anonymous"></script>
 
-	<script type="text/javascript">
-	function popup() 
-	{
-		var nomeProdotto=document.getElementById('inputnome').value;
-		var categoriaProdotto=document.getElementById('inputcategoria').value;
-		var quantitaMagazzino=document.getElementById('inputquantitamagazzino').value;
-		var quantitaMinima=document.getElementById('inputquantitaminima').value;
-		var descrizioneProdotto=document.getElementById('inputdescrizione').value;
-		var prezzoProdotto=document.getElementById('inputprezzo').value;
-	
-	
-		var w = 640;
-		var h = 480;
-		var l = Math.floor((screen.width-w)/2);
-		var t = Math.floor((screen.height-h)/2);
-		var newWindow = window.open("","","width=" + w + ",height=" + h + ",top=" + t + ",left=" + l);
-		
-		$.ajax({
-	         type: 'GET',
-	         url: 'checkproduct',
-	         data : {"nomeProdotto": nomeProdotto,
-	        	 	"categoriaProdotto": categoriaProdotto,
-	        	 	"quantitaMagazzino": quantitaMagazzino,
-	        	 	"quantitaMinima": quantitaMinima,
-	        	 	"descrizioneProdotto": descrizioneProdotto,
-	        	 	"prezzoProdotto": prezzoProdotto,},
-	         success: function(result) {
-	        		newWindow.location.href = "popupInsertProduct.jsp";
-	        		location.href = "fillproduct?";
-	        		
-	        	}
-	     });
-	}
-	</script>
+	<script src="javascript/insertProduct.js" type="text/javascript"></script>
 	
 </head>
 
@@ -97,7 +64,7 @@
 			<div class="col-sm-9" id="content">
 				<h1>Inserimento Prodotto</h1>
 				
-				<form class="form-horizontal" method="POST" action="checkproduct" enctype="multipart/form-data">
+				<form class="form-horizontal" id="formInsertProduct" name="formInsertProduct" enctype="multipart/form-data">
 					<div class="form-group required">
 						<label for="input-nome" class="col-sm-2 control-label">Nome</label>
 						<div class="col-sm-10">
@@ -144,16 +111,25 @@
 								placeholder="Prezzo" name="prezzo">
 						</div>
 					</div>
+					<div class="buttons">
+									<div class="alert alert-warning" id="alert-form"
+										style="display: none !important;">
+										<strong>Prego inserire tutti i campi!</strong>
+									</div>
+							
+									<div class="pull-right">
+										I have read and agree to the <a class="agree" href="#"><b>Privacy
+										Policy</b></a> <input type="checkbox" value="1" name="agree">
+										&nbsp;
+											<button type="button" data-loading-text="Loading..."
+												class="btn btn-primary" id="button-confirm"
+												onclick="javascript:popup()">Conferma</button>
+	
+										</div>
+								</div>
+				
 				</form>
-				<div class="buttons">
-					<div class="pull-right">
-						I have read and agree to the <a class="agree" href="#"><b>Privacy
-								Policy</b></a> <input type="checkbox" value="1" name="agree">
-						&nbsp;
-						<button type="submit" class="btn btn-primary"
-							value="InserimentoProdotto" onclick="javascript:popup()">Continue</button>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>
