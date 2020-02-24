@@ -43,18 +43,14 @@
 <body class="account-register col-2">
 	
 	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	<%@ include file="header.jsp"%>	
 	
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file= "navbar.jsp"%>
-	</nav>
-
+	<%@ include file= "navbar.jsp"%>
+	
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="index"><i class="fa fa-home"></i></a></li>
+			<li><a href="/GrowHealthy/"><i class="fa fa-home"></i></a></li>
 			<li><a href="#">Account</a></li>
 			<li><a href="companyRegistration.jsp">Modifica Informazioni</a></li>
 		</ul>
@@ -62,11 +58,8 @@
 			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>
 			<div class="col-sm-9" id="content">
 				<h1>Modifica dati Profilo</h1>
-				
 				<form class="form-horizontal" method="POST" action="editInformationCompany">
-
 					<p>INFORMAZIONI AZIENDALI</p>
-
 					<div class="form-group required">
 						<label for="input-pIva" class="col-sm-2 control-label">Partita
 							Iva</label>
@@ -148,7 +141,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- FOOTER -->
 	<%@ include file="footer.jsp"%>
 

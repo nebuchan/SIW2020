@@ -26,7 +26,7 @@ public class Login extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("rssController");
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
 
 					rd.forward(request, response);
 				} else {
-					out.println("<div class=\"alert alert-danger\">\r\n" +
+					out.println("<div class=\"alert alert-danger\" style=\"margin-bottom: 0px;position: sticky;z-index: 2;top: 0px;\">\r\n" +
 							" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
 							"  <strong>Accesso Negato!</strong> Username o Password errati. Controllare se i dati inseriti sono corretti\r\n" + 
 							"</div>");
@@ -56,7 +56,7 @@ public class Login extends HttpServlet {
 				}
 			} else {
 				System.out.println("Log Cliente fallito!");
-				out.println("<div class=\"alert alert-danger\">\r\n" +
+				out.println("<div class=\"alert alert-danger\" style=\"margin-bottom: 0px;position: sticky;z-index: 2;top: 0px;\">\r\n" +
 						" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
 						"  <strong>Accesso Negato!</strong> Username o Password errati. Controllare se i dati inseriti sono corretti\r\n" + 
 						"</div>");
@@ -77,7 +77,7 @@ public class Login extends HttpServlet {
 
 					rd.forward(request, response);
 				} else {
-					out.println("<div class=\"alert alert-danger\">\r\n" +
+					out.println("<div class=\"alert alert-danger\" style=\"margin-bottom: 0px;position: sticky;z-index: 2;top: 0px;\">\r\n" +
 							" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
 							"  <strong>Accesso Negato!</strong> Username o Password errati. Controllare se i dati inseriti sono corretti\r\n" + 
 							"</div>");
@@ -87,7 +87,7 @@ public class Login extends HttpServlet {
 			} else {
 				System.out.println("Log Azienda fallito!");
 
-				out.println("<div class=\"alert alert-danger\">\r\n" +
+				out.println("<div class=\"alert alert-danger\" style=\"margin-bottom: 0px;position: sticky;z-index: 2;top: 0px;\">\r\n" +
 						" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
 						"  <strong>Accesso Negato!</strong> Username o Password errati. Controllare se i dati inseriti sono corretti\r\n" + 
 						"</div>");

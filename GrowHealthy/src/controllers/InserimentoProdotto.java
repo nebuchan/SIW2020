@@ -29,9 +29,7 @@ import persistence.DBManager;
 maxFileSize=1024*1024*10,      // 10MB
 maxRequestSize=1024*1024*50)   // 50MB
 public class InserimentoProdotto extends HttpServlet {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	@Override
@@ -43,60 +41,59 @@ public class InserimentoProdotto extends HttpServlet {
 		
 		if(a!=null)
 		{
-		String nome = (String) req.getSession().getAttribute("name");
-		String categoria = (String) req.getSession().getAttribute("category");
-		String quantitaMagazzino = (String) req.getSession().getAttribute("stockQuantity");
-		String quantitaMinima = (String) req.getSession().getAttribute("minimumQuantity");
-		String descrizione = (String) req.getSession().getAttribute("description");
-		String prezzo = (String) req.getSession().getAttribute("price");
-		Prodotto prodotto = new Prodotto();
-		List<Prodotto> prodotti=DBManager.getInstance().dammiProdotti();
-		
-		//incremento id, sicuro ci sarà qualcosa di meglio, era giusto per provare
-		int id=0;
-		
-		for(int i=0; i<prodotti.size(); i++)
-			if(id==prodotti.get(i).getiD())
-			{
-				i=-1;
-				id++;
+			String nome = (String) req.getSession().getAttribute("name");
+			String categoria = (String) req.getSession().getAttribute("category");
+			String quantitaMagazzino = (String) req.getSession().getAttribute("stockQuantity");
+			String quantitaMinima = (String) req.getSession().getAttribute("minimumQuantity");
+			String descrizione = (String) req.getSession().getAttribute("description");
+			String prezzo = (String) req.getSession().getAttribute("price");
+			Prodotto prodotto = new Prodotto();
+			List<Prodotto> prodotti=DBManager.getInstance().dammiProdotti();
+			
+			//incremento id, sicuro ci sarà qualcosa di meglio, era giusto per provare
+			int id=0;
+			
+			for(int i=0; i<prodotti.size(); i++) {
+				if(id==prodotti.get(i).getiD()) {
+					i=-1;
+					id++;
+				}
 			}
 		
+			prodotto.setiD(id);
+			prodotto.setNome(nome);
+			prodotto.setCategoria(categoria);
+			prodotto.setQuantitaMagazzino(Integer.parseInt(quantitaMagazzino));
+			prodotto.setQuantitaMin(Integer.parseInt(quantitaMinima));
+			prodotto.setDescrizione(descrizione);
+			prodotto.setPrezzo(Integer.parseInt(prezzo));
+			prodotto.setEmailAzienda(a.getEmail());
+			
+			File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
+			
+			String user_dir=System.getProperty("user.home");
+			
+			File file = new File(user_dir+"/git/"+"SIW2020"+req.getContextPath()+"/WebContent/image/", prodotto.getiD()+".jpg");
+			Part part=req.getPart("immagine");
+		    //part.write("Ciao.png");
+		    
+		    
+		    InputStream is = part.getInputStream();
+		    FileUtils.copyInputStreamToFile(is, file);
+		   // Image image = new Image(file.toURI().toString());
+		    
+		    System.out.println(file.getAbsolutePath());
+		    String relative_path="image/"+Integer.toString(prodotto.getiD())+".jpg";
+		    prodotto.setImmagine(relative_path);
+			
+		    
+			DBManager.getInstance().inserisciProdotto(prodotto);
+			out.println("<div class=\"alert alert-success\">\r\n" +
+					" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
+					"  <strong>Prodotto inserito con successo!</strong> \r\n" + 
+					"</div>");
 		
-		prodotto.setiD(id);
-		prodotto.setNome(nome);
-		prodotto.setCategoria(categoria);
-		prodotto.setQuantitaMagazzino(Integer.parseInt(quantitaMagazzino));
-		prodotto.setQuantitaMin(Integer.parseInt(quantitaMinima));
-		prodotto.setDescrizione(descrizione);
-		prodotto.setPrezzo(Integer.parseInt(prezzo));
-		prodotto.setEmailAzienda(a.getEmail());
-		
-		File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
-		
-		String user_dir=System.getProperty("user.home");
-		
-		File file = new File(user_dir+"/git/"+"SIW2020"+req.getContextPath()+"/WebContent/image/", prodotto.getiD()+".jpg");
-		Part part=req.getPart("immagine");
-	    //part.write("Ciao.png");
-	    
-	    
-	    InputStream is = part.getInputStream();
-	    FileUtils.copyInputStreamToFile(is, file);
-	   // Image image = new Image(file.toURI().toString());
-	    
-	    System.out.println(file.getAbsolutePath());
-	    String relative_path="image/"+Integer.toString(prodotto.getiD())+".jpg";
-	    prodotto.setImmagine(relative_path);
-		
-	    
-		DBManager.getInstance().inserisciProdotto(prodotto);
-		out.println("<div class=\"alert alert-success\">\r\n" +
-				" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
-				"  <strong>Prodotto inserito con successo!</strong> \r\n" + 
-				"</div>");
-	
-		rd.include(req, resp);
+			rd.include(req, resp);
 		}
 		else
 			out.println("<div class=\"alert alert-danger\">\r\n" +

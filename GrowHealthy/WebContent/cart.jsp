@@ -42,14 +42,10 @@
 <body class="cart col-2">
 
 	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	<%@ include file="header.jsp"%>
 	
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file="navbar.jsp"%>
-	</nav>
+	<%@ include file="navbar.jsp"%>
 
 	<div class="container">
 		<br>
@@ -62,9 +58,7 @@
 				<form enctype="multipart/form-data" method="post" action="#">
 					<div class="table-responsive">
 						<table class="table table-bordered" id="tableCart">
-						
 							<thead>
-							
 								<tr>
 									<td class="text-center">Image</td>
 									<td class="text-center">Nome</td>
@@ -73,14 +67,9 @@
 									<td class="text-center">Quantità</td>
 									<td class="text-center">Prezzo(/kg)</td>
 									<td class="text-center">Totale</td>
-								</tr>
-								
+								</tr>		
 							</thead>
-							
-							<tbody>
-							
-							</tbody>
-							
+							<tbody></tbody>
 						</table>
 					</div>
 				</form>

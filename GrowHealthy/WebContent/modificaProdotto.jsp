@@ -42,14 +42,10 @@
 <body class="account-register col-2">
 
 	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	<%@ include file="header.jsp"%>
 	
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file= "navbar.jsp"%>
-	</nav>
+	<%@ include file= "navbar.jsp"%>
 
 	<div class="container">
 		<div class="row">
@@ -128,9 +124,7 @@
 			</div>
 		</div>
 	</div>
-	
 	<!-- FOOTER -->
 	<%@ include file="footer.jsp"%>
-	
 </body>
 </html>

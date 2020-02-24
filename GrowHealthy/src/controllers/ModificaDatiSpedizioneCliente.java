@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import model.Cliente;
 import persistence.DBManager;
 
+
 public class ModificaDatiSpedizioneCliente extends HttpServlet {
 
 	private static final long serialVersionUID = 7798277659947490541L;
@@ -45,7 +46,6 @@ public class ModificaDatiSpedizioneCliente extends HttpServlet {
 		for(int i = 0; i < data.length(); i++) {
 			JSONObject jsonObj = data.getJSONObject(i);
 			
-			
 			String email = cliente.getEmail();
 			String codiceFiscale = cliente.getCodiceFiscale();
 			String nome = cliente.getNome();
@@ -74,7 +74,6 @@ public class ModificaDatiSpedizioneCliente extends HttpServlet {
 			
 			DBManager.getInstance().modificaDatiCliente(tmp);
 		}
-		
 		req.getSession().setAttribute("utente", tmp);
 	}
 

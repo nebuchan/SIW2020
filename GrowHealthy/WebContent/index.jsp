@@ -45,7 +45,6 @@
 	
 </head>
 
-
 <body>
 	<!-- PRELOAD GIF IMAGE -->
 	<div class="preloader loader"
@@ -54,14 +53,10 @@
 	</div>
 	
 	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	<%@ include file="header.jsp"%>
 	
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file= "navbar.jsp"%>
-	</nav>
+	<%@ include file= "navbar.jsp"%>
 	
 	<!-- MAINBANNER -->
 	<div class="mainbanner">

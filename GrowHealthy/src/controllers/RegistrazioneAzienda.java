@@ -10,11 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import model.Azienda;
 import persistence.DBManager;
 
+
 public class RegistrazioneAzienda extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -45,7 +43,6 @@ public class RegistrazioneAzienda extends HttpServlet {
 
 		RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 		rd.forward(req, resp);
-
 	}
 
 }

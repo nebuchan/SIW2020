@@ -43,34 +43,27 @@
 <body class="category col-2 left-col">
 
 	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	<%@ include file="header.jsp"%>
 	
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file= "navbar.jsp"%>
-	</nav>
+	<%@ include file= "navbar.jsp"%>
 	
+	<br>
 	<div class="container">
-	<ul>
-		<li><a href="index"><i class="fa fa-home"></i></a></li>
-			<li><a href="mycategories">I miei Prodotti</a></li>
-		</ul>
 		<div class="row">
 			<div id="column-left" class="col-sm-3 hidden-xs column-left">
 				<div class="column-block">
 					<div class="columnblock-title">Categorie</div>
 					<div class="category_block">
 						<ul class="box-category treeview-list treeview">
-						<li><a href="#"
-									id="mieiProdotti" onclick="myProducts()">I miei prodotti </a></li>
-									
-						<li><a href="javascript:void(0);"
-									id="mieiTerreni">I miei Terreni </a></li>
-									
-						<li><a href="fillproduct?"
-									id="inserisciProdotto">Inserisci Prodotto </a></li>
+							<li><a href="#" id="mieiProdotti" onclick="myProducts()">I miei prodotti </a></li>
+						</ul>
+						<ul class="box-category treeview-list treeview">									
+							<li><a href="fillproduct?" id="inserisciPr"> > Inserisci Prodotto </a></li>
+							<li><a href="javascript:void(0);" id="mieiTerreni">I miei Terreni </a></li>
+						</ul>
+							<ul class="box-category treeview-list treeview">									
+								<li><a href="insertTerrain.jsp"> > Inserisci Terreno </a></li>
 						</ul>
 					</div>
 				</div>
@@ -90,8 +83,8 @@
 			</div>				
 		</div>
 	</div>
-		<br/>
-		
+	<br>
+	
 	<!-- FOOTER -->
 	<%@ include file="footer.jsp"%>
 

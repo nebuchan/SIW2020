@@ -43,37 +43,25 @@
 <body class="account-register col-2">
 
 	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	<%@ include file="header.jsp"%>
 
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file="navbar.jsp"%>
-	</nav>
+	<%@ include file="navbar.jsp"%>
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
+			<li><a href="/GrowHealthy/"><i class="fa fa-home"></i></a></li>
 			<li><a href="#">Account</a></li>
 			<li><a href="userRegistration.jsp">Registrazione Cliente</a></li>
 		</ul>
 		<div class="row">
 			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>
 			<div class="col-sm-9" id="content">
-
 				<h1>Registrazione Cliente</h1>
-
-				<p>
-					Se sei un'azienda, clicca <a href="companyRegistration.jsp">qui</a>.
-				</p>
-
+				<p>Se sei un'azienda, clicca <a href="companyRegistration.jsp">qui !</a></p>
+				
 				<form class="form-horizontal" method="POST" action="clientRegister">
-
-					<p>
-						<strong>Dati Personali:</strong>
-					</p>
-
+					<p> <strong>Dati Personali :</strong></p>
 					<div class="form-group required">
 						<label for="input-firstname" class="col-sm-2 control-label">Nome: </label>
 						<div class="col-sm-10">
@@ -117,9 +105,7 @@
 						</div>
 					</div>
 
-					<p>
-						<strong>Indirizzo:</strong>
-					</p>
+					<p><strong>Indirizzo:</strong></p>
 					
 					<div class="form-group required">
 						<label for="input-regione" class="col-sm-2 control-label">Regione: </label>
@@ -161,9 +147,7 @@
 						</div>
 					</div>
 
-					<p>
-						<strong>Dati per l'accesso:</strong>
-					</p>
+					<p><strong>Dati per l'accesso:</strong></p>
 
 					<div class="form-group required">
 						<label for="input-email" class="col-sm-2 control-label">E-Mail: </label>
@@ -172,6 +156,7 @@
 								placeholder="E-Mail" name="email" required>
 						</div>
 					</div>
+					
 					<div class="form-group required">
 						<label for="input-password" class="col-sm-2 control-label">Password: </label>
 						<div class="col-sm-10">
@@ -194,9 +179,8 @@
 				</form>
 			</div>
 		</div>
-
-		<!-- FOOTER -->
-		<%@ include file="footer.jsp"%>
 	</div>
+	<!-- FOOTER -->
+	<%@ include file="footer.jsp"%>
 </body>
 </html>

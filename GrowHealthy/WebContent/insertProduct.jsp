@@ -43,19 +43,16 @@
 </head>
 
 <body class="account-register col-2">
-		<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	
+	<!-- HEADER -->
+	<%@ include file="header.jsp"%>
 	
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file= "navbar.jsp"%>
-	</nav>
+	<%@ include file= "navbar.jsp"%>
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="index"><i class="fa fa-home"></i></a></li>
+			<li><a href="/GrowHealthy/"><i class="fa fa-home"></i></a></li>
 			<li><a href="#">Account</a></li>
 			<li><a href="userRegistration.jsp">Inserimento Prodotto</a></li>
 		</ul>
@@ -63,13 +60,11 @@
 			<div class="col-sm-3 hidden-xs column-left"  id="column-left"></div>
 			<div class="col-sm-9" id="content">
 				<h1>Inserimento Prodotto</h1>
-				
 				<form class="form-horizontal" id="formInsertProduct" name="formInsertProduct" enctype="multipart/form-data">
 					<div class="form-group required">
 						<label for="input-nome" class="col-sm-2 control-label">Nome</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputnome"
-								placeholder="Nome" name="nome">
+							<input type="text" class="form-control" id="inputnome" placeholder="Nome" name="nome">
 						</div>
 					</div>
 					<div class="form-group required">
@@ -78,8 +73,7 @@
 							<select name="categoria" id="inputcategoria">
 								<c:forEach items="${categories}" var="category">
 									<option value="${category.categoria}">${category.categoria}</option>
-							</c:forEach>
-							
+								</c:forEach>
 							</select>
 						</div>
 					</div>
@@ -112,28 +106,22 @@
 						</div>
 					</div>
 					<div class="buttons">
-									<div class="alert alert-warning" id="alert-form"
-										style="display: none !important;">
-										<strong>Prego inserire tutti i campi!</strong>
-									</div>
-							
-									<div class="pull-right">
-										I have read and agree to the <a class="agree" href="#"><b>Privacy
-										Policy</b></a> <input type="checkbox" value="1" name="agree">
-										&nbsp;
-											<button type="button" data-loading-text="Loading..."
-												class="btn btn-primary" id="button-confirm"
-												onclick="javascript:popup()">Conferma</button>
-	
-										</div>
-								</div>
-				
+						<div class="alert alert-warning" id="alert-form" style="display: none !important;">
+							<strong>Prego inserire tutti i campi!</strong>
+						</div>
+						<div class="pull-right">
+							<button type="button" data-loading-text="Loading..."
+								class="btn btn-primary" id="button-confirm"
+								onclick="javascript:popup()">Conferma
+							</button>
+						</div>
+					</div>
 				</form>
-				
 			</div>
 		</div>
 	</div>
-
+	<br>
+	
 	<!-- FOOTER -->
 	<%@ include file="footer.jsp"%>
 

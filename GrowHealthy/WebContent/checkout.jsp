@@ -44,18 +44,14 @@
 <body class="checkout col-2 left-col">
 
 	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	<%@ include file="header.jsp"%>
 
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file="navbar.jsp"%>
-	</nav>
+	<%@ include file="navbar.jsp"%>
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="index"><i class="fa fa-home"></i></a></li>
+			<li><a href="/GrowHealthy/"><i class="fa fa-home"></i></a></li>
 			<li><a href="cart.jsp">Carrello</a></li>
 		</ul>
 		<div class="row">

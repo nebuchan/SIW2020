@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.CategoriaProdotto;
 import persistence.DBManager;
 
+
 public class DammiMieCategorieProdotti extends HttpServlet {
 
 	private static final long serialVersionUID = 8348860825733737032L;

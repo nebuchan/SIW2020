@@ -219,7 +219,7 @@
 	</servlet-mapping>
 	
 	<welcome-file-list>
-    	<welcome-file>index</welcome-file>
+    	<welcome-file>rssController</welcome-file>
 	</welcome-file-list>
 	
 	<servlet>
@@ -229,7 +229,27 @@
 
 	<servlet-mapping>
 		<servlet-name>RSSController</servlet-name>
-		<url-pattern>/index</url-pattern>
+		<url-pattern>/rssController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ControllaTerreno</servlet-name>
+		<servlet-class>controllers.ControllaTerreno</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ControllaTerreno</servlet-name>
+		<url-pattern>/checkterrain</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>InserimentoTerreno</servlet-name>
+		<servlet-class>controllers.InserimentoTerreno</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>InserimentoTerreno</servlet-name>
+		<url-pattern>/insertterrain</url-pattern>
 	</servlet-mapping>
 
 

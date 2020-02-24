@@ -43,18 +43,14 @@
 <body class="account-register col-2">
 	
 	<!-- HEADER -->
-	<header>
-		<%@ include file="header.jsp"%>
-	</header>
+	<%@ include file="header.jsp"%>
 	
 	<!-- NAVBAR MENU -->
-	<nav id="menu" class="navbar">
-		<%@ include file= "navbar.jsp"%>
-	</nav>
+	<%@ include file= "navbar.jsp"%>
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="index"><i class="fa fa-home"></i></a></li>
+			<li><a href="/GrowHealthy/"><i class="fa fa-home"></i></a></li>
 			<li><a href="#">Account</a></li>
 			<li><a href="companyRegistration.jsp">Registrazione Azienda</a></li>
 		</ul>
@@ -150,9 +146,7 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- FOOTER -->
 	<%@ include file="footer.jsp"%>
-
 </body>
 </html>

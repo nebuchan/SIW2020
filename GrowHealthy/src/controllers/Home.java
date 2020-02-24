@@ -8,11 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Home extends HttpServlet{
 
-	/**
-	 * 
-	 */
+public class Home extends HttpServlet {
+
 	private static final long serialVersionUID = -4078275169727703547L;
 	
 	@Override

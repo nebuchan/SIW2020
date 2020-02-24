@@ -12,6 +12,7 @@ import model.Azienda;
 import model.Prodotto;
 import persistence.DBManager;
 
+
 public class DammiProdotto extends HttpServlet {
 
 	private static final long serialVersionUID = 3063537202686077481L;

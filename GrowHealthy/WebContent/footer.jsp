@@ -1,9 +1,8 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <footer>
-	<div class="container">
+	<div class="container" style='font-family: "Font Awesome 5 Pro";font-weight: 900;'>
 		<div class="footer-top-cms"></div>
 		<div class="row">
+			 <!-- ABOUT US -->
 			<div class="col-sm-4 footer-block" style="text-align:center">
 				<div class="my-footer-widget my-about-widget">
  					<h5 class="footer-title">About Us</h5>
@@ -27,6 +26,7 @@
 					<br>
 				</div>
 			</div>
+			<!-- CATEGORIE -->
 			<div class="col-sm-2 footer-block" style="text-align:center">
 				<div class="my-footer-widget my-categories-widget">
 					<h5 class="footer-title">Categorie</h5>
@@ -38,6 +38,7 @@
 					<br>
 				</div>
 			</div>
+			<!-- INFORMAZIONI -->
 			<div class="col-sm-2 footer-block" style="text-align:center">
 				<div class="my-footer-widget my-information-widget">
 					<h5 class="footer-title">Informazioni</h5>
@@ -50,6 +51,7 @@
 					<br>
 				</div>
 			</div>
+			<!-- CONTATTI -->
 			<div class="col-sm-4 footer-block" style="text-align:center">
 				<div class="my-footer-widget">						
 					<h5 class="footer-title">Contatti</h5>					
@@ -87,17 +89,9 @@
 	<div class="footer-bottom" style="margin-top:-30px; margin-bottom:-25px;">
 		<div class="container">
 			<div class="my-copyright">
-					Copyright c 2020 All Rights reserved | Design made with <i class="fas fa-heart"></i> by UnicalIT DEV
-			</div>
-			<div class="copyright">
-					> Powered By &nbsp;<a class="yourstore" href="http://www.lionode.com/">lionode
-					&copy; 2017 </a>
+				Copyright &copy; 2020 All Rights reserved | Design made with <i class="fas fa-heart"></i> by UnicalIT DEV
 			</div>
 		</div>
 	</div>
 	<br>
 </footer>
-
-
-
-

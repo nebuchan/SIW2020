@@ -41,7 +41,6 @@
 
 <body class="account-register col-2">
 
-
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3 hidden-xs column-left" id="column-left"></div>
@@ -95,7 +94,6 @@
 			</div>
 		</div>
 	</div>
-	
 	
 </body>
 </html>

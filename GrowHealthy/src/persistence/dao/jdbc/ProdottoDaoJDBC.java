@@ -11,6 +11,7 @@ import model.Prodotto;
 import persistence.DataSource;
 import persistence.dao.ProdottoDao;
 
+
 public class ProdottoDaoJDBC implements ProdottoDao {
 	private DataSource dataSource;
 
@@ -47,7 +48,6 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
-
 	}
 
 	@Override
@@ -149,7 +149,6 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
-
 	}
 
 	@Override
@@ -170,7 +169,6 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
-
 	}
 	
 	public List<Prodotto> findByCategory(String category){
@@ -207,7 +205,6 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 			}
 		}
 		return prodotti;
-		
 	}
 
 }

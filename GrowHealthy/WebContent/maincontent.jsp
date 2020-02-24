@@ -1564,33 +1564,31 @@
 						<h3>Ultime Notizie dal mondo dell'agricoltura</h3>
 					</div>
 					<div class="blog-inner box">
-						<form action="RSSController" method="GET">
-							<ul class="list-unstyled blog-wrapper" id="latest-blog">
-								<c:forEach items="${feeder}" var="item">
-									<div class="item blog-slider-item" style="display: inline-block;">
-										<div class="panel-default">
-											<div class="blog-image">
-												<a href="${item.link}" class="blog-imagelink"> <img
-													src="${item.image}" alt="#"
-													style="width: 400px; height: 266px;">
-												</a>
-												<span class="blog-hover"></span>
-												<span class="blog-date">28/02/2020</span>
-												<span class="blog-readmore-outer"><a
-													href="${item.link}" target="_blank" class="blog-readmore">Read
-														More</a>
-												</span>
-											</div>
-											<div class="blog-content">
-												<a href="${item.link}" target="_blank" class="blog-name">
-													<h2>${item.title}</h2>
-												</a>
-											</div>
+						<ul class="list-unstyled blog-wrapper" id="latest-blog">
+							<c:forEach items="${feeder}" var="item">
+								<div class="item blog-slider-item" style="display: inline-block;">
+									<div class="panel-default">
+										<div class="blog-image">
+											<a href="${item.link}" class="blog-imagelink"> <img
+												src="${item.image}" alt="#"
+												style="width: 400px; height: 266px;">
+											</a>
+											<span class="blog-hover"></span>
+											<span class="blog-date">28/02/2020</span>
+											<span class="blog-readmore-outer"><a
+												href="${item.link}" target="_blank" class="blog-readmore">Read
+													More</a>
+											</span>
+										</div>
+										<div class="blog-content">
+											<a href="${item.link}" target="_blank" class="blog-name">
+												<h2>${item.title}</h2>
+											</a>
 										</div>
 									</div>
-								</c:forEach>
-							</ul>
-						</form>
+								</div>
+							</c:forEach>
+						</ul>
 					</div>
 				</div>
 				<div id="brand_carouse" class="owl-carousel brand-logo">

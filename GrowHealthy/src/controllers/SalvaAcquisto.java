@@ -21,6 +21,7 @@ import model.Cliente;
 import model.Prodotto;
 import persistence.DBManager;
 
+
 public class SalvaAcquisto extends HttpServlet {
 
 	private static final long serialVersionUID = 544030728772951941L;
@@ -37,7 +38,6 @@ public class SalvaAcquisto extends HttpServlet {
 		while (line != null) {
 			jsonReceived = jsonReceived + line;
 			line = reader.readLine();
-
 		}
 
 		jsonReceived = jsonReceived.replaceAll("\\\\n", "");
@@ -47,16 +47,14 @@ public class SalvaAcquisto extends HttpServlet {
 		
 		List<Acquisto> tmpAcquisti = DBManager.getInstance().dammiAcquisti();
 		
-		for (int i = 0; i < tmpAcquisti.size(); i++)
+		for (int i = 0; i < tmpAcquisti.size(); i++) {
 			if (cod == tmpAcquisti.get(i).getCodiceAcquisto()) {
 				i = -1;
-				cod++;
-			}
+				cod++; }
+		}
 		
 		try {
-
 			JSONObject tmp = new JSONObject(jsonReceived);
-
 			JSONArray jsonArray = new JSONArray(tmp.get("values").toString());
 
 			for (int i = 0; i < jsonArray.length(); i++) {
@@ -74,7 +72,6 @@ public class SalvaAcquisto extends HttpServlet {
 				List<Acquisto> acquisti = DBManager.getInstance().dammiAcquisti();
 				
 				int id = 0;
-
 				for (int j = 0; j < acquisti.size(); j++)
 					if (id == acquisti.get(j).getiD()) {
 						j = -1;
@@ -107,7 +104,6 @@ public class SalvaAcquisto extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 }

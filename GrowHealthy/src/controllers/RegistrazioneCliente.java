@@ -10,11 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import model.Cliente;
 import persistence.DBManager;
 
+
 public class RegistrazioneCliente extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2974334476489069848L;
 
 	@Override
@@ -53,7 +51,6 @@ public class RegistrazioneCliente extends HttpServlet {
 
 		RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 		rd.forward(req, resp);
-
 	}
 
 }
