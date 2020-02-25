@@ -643,7 +643,7 @@
 								<div class="form-group">
 									<label class="control-label qty-label" for="input-quantity">Quantità</label>
 									<input type="text" name="quantity" size="2" id="input-quantity"
-										class="form-control productpage-qty" /> <span>/kg</span>
+										class="form-control productpage-qty"/> <span>/kg</span>
 									<div class="btn-group">
 										<button type="button" id="button-cart"
 											data-loading-text="Loading..."
@@ -651,6 +651,11 @@
 											onclick="addToCart()">Aggiungi al carrello</button>
 									</div>
 									<br>
+									<div class="alert alert-warning" id="alert_quantita_null"
+										style="display: none !important; border-left: 25px;">
+										<strong>Inserire quantità da acquistare</strong>
+									</div>
+									
 									<div class="alert alert-success"
 										id="alert_conferma_inserimento"
 										style="display: none !important; border-left: 25px;">

@@ -35,14 +35,13 @@ public class RegistrazioneAzienda extends HttpServlet {
 		azienda.setRagioneSociale(ragioneSociale);
 		azienda.setSedeLegale(sedeLegale);
 		azienda.setReferente(referente);
-		azienda.setpIva(Integer.parseInt(pIva));
+		azienda.setpIva(Long.parseLong(pIva));
 		azienda.setTelefono(telefono);
 		azienda.setDescrizione(descrizione);
 
 		DBManager.getInstance().inserisciAzienda(azienda);
 
-		RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
-		rd.forward(req, resp);
+		resp.sendRedirect(req.getContextPath() + "/index.jsp");
 	}
 
 }

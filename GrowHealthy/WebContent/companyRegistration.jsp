@@ -38,6 +38,9 @@
 	
 	<script src="https://kit.fontawesome.com/efd0a43034.js" crossorigin="anonymous"></script>
 
+	<script src="javascript/checkDataRegistration.js" type="text/javascript"></script>
+	
+	
 </head>
 
 <body class="account-register col-2">
@@ -69,8 +72,13 @@
 						<label for="input-pIva" class="col-sm-2 control-label">Partita
 							Iva</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="input-pIva"
+							<input type="text" class="form-control" id="input-piva"
 								placeholder="Partita Iva" name="pIva" required>
+						</div>
+						
+						<div class="alert alert-warning" id="alert-inputpiva"
+										style="display: none !important;">
+										<strong>Partita iva inserita non valida!</strong>
 						</div>
 					</div>
 					<div class="form-group required">
@@ -103,6 +111,11 @@
 							<input type="tel" class="form-control" id="input-telephone"
 								placeholder="Numero Telefono" name="telefono" required>
 						</div>
+						
+						<div class="alert alert-warning" id="alert-inputtelephone"
+										style="display: none !important;">
+										<strong>Numero telefono inserito non valido!</strong>
+						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-descrizione" class="col-sm-2 control-label">Descrizione</label>
@@ -121,25 +134,41 @@
 						</div>
 					</div>
 					<div class="form-group required">
-						<label for="input-password" class="col-sm-2 control-label">Password</label>
+						<label for="input-password" class="col-sm-2 control-label">Password: </label>
 						<div class="col-sm-10">
 							<input type="password" class="form-control" id="input-password"
 								placeholder="Password" name="password" required>
 						</div>
+						
+						<div class="alert alert-warning" id="alert-minus-password"
+										style="display: none !important;">
+										<strong>Attenzione, inserire una password di almeno 6 caratteri!</strong>
+						</div>
 					</div>
-					<!--   <div class="form-group required">
-                        <label for="input-confirm" class="col-sm-2 control-label">Conferma Password</label>
+					
+					<div class="form-group required">
+                        <label for="input-confirm-password" class="col-sm-2 control-label">Conferma Password</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="input-confirm" placeholder="Conferma Password" value="" name="confirm">
+                            <input type="password" class="form-control" id="input-confirm-password" 
+                            placeholder="Conferma Password" name="confirm-password" required>
                         </div>
-                    </div>-->
+                        
+                        <div class="alert alert-warning" id="alert-confirm-unsuccess"
+										style="display: none !important;">
+										<strong>Password immesse non coincidono!</strong>
+						</div>
+						
+						 <div class="alert alert-success" id="alert-confirm-success"
+										style="display: none !important;">
+										<strong>Password immessa valida!</strong>
+						</div>
+                    </div>
 					<div class="buttons">
 						<div class="pull-right">
-							I have read and agree to the <a class="agree" href="#"><b>Privacy
-									Policy</b></a> <input type="checkbox" value="1" name="agree">
+							Ho letto e accetto la <a class="agree" href="#"><b>Politica sulla Privacy
+									</b></a> <input type="checkbox" value="1" name="agree" required>
 							&nbsp;
-							<button type="submit" class="btn btn-primary"
-								value="RegistrazioneCliente">Continue</button>
+							<input type="submit" class="btn btn-primary" value="Conferma" value="Controlla" />
 						</div>
 					</div>
 				</form>

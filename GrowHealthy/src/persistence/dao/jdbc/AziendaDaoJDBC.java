@@ -31,7 +31,7 @@ public class AziendaDaoJDBC implements AziendaDao {
 			statement.setString(2, azienda.getPassword());
 			statement.setString(3, azienda.getRagioneSociale());
 			statement.setString(4, azienda.getSedeLegale());
-			statement.setInt(5, azienda.getpIva());
+			statement.setLong(5, azienda.getpIva());
 			statement.setString(6, azienda.getReferente());
 			statement.setString(7, azienda.getTelefono());
 			statement.setString(8, azienda.getDescrizione());
@@ -130,7 +130,7 @@ public class AziendaDaoJDBC implements AziendaDao {
 			statement.setString(1, azienda.getPassword());
 			statement.setString(2, azienda.getRagioneSociale());
 			statement.setString(3, azienda.getSedeLegale());
-			statement.setInt(4, azienda.getpIva());
+			statement.setLong(4, azienda.getpIva());
 			statement.setString(5, azienda.getReferente());
 			statement.setString(6, azienda.getTelefono());
 			statement.setString(7, azienda.getDescrizione());
