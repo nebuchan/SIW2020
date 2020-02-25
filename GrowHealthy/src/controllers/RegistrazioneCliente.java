@@ -49,8 +49,7 @@ public class RegistrazioneCliente extends HttpServlet {
 
 		DBManager.getInstance().inserisciCliente(cliente);
 
-		RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
-		rd.forward(req, resp);
+		resp.sendRedirect(req.getContextPath() + "/index.jsp");
 	}
 
 }

@@ -116,7 +116,7 @@
 						</div>
 						<div class="pull-right">
 							<button type="submit" class="btn btn-primary"
-								value="Conferma">Conferma</button>
+								value="Conferma" onclick="return confirm('Sicuro di voler confermare la modifica dei dati?')">Conferma</button>
 						</div>
 						<br>
 					</div>

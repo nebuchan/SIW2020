@@ -134,7 +134,7 @@
 									Policy</b></a> <input type="checkbox" value="1" name="agree">
 							&nbsp;
 							<button type="submit" class="btn btn-primary"
-								value="Continue" onclick="return confirm('Sicuro di voler confermare la modifica dei dati?')">Continue</button>
+								value="Continue" onclick="return confirm('Sicuro di voler confermare la modifica dei dati?')">Conferma</button>
 						</div>
 					</div>
 				</form>

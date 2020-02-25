@@ -37,6 +37,8 @@
 
 <script src="https://kit.fontawesome.com/efd0a43034.js"
 	crossorigin="anonymous"></script>
+	
+<script src="javascript/checkDataRegistration.js" type="text/javascript"></script>
 
 </head>
 
@@ -60,8 +62,9 @@
 				<h1>Registrazione Cliente</h1>
 				<p>Se sei un'azienda, clicca <a href="companyRegistration.jsp">qui !</a></p>
 				
-				<form class="form-horizontal" method="POST" action="clientRegister">
+				<form class="form-horizontal" method="POST" action="clientRegister" id="formUserRegistration">
 					<p> <strong>Dati Personali :</strong></p>
+					
 					<div class="form-group required">
 						<label for="input-firstname" class="col-sm-2 control-label">Nome: </label>
 						<div class="col-sm-10">
@@ -74,7 +77,7 @@
 						<label for="input-lastname" class="col-sm-2 control-label">Cognome: </label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-lastname"
-								placeholder="Cognome" name="cognome" required>
+								placeholder="Cognome" name="cognome" required >
 						</div>
 					</div>
 					
@@ -85,6 +88,12 @@
 							<input type="text" class="form-control" id="input-cf"
 								placeholder="Codice Fiscale" name="cf" required>
 						</div>
+						
+						<div class="alert alert-warning" id="alert-inputcf"
+										style="display: none !important;">
+										<strong>Codice fiscale inserito non valido!</strong>
+						</div>
+						
 					</div>
 					
 					<div class="form-group required">
@@ -103,6 +112,12 @@
 							<input type="tel" class="form-control" id="input-telephone"
 								placeholder="Numero Telefono" name="telefono" required>
 						</div>
+						
+						<div class="alert alert-warning" id="alert-inputtelephone"
+										style="display: none !important;">
+										<strong>Numero telefono inserito non valido!</strong>
+						</div>
+						
 					</div>
 
 					<p><strong>Indirizzo:</strong></p>
@@ -145,6 +160,11 @@
 							<input type="text" class="form-control" id="input-postcode"
 								placeholder="CAP" name="cap" required>
 						</div>
+						
+						<div class="alert alert-warning" id="alert-inputpostcode"
+										style="display: none !important;">
+										<strong>CAP inserito non valido!</strong>
+						</div>
 					</div>
 
 					<p><strong>Dati per l'accesso:</strong></p>
@@ -163,17 +183,38 @@
 							<input type="password" class="form-control" id="input-password"
 								placeholder="Password" name="password" required>
 						</div>
+						
+						<div class="alert alert-warning" id="alert-minus-password"
+										style="display: none !important;">
+										<strong>Attenzione, inserire una password di almeno 6 caratteri!</strong>
+						</div>
 					</div>
-					<!--   <div class="form-group required">
-                        <label for="input-confirm" class="col-sm-2 control-label">Conferma Password</label>
+					
+					<div class="form-group required">
+                        <label for="input-confirm-password" class="col-sm-2 control-label">Conferma Password</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="input-confirm" placeholder="Conferma Password" value="" name="confirm">
+                            <input type="password" class="form-control" id="input-confirm-password" 
+                            placeholder="Conferma Password" name="confirm-password" required>
                         </div>
-                    </div>-->
+                        
+                        <div class="alert alert-warning" id="alert-confirm-unsuccess"
+										style="display: none !important;">
+										<strong>Password immesse non coincidono!</strong>
+						</div>
+						
+						 <div class="alert alert-success" id="alert-confirm-success"
+										style="display: none !important;">
+										<strong>Password immessa valida!</strong>
+						</div>
+                    </div>
+                    
 					<div class="buttons">
 						<div class="pull-right">
-							<button type="submit" class="btn btn-primary"
-								value="RegistrazioneCliente">Continue</button>
+							Ho letto e accetto la <a class="agree" href="#"><b>Politica sulla Privacy
+									</b></a> <input type="checkbox" value="1" name="agree" required>
+							&nbsp;
+							
+							<input type="submit" class="btn btn-primary" value="Conferma" value="Controlla" />
 						</div>
 					</div>
 				</form>
