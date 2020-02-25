@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import model.Acquisto;
+import model.Azienda;
 import model.Cliente;
 import model.Prodotto;
 import persistence.DBManager;
@@ -38,9 +39,14 @@ public class DammiAcquistiCliente extends HttpServlet{
 			jsonAcquisto.put("codice", acquisto.getCodiceAcquisto());
 			
 			Prodotto prodotto = DBManager.getInstance().dammiProdotto(acquisto.getProdotto());
+			Azienda aziendaProdotto = DBManager.getInstance().dammiAzienda(prodotto.getEmailAzienda());
 			jsonAcquisto.put("prodotto", prodotto.getNome());
+			jsonAcquisto.put("azienda", aziendaProdotto.getRagioneSociale());
+			jsonAcquisto.put("indirizzo", acquisto.getIndirizzoSpedizione());
+			jsonAcquisto.put("spedizione", acquisto.getMetodoSpedizione());
+			jsonAcquisto.put("pagamento", acquisto.getDatiPagamento());
 			
-			jsonAcquisti.put(jsonAcquisto);	
+			jsonAcquisti.put(jsonAcquisto);
 		}
 		PrintWriter out = resp.getWriter();
 		System.out.println(jsonAcquisti.toString());

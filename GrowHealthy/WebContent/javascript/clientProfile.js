@@ -1,5 +1,81 @@
 $(document).ready(function() {
-	$("#myData").click(function() {
+    var sectionName = window.location.hash.slice(1);
+    
+    if(sectionName=="divMyData2"){
+    	$('#' + sectionName ).show();
+    	
+    	$("#tableMyData2 tbody").empty();
+    	
+    	$.ajax({
+			url: "clientPurchases",
+			type: "post",
+			success: function(res) {
+				
+				var acquisti = JSON.parse(res);
+				
+				var cod = 0;
+				var cont = 0;
+				
+				for(var i = 0; i < acquisti.length; i++){
+					
+					if(cod == 0 && cont == 0 ){
+						cont=cont + 1;
+						
+						var $acquistoTr = (
+								"<tr>"
+									+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
+									+ "<td class='text-center'> <div id='divProducts'></div></td>"
+									+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].data+"</td>"
+									+ "<td class='text-center'>€ "+acquisti[i].totale+"</td>"
+								+ "</tr>")
+								
+						
+						$("#tableMyData2 tbody").append($acquistoTr);
+						
+						for(var j = 0; j < acquisti.length; j++){
+							if(acquisti[i].codice == acquisti[j].codice){
+								var $product = ("<h4>"+acquisti[j].prodotto+", "+acquisti[j].azienda+"</h4>")
+							}
+							$("#divProducts").append($product);
+						}		
+					}
+					
+					else if(cod != acquisti[i].codice){
+						cod = acquisti[i].codice;
+						var $acquistoTr = (
+								"<tr>"
+									+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
+									+ "<td class='text-center'><div id='divProducts'></div></td>"
+									+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].data+"</td>"
+									+ "<td class='text-center'>€ "+acquisti[i].totale+"</td>"
+								+ "</tr>")
+						
+						$("#tableMyData2 tbody").append($acquistoTr);
+						
+						for(var j = 0; j < acquisti.length; j++){
+							if(acquisti[i].codice == acquisti[j].codice){
+								var $product = ("<h4>"+acquisti[j].prodotto+", "+acquisti[j].azienda+"</h4>")
+							}
+							$("#divProducts").append($product);
+						}
+					}
+				}
+			}
+    	})
+    }
+    else{
+    $('#' + sectionName ).show();
+    }
+});
+
+$(document).ready(function() {
+	$("#myData").click(function(){
 		$("#divMyData").show("slow");
 		$("#divMyData1").hide("slow");
 		$("#divMyData2").hide("slow");
@@ -41,6 +117,9 @@ $(document).ready(function() {
 								"<tr>"
 									+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
 									+ "<td class='text-center'> <div id='divProducts'></div></td>"
+									+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
 									+ "<td class='text-center'>"+acquisti[i].data+"</td>"
 									+ "<td class='text-center'>€ "+acquisti[i].totale+"</td>"
 								+ "</tr>")
@@ -50,7 +129,7 @@ $(document).ready(function() {
 						
 						for(var j = 0; j < acquisti.length; j++){
 							if(acquisti[i].codice == acquisti[j].codice){
-								var $product = ("<h4>"+acquisti[j].prodotto+"</h4>")
+								var $product = ("<h4>"+acquisti[j].prodotto+", "+acquisti[j].azienda+"</h4>")
 							}
 							$("#divProducts").append($product);
 						}		
@@ -62,6 +141,9 @@ $(document).ready(function() {
 								"<tr>"
 									+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
 									+ "<td class='text-center'><div id='divProducts'></div></td>"
+									+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
+									+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
 									+ "<td class='text-center'>"+acquisti[i].data+"</td>"
 									+ "<td class='text-center'>€ "+acquisti[i].totale+"</td>"
 								+ "</tr>")
@@ -70,7 +152,7 @@ $(document).ready(function() {
 						
 						for(var j = 0; j < acquisti.length; j++){
 							if(acquisti[i].codice == acquisti[j].codice){
-								var $product = ("<h4>"+acquisti[j].prodotto+"</h4>")
+								var $product = ("<h4>"+acquisti[j].prodotto+", "+acquisti[j].azienda+"</h4>")
 							}
 							$("#divProducts").append($product);
 						}

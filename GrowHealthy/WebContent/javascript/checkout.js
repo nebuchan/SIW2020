@@ -127,10 +127,16 @@ function salvaAcquisto(){
 	}
 	else{
 		var tot = $("#totale1").text();
+		var address = $("#hDeliveryData").text();
+		var delivery = $("#hDeliveryOption").text();
+		var payment = $("#hPaymentMethod").text();
 		
 		var data = {
 					"values": products.cart,
-					"totale": tot
+					"totale": tot,
+					"indirizzo": address,
+					"spedizione": delivery,
+					"pagamento": payment
 		}
 		
 		$.ajax({

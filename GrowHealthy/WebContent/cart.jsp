@@ -490,11 +490,11 @@
 				</table>
 			</div>
 			<div class="buttons">
-				<div class="pull-left">
+				<div class="pull-left" style="margin-bottom: 5px;">
 					<a class="btn btn-default" href="categories">Continua lo
 						shopping</a>
 				</div>
-				<div class="pull-right">
+				<div class="pull-right" style="margin-bottom: 5px;">
 					<a class="btn btn-default" href="checkout.jsp" id="btnCheckout" style="display: none;">Checkout</a>
 				</div>
 			</div>

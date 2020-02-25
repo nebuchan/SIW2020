@@ -335,7 +335,7 @@
 								<div class="buttons">
 									<div class="alert alert-warning pull-right" id="alert-confirm"
 										style="display: none !important;">
-										<strong>Prego completare tutti gli step prima della
+										<strong>Completare tutti gli step prima della
 											conferma</strong>
 									</div>
 									<div class="pull-right">

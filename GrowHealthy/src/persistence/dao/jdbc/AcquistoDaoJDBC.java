@@ -27,7 +27,7 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into acquisto(id, cliente, prodotto, quantita_p, importo, totale, codice_acquisto, data) values (?,?,?,?,?,?,?,?)";
+			String insert = "insert into acquisto(id, cliente, prodotto, quantita_p, importo, totale, codice_acquisto, data, azienda_prodotto, indirizzo_spedizione, metodo_spedizione, dati_pagamento) values (?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setInt(1, acquisto.getiD());
 			statement.setString(2, acquisto.getCliente());
@@ -37,6 +37,10 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 			statement.setDouble(6, acquisto.getTotale());
 			statement.setInt(7, acquisto.getCodiceAcquisto());
 			statement.setString(8, acquisto.getData());
+			statement.setString(9, acquisto.getAziendaProdotto());
+			statement.setString(10, acquisto.getIndirizzoSpedizione());
+			statement.setString(11, acquisto.getMetodoSpedizione());
+			statement.setString(12, acquisto.getDatiPagamento());
 
 			statement.executeUpdate();
 
@@ -73,6 +77,10 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setTotale(result.getDouble("totale"));
 				acquisto.setCodiceAcquisto(result.getInt("codice_acquisto"));
 				acquisto.setData(result.getString("data"));
+				acquisto.setAziendaProdotto(result.getString("azienda_prodotto"));
+				acquisto.setIndirizzoSpedizione(result.getString("indirizzo_spedizione"));
+				acquisto.setMetodoSpedizione(result.getString("metodo_spedizione"));
+				acquisto.setDatiPagamento(result.getString("dati_pagamento"));
 
 			}
 		} catch (SQLException e) {
@@ -108,6 +116,10 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setTotale(result.getDouble("totale"));
 				acquisto.setCodiceAcquisto(result.getInt("codice_acquisto"));
 				acquisto.setData(result.getString("data"));
+				acquisto.setAziendaProdotto(result.getString("azienda_prodotto"));
+				acquisto.setIndirizzoSpedizione(result.getString("indirizzo_spedizione"));
+				acquisto.setMetodoSpedizione(result.getString("metodo_spedizione"));
+				acquisto.setDatiPagamento(result.getString("dati_pagamento"));
 
 				acquisti.add(acquisto);
 			}
@@ -145,6 +157,10 @@ public class AcquistoDaoJDBC implements AcquistoDao {
 				acquisto.setTotale(result.getDouble("totale"));
 				acquisto.setCodiceAcquisto(result.getInt("codice_acquisto"));
 				acquisto.setData(result.getString("data"));
+				acquisto.setAziendaProdotto(result.getString("azienda_prodotto"));
+				acquisto.setIndirizzoSpedizione(result.getString("indirizzo_spedizione"));
+				acquisto.setMetodoSpedizione(result.getString("metodo_spedizione"));
+				acquisto.setDatiPagamento(result.getString("dati_pagamento"));
 
 				acquisti.add(acquisto);
 			}

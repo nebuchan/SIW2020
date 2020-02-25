@@ -57,9 +57,9 @@
 					<div class="columnblock-title">Il Mio Profilo</div>
 					<div class="category_block">
 						<ul class="box-category treeview-list treeview">
-							<li><a href="javascript:void(0);" id="myData">I Miei
+							<li><a href="javascript:void(0);" id="myData" name="dio">I Miei
 									Dati</a></li>
-							<li><a href="javascript:void(0);" id="myData1">Il Mio
+							<li><a href="javascript:void(0);" id="myData1" name="gesu">Il Mio
 									Indirizzo</a></li>
 							<li><a href="javascript:void(0);" id="myData2">I Miei
 									Acquisti</a></li>
@@ -68,7 +68,8 @@
 				</div>
 			</div>
 			<div id="content" class="col-sm-9" style="margin-bottom: 10px;">
-				<div id="divMyData">
+			
+				<div id="divMyData" style="display: none;">
 					<h1 align="center">
 						<strong>I Miei Dati</strong>
 					</h1>
@@ -189,6 +190,9 @@
 							<tr>
 								<th class="text-center">Codice</th>
 								<th class="text-center">Prodotti</th>
+								<th class="text-center">Indirizzo</th>
+								<th class="text-center">Metodo Spedizione</th>
+								<th class="text-center">Dati Pagamento</th>
 								<th class="text-center">Data</th>
 								<th class="text-center">Totale</th>
 							</tr>

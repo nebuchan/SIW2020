@@ -17,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import model.Acquisto;
+import model.Azienda;
 import model.Cliente;
 import model.Prodotto;
 import persistence.DBManager;
@@ -55,6 +56,7 @@ public class SalvaAcquisto extends HttpServlet {
 		
 		try {
 			JSONObject tmp = new JSONObject(jsonReceived);
+			System.out.println(tmp.toString());
 			JSONArray jsonArray = new JSONArray(tmp.get("values").toString());
 
 			for (int i = 0; i < jsonArray.length(); i++) {
@@ -65,9 +67,13 @@ public class SalvaAcquisto extends HttpServlet {
 				int quantita = Integer.parseInt(jsonObject.getString("quantita"));
 				double importo = Double.parseDouble(jsonObject.getString("prezzo")) * quantita;
 				double totale = Double.parseDouble(tmp.getString("totale"));
+				String indirizzoSpedizione = tmp.getString("indirizzo");
+				String metodoSpedizione = tmp.getString("spedizione");
+				String datiPagamento = tmp.getString("pagamento");
 
 				Acquisto acquisto = new Acquisto();
 				Prodotto prodotto = DBManager.getInstance().dammiProdotto(idProdotto);
+				Azienda aziendaProdotto = DBManager.getInstance().dammiAzienda(prodotto.getEmailAzienda());
 
 				List<Acquisto> acquisti = DBManager.getInstance().dammiAcquisti();
 				
@@ -77,12 +83,11 @@ public class SalvaAcquisto extends HttpServlet {
 						j = -1;
 						id++;
 					}
-				
-				System.out.println(id);
 
 				acquisto.setiD(id);
 				acquisto.setCliente(emailCliente);
 				acquisto.setProdotto(idProdotto);
+				acquisto.setAziendaProdotto(aziendaProdotto.getRagioneSociale());
 				acquisto.setQuantita(quantita);
 				
 				LocalDateTime myDateObj = LocalDateTime.now();
@@ -93,6 +98,9 @@ public class SalvaAcquisto extends HttpServlet {
 				acquisto.setImporto(importo);
 				acquisto.setTotale(totale);
 				acquisto.setCodiceAcquisto(cod);
+				acquisto.setIndirizzoSpedizione(indirizzoSpedizione);
+				acquisto.setMetodoSpedizione(metodoSpedizione);
+				acquisto.setDatiPagamento(datiPagamento);
 
 				prodotto.setQuantitaMagazzino(prodotto.getQuantitaMagazzino() - quantita);
 				DBManager.getInstance().aggiornaProdotto(prodotto);

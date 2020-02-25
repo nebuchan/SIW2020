@@ -2,6 +2,7 @@
 
 <script src="javascript/cart.js" type="text/javascript"></script>
 <script src="javascript/js.cookie.js" type="text/javascript"></script>
+<script src="javascript/clientProfile.js" type="text/javascript"></script>
 
 <header>
 	<div class="header-top">
@@ -10,27 +11,28 @@
 				<div class="top-right pull-right">
 					<div id="top-links" class="nav pull-right">
 						<ul class="list-inline">
-							<li class="dropdown"><a href="#" title="My Account" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-user"></i><span>My Account</span> <span class="caret"></span></a>
+							<li class="dropdown"><a href="#" title="My Account"
+								class="dropdown-toggle" data-toggle="dropdown"> <i
+									class="fa fa-user"></i><span>My Account</span> <span
+									class="caret"></span></a>
 								<ul class="dropdown-menu dropdown-menu-right">
-									<li>
-										<form class="form-horizontal" action="login" method="post">
-											<c:if test="${utente == null}">
+									<li><c:if test="${utente == null}">
+											<form class="form-horizontal" action="login" method="post">
 												<div class="form-group">
-													<label>Email</label> <input
-														type="text" class="form-control" name="email">
+													<label>Email</label> <input type="text"
+														class="form-control" name="email">
 												</div>
 												<div class="form-group">
 													<label class="loginForm">Password</label> <input
 														type="password" class="form-control " name="password">
 												</div>
-	
+
 												<div class="form-group">
 													<input type="radio" name="tipo" value="Cliente" checked>
-														Cliente <input type="radio" name="tipo" value="Azienda"
+													Cliente <input type="radio" name="tipo" value="Azienda"
 														style="margin-left: 15px;"> Azienda
 												</div>
-	
+
 												<div class="form-group">
 													<button type="submit" class="btn btn-default"
 														style="margin-left: 40px;">Accedi</button>
@@ -40,72 +42,71 @@
 														formaction="userRegistration.jsp"
 														style="margin-left: 30px;">Registrati</button>
 												</div>
+											</form>
+										</c:if> <c:if test="${utente != null}">
+
+											<c:if test="${ragioneSociale==null}">
+
+												<h1 align="center">
+													<strong>Benvenuto <span>${utente.nome}</span></strong> <input
+														type="hidden" id="emailUtente" value="${utente.email}" />
+												</h1>
+
 											</c:if>
-											
-											<c:if test="${utente != null}">
-												<c:if test="${ragioneSociale==null}">
-													<h1>
-														<strong style="margin-left: 12px;">Benvenuto <span
-															style="padding-left: 25px;">${utente.nome}</span></strong> <input
-															type="hidden" id="emailUtente" value="${utente.email}" />
-													</h1>
-												</c:if>
-												
-												<c:if test="${ragioneSociale!=null}">
-													<h1>
-														<strong style="padding-left: 53px;">Benvenuto <span>${utente.email}</span></strong>
-														<input type="hidden" id="emailUtente"
-															value="${utente.email}" />
-													</h1>
-												</c:if>
-	
-												<c:if test="${ragioneSociale==null}">
-													<li>
-														<button type="submit" class="btn-link"
-															formaction="clientProfile.jsp" style="margin-left: 18px;">
-															<h3>
-																<strong>I Miei Dati</strong>
-															</h3>
-														</button>
-													</li>
-	
-													<li>
-														<button type="submit" class="btn-link"
-															formaction="clientProfile.jsp">
-															<h3>
-																<strong>Il Mio Indirizzo</strong>
-															</h3>
-														</button>
-													</li>
-	
-													<li>
-														<button type="submit" class="btn-link"
-															style="margin-left: 10px;" formaction="clientProfile.jsp">
-															<h3>
-																<strong>I Miei Ordini</strong>
-															</h3>
-														</button>
-													</li>
-												</c:if>
-	
-												<c:if test="${ragioneSociale!=null}">
-													<div class="form-group">
-														<button type="submit" class="btn-link" formmethod="get"
-															formaction="mycategories.jsp">I miei Prodotti</button>
-														<br>
-														<button type="submit" class="btn-link"
-															formaction=companyManagement.jsp>Gestione Profilo</button>
-													</div>
+
+											<c:if test="${ragioneSociale!=null}">
+
+												<h1>
+													<strong style="padding-left: 53px;">Benvenuto <span>${utente.email}</span></strong>
+													<input type="hidden" id="emailUtente"
+														value="${utente.email}" />
+												</h1>
+
+											</c:if>
+
+											<c:if test="${ragioneSociale==null}">
+
+												<li><a type="button" href="clientProfile.jsp#divMyData"
+													style="margin-left: 14px;"> <strong>I Miei
+															Dati</strong>
+
+												</a></li>
+
+												<li><a type="button"
+													href="clientProfile.jsp#divMyData1"
+													style="margin-left: 2px;"> <strong>Il Mio
+															Indirizzo</strong>
+
+												</a></li>
+
+												<li><a type="button"
+													href="clientProfile.jsp#divMyData2"
+													style="margin-left: 2px;"> <strong>I Miei
+															Acquisti</strong>
+
+												</a></li>
+
+											</c:if>
+
+											<c:if test="${ragioneSociale!=null}">
+
+												<div class="form-group">
+													<button type="submit" class="btn-link" formmethod="get"
+														formaction="mycategories.jsp">I miei Prodotti</button>
 													<br>
-												</c:if>
-												<button type="submit" class="btn btn-warning"
-													formaction="login" formmethod="get"
-													style="margin-left: 28px;">Logout</button>
+													<button type="submit" class="btn-link"
+														formaction=companyManagement.jsp>Gestione Profilo</button>
+												</div>
+												<br>
 											</c:if>
-										</form>
-									</li>
-								</ul>
-							</li>
+
+											<a type="submit" class="btn btn-warning"
+												href="login"
+												style="margin-left: 25px;">Logout</a>
+
+										</c:if></li>
+
+								</ul></li>
 						</ul>
 					</div>
 				</div>
@@ -133,7 +134,7 @@
 					</div>
 				</div>
 			</div>
-	
+
 			<div class="col-sm-4 col-xs-12 header-right">
 				<div id="cart" class="btn-group btn-block">
 					<button type="button"
@@ -145,7 +146,8 @@
 					<ul class="dropdown-menu pull-right cart-dropdown-menu">
 						<li>
 							<table class="table table-striped" id="productsincart">
-								<tbody> </tbody>
+								<tbody>
+								</tbody>
 							</table>
 						</li>
 						<c:if test="${utente != null }">
@@ -169,7 +171,7 @@
 									</table>
 									<p class="text-right">
 										<span class="btn-viewcart"><a href="cart.jsp"><strong><i
-											class="fa fa-shopping-cart"></i> Vai al carrello</strong></a></span>
+													class="fa fa-shopping-cart"></i> Vai al carrello</strong></a></span>
 									</p>
 								</div>
 							</li>

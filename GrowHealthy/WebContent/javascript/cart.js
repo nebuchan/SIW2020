@@ -15,11 +15,11 @@ $(document).ready(function() {
 		if (Cookies.getJSON('products'+cliente).length == 0) {
 			products = {
 							cart: []
-			};
+			}
 		} else {
 			products = {
 							cart: Cookies.getJSON('products'+cliente)
-			};
+			}
 		}
 		if(products.cart.length > 0){
 			$("#totalCart").html(products.cart.length+" prodotto(i)");
@@ -29,7 +29,7 @@ $(document).ready(function() {
 	}
 });
 
-$(document).ready(function showTableCart() {
+$(document).ready(function() {
 	
 	if(products.cart.length == 0){
 		$("#tableCart tbody").append("<tr><td></td><td></td><td></td><td class='text-center'><span><strong>Nessun prodotto nel carrello</strong></span></td><td></td><td></td><td></td></tr>");
@@ -110,7 +110,10 @@ function addToCart() {
 		$("#alert_quantita_min").show("slow").delay(3500).fadeOut();
 	}else if(parseInt(quantity) > parseInt($("#sQMax").text())){
 		$("#alert_quantita_max").show("slow").delay(3500).fadeOut();
-	}else{
+	}else if(quantity==""){
+		$("#alert_quantita_null").show("slow").delay(3500).fadeOut();
+	}
+	else{
 		products.cart.push({
 			"id" : id,
 			"nome" : name,

@@ -6,10 +6,14 @@ public class Acquisto {
 	private int codiceAcquisto;
 	private String cliente;
 	private int prodotto;
+	private String aziendaProdotto;
 	private int quantita;
 	private String data;
 	private double importo;
 	private double totale;
+	private String indirizzoSpedizione;
+	private String metodoSpedizione;
+	private String datiPagamento;
 
 	public int getiD() {
 		return iD;
@@ -43,6 +47,14 @@ public class Acquisto {
 		this.prodotto = prodotto;
 	}
 
+	public String getAziendaProdotto() {
+		return aziendaProdotto;
+	}
+
+	public void setAziendaProdotto(String aziendaProdotto) {
+		this.aziendaProdotto = aziendaProdotto;
+	}
+
 	public int getQuantita() {
 		return quantita;
 	}
@@ -73,6 +85,30 @@ public class Acquisto {
 
 	public void setTotale(double totale) {
 		this.totale = totale;
+	}
+
+	public String getIndirizzoSpedizione() {
+		return indirizzoSpedizione;
+	}
+
+	public void setIndirizzoSpedizione(String indirizzoSpedizione) {
+		this.indirizzoSpedizione = indirizzoSpedizione;
+	}
+
+	public String getMetodoSpedizione() {
+		return metodoSpedizione;
+	}
+
+	public void setMetodoSpedizione(String metodoSpedizione) {
+		this.metodoSpedizione = metodoSpedizione;
+	}
+
+	public String getDatiPagamento() {
+		return datiPagamento;
+	}
+
+	public void setDatiPagamento(String datiPagamento) {
+		this.datiPagamento = datiPagamento;
 	}
 
 }
