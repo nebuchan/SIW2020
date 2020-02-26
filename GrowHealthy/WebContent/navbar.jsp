@@ -10,7 +10,7 @@
 			<ul class="main-navigation">
 				<li><a href="/GrowHealthy/" class="parent">Home</a></li>
 				<li><a href="categories" class="parent">I nostri prodotti</a></li>
-				<li><a href="/GrowHealthy/" class="parent">Terreni</a></li>
+				<li><a href="chisiamo.jsp" class="parent">Chi Siamo</a></li>
 			</ul>
 		</div>
 	</div>

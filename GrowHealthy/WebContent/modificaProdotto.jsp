@@ -111,7 +111,7 @@
 							<br>
 							<label for="input-immagine" class="col-sm-2 control-label"><strong>Immagine Prodotto</strong></label>
 							<div class="col-sm-10">
-								<img alt="${name}" src="${image}">
+								<img alt="${name}" src="${image}" id="img_dim1">
 							</div>
 						</div>
 						<div class="pull-right">

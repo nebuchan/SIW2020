@@ -60,10 +60,6 @@
 						</ul>
 						<ul class="box-category treeview-list treeview">									
 							<li><a href="fillproduct?" id="inserisciPr"> > Inserisci Prodotto </a></li>
-							<li><a href="javascript:void(0);" id="mieiTerreni">I miei Terreni </a></li>
-						</ul>
-							<ul class="box-category treeview-list treeview">									
-								<li><a href="insertTerrain.jsp"> > Inserisci Terreno </a></li>
 						</ul>
 					</div>
 				</div>
