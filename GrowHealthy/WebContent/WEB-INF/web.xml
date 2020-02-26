@@ -231,26 +231,5 @@
 		<servlet-name>RSSController</servlet-name>
 		<url-pattern>/rssController</url-pattern>
 	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>ControllaTerreno</servlet-name>
-		<servlet-class>controllers.ControllaTerreno</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>ControllaTerreno</servlet-name>
-		<url-pattern>/checkterrain</url-pattern>
-	</servlet-mapping>
-	
-		<servlet>
-		<servlet-name>InserimentoTerreno</servlet-name>
-		<servlet-class>controllers.InserimentoTerreno</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>InserimentoTerreno</servlet-name>
-		<url-pattern>/insertterrain</url-pattern>
-	</servlet-mapping>
-
 
 </web-app>

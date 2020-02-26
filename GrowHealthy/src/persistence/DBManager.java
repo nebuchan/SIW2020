@@ -7,19 +7,16 @@ import model.Azienda;
 import model.CategoriaProdotto;
 import model.Cliente;
 import model.Prodotto;
-import model.Terreno;
 import persistence.dao.AcquistoDao;
 import persistence.dao.AziendaDao;
 import persistence.dao.CategoriaProdottoDao;
 import persistence.dao.ClienteDao;
 import persistence.dao.ProdottoDao;
-import persistence.dao.TerrenoDao;
 import persistence.dao.jdbc.AcquistoDaoJDBC;
 import persistence.dao.jdbc.AziendaDaoJDBC;
 import persistence.dao.jdbc.CategoriaProdottoDaoJDBC;
 import persistence.dao.jdbc.ClienteDaoJDBC;
 import persistence.dao.jdbc.ProdottoDaoJDBC;
-import persistence.dao.jdbc.TerrenoDaoJDBC;
 
 
 public class DBManager {
@@ -51,7 +48,6 @@ public class DBManager {
 	private AziendaDao getAziendaDao() { return new AziendaDaoJDBC(dataSource); }
 	private ProdottoDao getProdottoDao() { return new ProdottoDaoJDBC(dataSource); }
 	private AcquistoDao getAcquistoDao() { return new AcquistoDaoJDBC(dataSource); }
-	private TerrenoDao getTerrenoDao() { return new TerrenoDaoJDBC(dataSource); }
 	
 	//ACQUISTODAO
 	public void inserisciAcquisto(Acquisto acquisto) { getAcquistoDao().save(acquisto); }
@@ -87,11 +83,5 @@ public class DBManager {
 		List<Prodotto> prodotti = getProdottoDao().findByCategory(categoria);
 		return prodotti;
 	}
-
-	//TERRENODAO
-	public void inserisciTerreno(Terreno terreno) { getTerrenoDao().save(terreno); }
-	public Terreno dammiTerreno(int id) { return getTerrenoDao().findByPrimaryKey(id); }
-	public List<Terreno> dammiTerreni() { return getTerrenoDao().findAll(); }
-	public void modificaDatiTerreno(Terreno terreno) { getTerrenoDao().update(terreno); }
 	
 }
