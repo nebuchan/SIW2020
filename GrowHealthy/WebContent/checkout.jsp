@@ -39,6 +39,8 @@
 <script src="https://kit.fontawesome.com/efd0a43034.js"
 	crossorigin="anonymous"></script>
 
+<script src="javascript/checkoutControl.js" type="text/javascript"></script>
+
 </head>
 
 <body class="checkout col-2 left-col">
@@ -123,20 +125,44 @@
 										</div>
 									</div>
 									<div class="form-group required">
+									<input type="hidden" id="oldcap" value="${utente.cap}">
 										<label for="input-cap" class="col-sm-2 control-label">CAP:
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-cap"
 												placeholder="CAP" value="${utente.cap}" name="cap">
 										</div>
+										
+										<div class="alert alert-warning" id="alert-inputpostcode"
+										style="display: none !important;">
+										<strong>CAP inserito non valido!</strong>
+										</div>
+										
+										<div class="alert alert-success" id="alert-success-inputpostcode"
+										style="display: none !important;">
+										<strong>CAP inserito valido!</strong>
+										</div>
+										
 									</div>
 									<div class="form-group required">
+									<input type="hidden" id="oldtelephone" value="${utente.telefono}">
 										<label for="input-telefono" class="col-sm-2 control-label">Telefono:
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-telefono"
 												placeholder="Telefono" value="${utente.telefono}" name="telefono">
 										</div>
+										
+										<div class="alert alert-warning" id="alert-inputtelephone"
+										style="display: none !important;">
+										<strong>Numero telefono inserito non valido!</strong>
+										</div>
+										
+										<div class="alert alert-success" id="alert-success-inputtelephone"
+										style="display: none !important;">
+										<strong>Numero telefono valido!</strong>
+										</div>
+										
 									</div>
 									<br>
 									<div class="alert alert-warning" id="alert-form"
@@ -231,6 +257,17 @@
 											<label for="input-numeroCarta">Numero carta:</label> <input
 												type="text" id="input-numeroCarta" value=""
 												name="numeroCarta">
+											
+												<div class="alert alert-warning" id="alert-inputcarta"
+											style="display: none !important;">
+											<strong>Numero carta inserito non valido!</strong>
+											</div>
+											
+											<div class="alert alert-success" id="alert-success-inputcarta"
+											style="display: none !important;">
+											<strong>Numero carta inserito valido!</strong>
+											</div>
+												
 										</div>
 										<div class="form-group required">
 											<label for="input-dataScadenza">Scadenza:</label> <input
@@ -241,6 +278,17 @@
 											<label for="input-cvc">CVC:</label> <input
 												type="text" id="input-cvc" size="1" value=""
 												name="CVC">
+												
+												<div class="alert alert-warning" id="alert-inputcvc"
+											style="display: none !important;">
+											<strong>CVC inserito non valido!</strong>
+											</div>
+											
+											<div class="alert alert-success" id="alert-success-inputcvc"
+											style="display: none !important;">
+											<strong>CVC inserito valido!</strong>
+											</div>	
+												
 										</div>
 										<div class="alert alert-warning" id="alert-formPayment"
 											style="display: none !important;">

@@ -1,6 +1,8 @@
 package controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,9 +20,11 @@ public class ModificaProfiloAzienda extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
+		
+		PrintWriter out = resp.getWriter();
 
 		String email = req.getParameter("email");
-		String password = req.getParameter("password");
+		String password = req.getParameter("confirm-password");
 		String ragioneSociale = req.getParameter("ragioneSociale");
 		String sedeLegale = req.getParameter("sedeLegale");
 		String referente = req.getParameter("referente");
@@ -28,6 +32,9 @@ public class ModificaProfiloAzienda extends HttpServlet {
 		String telefono = req.getParameter("telefono");
 		String descrizione = req.getParameter("descrizione");
 
+		if(password=="")
+			password=req.getParameter("backupPwd");
+		
 		Azienda azienda = new Azienda();
 
 		azienda.setEmail(email);
@@ -41,10 +48,17 @@ public class ModificaProfiloAzienda extends HttpServlet {
 
 		DBManager.getInstance().modificaAzienda(azienda);
 		
+		
+		
 		req.getSession().setAttribute("utente", azienda);
- 
+		
+		out.println("<div class=\"alert alert-success\" style=\"margin-bottom: 0px;position: sticky;z-index: 2;top: 0px;\">\r\n" +
+				" <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>"+
+				"  <strong>Aggiornamento Dati Avvenuto Con Successo!</strong> \r\n" + 
+				"</div>");
+		
 		RequestDispatcher rd = req.getRequestDispatcher("companyManagement.jsp");
-		rd.forward(req, resp);
+		rd.include(req, resp);
 	}
 
 }

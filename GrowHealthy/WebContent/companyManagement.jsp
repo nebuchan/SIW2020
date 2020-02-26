@@ -38,6 +38,9 @@
 	
 	<script src="https://kit.fontawesome.com/efd0a43034.js" crossorigin="anonymous"></script>
 	
+	<script src="javascript/companyManagement.js" type="text/javascript"></script>
+	
+	
 </head>
 
 <body class="account-register col-2">
@@ -92,12 +95,24 @@
 						</div>
 					</div>
 					<div class="form-group required">
+					<input type="hidden" id="oldtelephone" value="${utente.telefono}">
 						<label for="input-telephone" class="col-sm-2 control-label">Numero
 							Telefono</label>
 						<div class="col-sm-10">
 							<input type="tel" class="form-control" id="input-telephone"
 								 name="telefono" value="${utente.telefono}" required>
 						</div>
+						
+						<div class="alert alert-warning" id="alert-inputtelephone"
+										style="display: none !important;">
+										<strong>Numero telefono inserito non valido!</strong>
+						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputtelephone"
+										style="display: none !important;">
+										<strong>Numero telefono valido!</strong>
+						</div>
+						
 					</div>
 					<div class="form-group required">
 						<label for="input-descrizione" class="col-sm-2 control-label">Descrizione</label>
@@ -109,19 +124,74 @@
 
 					<p>DATI DI ACCESSO</p>
 					<div class="form-group required">
+					<input type="hidden" id="email" name="email" value="${utente.email}">
 						<label for="input-email" class="col-sm-2 control-label">E-Mail</label>
 						<div class="col-sm-10">
-							<input type="email" class="form-control" id="input-email"
-								 name="email" value="${utente.email}" readonly>
-						</div>
+							<label><strong>${utente.email}</strong>
+						</label></div>
 					</div>
 					<div class="form-group required">
-						<label for="input-password" class="col-sm-2 control-label">Password</label>
+					<input type="hidden" id="oldPwd" name="backupPwd" value="${utente.password}">
+						<label for="input-oldpwd" class="col-sm-2 control-label">Password Corrente</label>
+						<div class="col-sm-10">
+							<input type="password" class="form-control" id="input-oldpwd"
+								 name="oldpwd" required>
+						</div>
+						
+						<div class="alert alert-warning" id="warning2-modifyPwd"
+									style="display: none !important;">
+									<strong>Attenzione, la password corrente non corrisponde,prego
+										inserire la password corretta</strong>
+								</div>
+						
+						 <div class="alert alert-success" id="success-modifyPwd"
+									style="display: none !important;">
+									<strong>Password immessa valida!</strong>
+								</div>
+					</div>
+					
+					<div class="form-group required">
+						<label for="input-password" class="col-sm-2 control-label">Nuova Password</label>
 						<div class="col-sm-10">
 							<input type="password" class="form-control" id="input-password"
-								 name="password" required value=${utente.password}>
+								 name="password">
+						</div>
+						
+						<div class="alert alert-warning" id="alert-minus-password"
+										style="display: none !important;">
+										<strong>Attenzione, inserire una password di almeno 6 caratteri!</strong>
+						</div>
+						
+						<div class="alert alert-warning" id="alert-unsuccess"
+										style="display: none !important;">
+										<strong>Password immesse non coincidono!</strong>
+						</div>
+						
+						 <div class="alert alert-success" id="alert-success"
+										style="display: none !important;">
+										<strong>Password immessa valida!</strong>
 						</div>
 					</div>
+					
+					<div class="form-group required">
+						<label for="input-confirm-password" class="col-sm-2 control-label">Conferma Password</label>
+						<div class="col-sm-10">
+							<input type="password" class="form-control" id="input-confirm-password"
+								 name="confirm-password">
+						</div>
+						
+						<div class="alert alert-warning" id="alert-confirm-unsuccess"
+										style="display: none !important;">
+										<strong>Password immesse non coincidono!</strong>
+						</div>
+						
+						 <div class="alert alert-success" id="alert-confirm-success"
+										style="display: none !important;">
+										<strong>Password immessa valida!</strong>
+						</div>
+					</div>
+								
+					
 					<!--   <div class="form-group required">
                         <label for="input-confirm" class="col-sm-2 control-label">Conferma Password</label>
                         <div class="col-sm-10">
@@ -130,9 +200,6 @@
                     </div>-->
 					<div class="buttons">
 						<div class="pull-right">
-							I have read and agree to the <a class="agree" href="#"><b>Privacy
-									Policy</b></a> <input type="checkbox" value="1" name="agree">
-							&nbsp;
 							<button type="submit" class="btn btn-primary"
 								value="Continue" onclick="return confirm('Sicuro di voler confermare la modifica dei dati?')">Conferma</button>
 						</div>

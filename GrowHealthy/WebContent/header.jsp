@@ -91,11 +91,13 @@
 											<c:if test="${ragioneSociale!=null}">
 
 												<div class="form-group">
+												<form class="form-horizontal">
 													<button type="submit" class="btn-link" formmethod="get"
 														formaction="mycategories.jsp">I miei Prodotti</button>
 													<br>
 													<button type="submit" class="btn-link"
 														formaction=companyManagement.jsp>Gestione Profilo</button>
+												</form>
 												</div>
 												<br>
 											</c:if>
