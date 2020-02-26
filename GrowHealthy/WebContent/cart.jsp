@@ -5,37 +5,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Grow Healthy</title>
-	
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description"
-		content="E-commerce di prodotti agricoli" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
-		media="screen" />
-	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
-		type="text/css" />
-	<link
-		href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,500,700,900'
-		rel='stylesheet' type='text/css'>
-	<link href="css/stylesheet.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
-	<link href="owl-carousel/owl.carousel.css" type="text/css"
-		rel="stylesheet" media="screen" />
-	<link href="owl-carousel/owl.transitions.css" type="text/css"
-		rel="stylesheet" media="screen" />
-	
-	<script src="javascript/jquery-2.1.1.min.js" type="text/javascript"></script>
-	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="javascript/jstree.min.js"></script>
-	<script type="text/javascript" src="javascript/template.js"></script>
-	<script src="javascript/common.js" type="text/javascript"></script>
-	<script src="javascript/global.js" type="text/javascript"></script>
-	<script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<title>Grow Healthy</title>
 
-	<script src="https://kit.fontawesome.com/efd0a43034.js" crossorigin="anonymous"></script>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="E-commerce di prodotti agricoli" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	media="screen" />
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css" />
+<link
+	href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,500,700,900'
+	rel='stylesheet' type='text/css'>
+<link href="css/stylesheet.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="owl-carousel/owl.carousel.css" type="text/css"
+	rel="stylesheet" media="screen" />
+<link href="owl-carousel/owl.transitions.css" type="text/css"
+	rel="stylesheet" media="screen" />
+
+<script src="javascript/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="javascript/jstree.min.js"></script>
+<script type="text/javascript" src="javascript/template.js"></script>
+<script src="javascript/common.js" type="text/javascript"></script>
+<script src="javascript/global.js" type="text/javascript"></script>
+<script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+
+<script src="https://kit.fontawesome.com/efd0a43034.js"
+	crossorigin="anonymous"></script>
 
 </head>
 
@@ -43,7 +43,7 @@
 
 	<!-- HEADER -->
 	<%@ include file="header.jsp"%>
-	
+
 	<!-- NAVBAR MENU -->
 	<%@ include file="navbar.jsp"%>
 
@@ -64,13 +64,31 @@
 									<td class="text-center">Nome</td>
 									<td class="text-center">Categoria</td>
 									<td class="text-center">Azienda</td>
-									<td class="text-center">Quantità</td>
+									<td class="text-center">Quantità(/kg)</td>
 									<td class="text-center">Prezzo(/kg)</td>
 									<td class="text-center">Totale</td>
-								</tr>		
+								</tr>
 							</thead>
 							<tbody></tbody>
 						</table>
+						
+						<div class="alert alert-warning" id="alert_updateQuantita_max"
+							style="display: none !important; border-left: 25px;">
+							<strong>La quantita inserita supera la disponibile</strong>
+						</div>
+
+						<div class="alert alert-warning" id="alert_updateQuantita_min"
+							style="display: none !important; border-left: 25px;">
+							<strong>La quantità inserita è minore della minima da
+								acquistare per questo prodotto</strong>
+						</div>
+
+						<div class="alert alert-success" id="alert_conferma_update"
+							style="display: none !important; border-left: 25px;">
+							<strong>Quantita modificata con successo</strong>
+						</div>
+
+
 					</div>
 				</form>
 
@@ -495,14 +513,15 @@
 						shopping</a>
 				</div>
 				<div class="pull-right" style="margin-bottom: 5px;">
-					<a class="btn btn-default" href="checkout.jsp" id="btnCheckout" style="display: none;">Checkout</a>
+					<a class="btn btn-default" href="checkout.jsp" id="btnCheckout"
+						style="display: none;">Checkout</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- FOOTER -->
 	<%@ include file="footer.jsp"%>
-	
+
 </body>
 </html>

@@ -46,9 +46,9 @@ $(document).ready(function() {
 						+ "<td class='text-center'>"+products.cart[i].azienda+"</td>"
 						+ "<td class='text-left'>"
 						+ "<div style='max-width: 200px; left: 30px;' class='input-group btn-block'>"
-							+ "<input type='text' class='form-control quantity' size='1' value='"+products.cart[i].quantita+" kg' name='quantity'>" 
+							+ "<input type='text' class='form-control quantity' size='1' value='"+products.cart[i].quantita+"' id='q"+i+"'>" 
 							+ "<span class='input-group-btn'>"
-								+ "<button class='btn btn-primary' title='' data-toggle='tooltip' type='submit' data-original-title='Update'>"
+								+ "<button class='btn btn-primary' title='' data-toggle='tooltip' type='button' data-original-title='Update' onclick='updateQuantity("+products.cart[i].id+")'>"
 									+ "<i class='fa fa-refresh'></i>"
 								+ "</button>"
 								+ "<button class='btn btn-danger' title='' data-toggle='tooltip' type='button' data-original-title='Remove' onclick='removeFromCart(this,"+products.cart[i].id+")'>"
@@ -91,6 +91,10 @@ function addToCart() {
 	var category = $("#productCategory").val();
 
 	var quantity = $("#input-quantity").val();
+	
+	var maxQ = $("#sQMax").text();
+	
+	var minQ = $("#sQMin").text();
 
 	var price = $("#productPrice").text();
 
@@ -119,6 +123,8 @@ function addToCart() {
 			"nome" : name,
 			"categoria" : category,
 			"quantita" : quantity,
+			"maxQuantity" : maxQ,
+			"minQuantity" : minQ,
 			"prezzo" : price,
 			"azienda" : company
 		});
@@ -150,13 +156,47 @@ function removeFromCart(row,id) {
 	
 	if(products.cart.length > 0){
 		$("#totalCart").html(products.cart.length+" prodotto(i)");
+		
 	}else{
+		$("#tableCart tbody").empty();
+		$("#tableCart tbody").append("<tr><td></td><td></td><td></td><td class='text-center'><span><strong>Nessun prodotto nel carrello</strong></span></td><td></td><td></td><td></td></tr>");
+		$("#btnCheckout").hide();
+		$('#productsincart tbody').append("<span><strong>Nessun prodotto nel carrello</strong></span>");
 		$("#totalCart").html("0 prodotto(i)");
 	}
 	
 	calcolaImporti();
 	
 };
+
+function updateQuantity(id) {
+	
+	
+	for(var i = 0; i < products.cart.length; i++){
+		if(products.cart[i].id == id){
+			if(parseInt($("#q"+i).val()) > parseInt(products.cart[i].maxQuantity)){
+				$("#alert_updateQuantita_max").show("slow").delay(3500).fadeOut();
+				$("#alert_updateQuantitaCheckout_max").show("slow").delay(3500).fadeOut();
+				
+			}else if(parseInt($("#q"+i).val()) < parseInt(products.cart[i].minQuantity)){
+				$("#alert_updateQuantita_min").show("slow").delay(3500).fadeOut();
+				$("#alert_updateQuantitaCheckout_min").show("slow").delay(3500).fadeOut();
+			
+			}else{
+				$("#alert_conferma_update").show("slow").delay(3500).fadeOut();
+				$("#alert_conferma_updateCheckout").show("slow").delay(3500).fadeOut();
+				products.cart[i].quantita = $("#q"+i).val();
+			
+			}
+		}
+		
+	}
+	
+	Cookies.set('products'+cliente, products.cart, { expires: 7 });
+	
+	calcolaImporti();
+	
+}
 
 function showCart() {
 	

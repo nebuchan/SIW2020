@@ -78,7 +78,7 @@
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-nome"
-												placeholder="Nome" value="" name="nome">
+												placeholder="Nome" value="${utente.nome}" name="nome">
 										</div>
 									</div>
 									<div class="form-group required">
@@ -86,7 +86,7 @@
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-cognome"
-												placeholder="Cognome" value="" name="cognome">
+												placeholder="Cognome" value="${utente.cognome}" name="cognome">
 										</div>
 									</div>
 									<div class="form-group required">
@@ -94,7 +94,7 @@
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-regione"
-												placeholder="Regione" value="" name="regione">
+												placeholder="Regione" value="${utente.regione}" name="regione">
 										</div>
 
 									</div>
@@ -103,7 +103,7 @@
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-provincia"
-												placeholder="Provincia" value="" name="provincia">
+												placeholder="Provincia" value="${utente.provincia}" name="provincia">
 										</div>
 									</div>
 									<div class="form-group required">
@@ -111,7 +111,7 @@
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-citta"
-												placeholder="Città" value="" name="citta">
+												placeholder="Città" value="${utente.citta}" name="citta">
 										</div>
 									</div>
 									<div class="form-group required">
@@ -119,7 +119,7 @@
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-via"
-												placeholder="Via" value="" name="via">
+												placeholder="Via" value="${utente.via}" name="via">
 										</div>
 									</div>
 									<div class="form-group required">
@@ -127,7 +127,7 @@
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-cap"
-												placeholder="CAP" value="" name="cap">
+												placeholder="CAP" value="${utente.cap}" name="cap">
 										</div>
 									</div>
 									<div class="form-group required">
@@ -135,7 +135,7 @@
 										</label>
 										<div class="col-sm-10">
 											<input type="text" class="form-control" id="input-telefono"
-												placeholder="Telefono" value="" name="telefono">
+												placeholder="Telefono" value="${utente.telefono}" name="telefono">
 										</div>
 									</div>
 									<br>
@@ -216,17 +216,11 @@
 								<p>
 									<strong>Inserire dati della carta</strong>
 								</p>
-
-								<!--  <div class="radio">
-									<label> <input type="radio" name="payment_method"
-										value="cardPayment" onchange="showCardDiv()">
-										Pagamento con carta
-									</label> <label> <input type="radio" name="payment_method"
-										value="cashOnDelivery"> Pagamento alla consegna
-									</label>
-
-								</div>-->
-
+								<label> <input type="radio" value="Mastercard" name="cardType" checked>
+									<img src="image/payment/mastercard.jpg">
+								</label> <label> <input type="radio" value="Visa" name="cardType">
+									<img src="image/payment/visa.jpg">
+								</label>
 								<div id="divCardPayment">
 									<form id="formCardData">
 										<div class="form-group required">
@@ -234,14 +228,19 @@
 												type="text" id="input-titolare" value="" name="titolare">
 										</div>
 										<div class="form-group required">
+											<label for="input-numeroCarta">Numero carta:</label> <input
+												type="text" id="input-numeroCarta" value=""
+												name="numeroCarta">
+										</div>
+										<div class="form-group required">
 											<label for="input-dataScadenza">Scadenza:</label> <input
 												type="date" id="input-dataScadenza" value=""
 												name="dataScadenza">
 										</div>
 										<div class="form-group required">
-											<label for="input-numeroCarta">Numero carta:</label> <input
-												type="text" id="input-numeroCarta" value=""
-												name="numeroCarta">
+											<label for="input-cvc">CVC:</label> <input
+												type="text" id="input-cvc" size="1" value=""
+												name="CVC">
 										</div>
 										<div class="alert alert-warning" id="alert-formPayment"
 											style="display: none !important;">
@@ -281,7 +280,7 @@
 												<td class="text-center">Nome</td>
 												<td class="text-center">Categoria</td>
 												<td class="text-center">Azienda</td>
-												<td class="text-center">Quantità</td>
+												<td class="text-center">Quantità(/kg)</td>
 												<td class="text-center">Prezzo(/kg)</td>
 												<td class="text-center">Totale</td>
 											</tr>
@@ -289,6 +288,24 @@
 										<tbody>
 										</tbody>
 									</table>
+
+									<div class="alert alert-warning" id="alert_updateQuantitaCheckout_max"
+										style="display: none !important; border-left: 25px;">
+										<strong>La quantita inserita supera la disponibile</strong>
+									</div>
+
+									<div class="alert alert-warning" id="alert_updateQuantitaCheckout_min"
+										style="display: none !important; border-left: 25px;">
+										<strong>La quantità inserita è minore della minima da
+											acquistare per questo prodotto</strong>
+									</div>
+
+									<div class="alert alert-success" id="alert_conferma_updateCheckout"
+										style="display: none !important; border-left: 25px;">
+										<strong>Quantita modificata con successo</strong>
+									</div>
+
+
 								</div>
 
 								<br>

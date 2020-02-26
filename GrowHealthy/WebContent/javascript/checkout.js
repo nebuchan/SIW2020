@@ -112,10 +112,11 @@ function fillCardPayment() {
 	if(ValidateForm(form)){
 		$("#success-formPayment").show("slow").delay(3500).fadeOut();
 		
-		titolare = $("#input-titolare").val();
-		numCarta = $("#input-numeroCarta").val();
+		var titolare = $("#input-titolare").val();
+		var numCarta = $("#input-numeroCarta").val();
+		var card = $("input[name=cardType]:checked").val();
 		
-		$("#hPaymentMethod").html("<h2>Carta numero: <h3 style='color : green;'>" + numCarta + "</h3></h2> <h2>Titolare: <h3 style='color : green;'>" + titolare + "</h3></h2>");
+		$("#hPaymentMethod").html("<h2 style='color : green;'>" + card + "</h3> <h2>Carta numero: <h3 style='color : green;'>" + numCarta + "</h3></h2> <h2>Titolare: <h3 style='color : green;'>" + titolare + "</h3></h2>");
 	}else{
 		$("#alert-formPayment").show("slow").delay(3500).fadeOut();
 	}
