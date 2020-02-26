@@ -83,6 +83,17 @@ $(document).ready(function() {
 		itemsMobile : [479, 1]
 	});
 	
+	$('#bestsellers-slidertab').owlCarousel({
+		items: 4,
+		navigation: true,
+		pagination: false,
+		itemsDesktop : [1199, 3],
+		itemsDesktopSmall : [979, 2],
+		itemsTablet : [768, 2],
+		itemsTabletSmall : false,
+		itemsMobile : [479, 1]
+	});
+	
 	 $('#brand_carouse').owlCarousel({
         items: 5,
         navigation: true,

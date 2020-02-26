@@ -31,9 +31,9 @@
 				<div class="my-footer-widget my-categories-widget">
 					<h5 class="footer-title">Categorie</h5>
 					<ul class="list-unstyled ul-wrapper">
-						<li style="list-style:square"><a href="about-us.jsp">Terreni</a></li>
-						<li style="list-style:square"><a href="product.jsp">Ortaggi</a></li>
-						<li style="list-style:square"><a href="growproduct.jsp">Prodotti agricoli</a></li>
+						<li style="list-style:square"><a href="categories.jsp">Terreni</a></li>
+						<li style="list-style:square"><a href="categories.jsp">Ortaggi</a></li>
+						<li style="list-style:square"><a href="categories.jsp">Prodotti agricoli</a></li>
 					</ul>
 					<br>
 				</div>
@@ -43,9 +43,9 @@
 				<div class="my-footer-widget my-information-widget">
 					<h5 class="footer-title">Informazioni</h5>
 					<ul class="list-unstyled ul-wrapper">
-						<li style="list-style:square"><a href="#">Chi siamo</a></li>
-						<li style="list-style:square"><a href="gift.html">Contattaci</a></li>
-						<li style="list-style:square"><a href="affiliate.html">Termini & Condizioni</a></li>
+						<li style="list-style:square"><a href="aboutUS.jsp">Chi siamo</a></li>
+						<li style="list-style:square"><a href="#">Contattaci</a></li>
+						<li style="list-style:square"><a href="#">Termini & Condizioni</a></li>
 						<li style="list-style:square"><a href="#">Spedizione</a></li>
 					</ul>
 					<br>

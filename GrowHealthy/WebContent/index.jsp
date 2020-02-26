@@ -77,7 +77,255 @@
 	</div>
 	
 	<!-- MAIN CONTENT -->
-	<%@ include file="maincontent.jsp"%>
+	<div class="container" >
+		<div class="row">
+			<div id="content" class="col-sm-12">
+				<h3 class="productblock-title">Prodotti delle nostre aziende</h3>
+				<div class="box">
+					<div id="feature-slider" class="row owl-carousel product-slider" style="height: 325px;">
+						<c:forEach items="${latestProduct}" var="item">
+							<div class="item product-slider-item">
+								<div class="product-thumb transition">
+									<div class="image product-imageblock">
+										<a href="product.html"> <img
+											src="${item.getImmagine()}"
+											alt=""
+											title="lorem ippsum dolor dummy" class="img-responsive"
+											style="height: 300px; width: 291px;" />
+										</a>
+										<div class="button-group">
+											<button type="button" class="addtocart-btn">Add To
+												Cart</button>
+											<button type="button" class="compare" data-toggle="tooltip"
+												title="Compare this Product">
+												<i class="fa fa-exchange"></i>
+											</button>
+										</div>
+									</div>
+									<div class="caption product-detail">
+										<h4 class="product-name">
+											<a href="product.html" title="lorem ippsum dolor dummy">${item.getNome()}</a>
+										</h4>
+										<p class="price product-price">
+											${item.getPrezzo()}<span class="price-tax"></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</c:forEach>			
+					</div>
+				</div>
+				<br>
+				<br>
+				
+				<div class="customtab">
+					<div id="tabs" class="customtab-wrapper">
+						<ul class='customtab-inner'>
+							<li class='tab'><a href="#tab-vegetables">Vegetali</a></li>
+							<li class='tab'><a href="#tab-legumes">Legumi</a></li>
+							<li class='tab'><a href="#tab-tubers">Tuberi</a></li>
+							<li class='tab'><a href="#tab-fruit">Frutta</a></li>
+						</ul>
+					</div>
+					<!-- TAB VEGETABLES -->
+					<div id="tab-vegetables" class="tab-content">
+						<div class="box">
+							<div id="latest-slidertab"
+								class="row owl-carousel product-slider" style="height: 350px;">
+								<c:forEach items="${vegetablesList}" var="item">
+									<div class="item">
+										<div class="product-thumb transition">
+											<div class="image product-imageblock">
+												<a href="product.html"><img
+													src="${item.getImmagine()}"
+													alt=""
+													title="lorem ippsum dolor dummy" class="img-responsive"
+													style="height: 300px; width: 291px;" />
+												</a>
+												<div class="button-group">
+
+													<button type="button" class="addtocart-btn">Add To
+														Cart</button>
+													<button type="button" class="compare" data-toggle="tooltip"
+														title="Compare this Product">
+														<i class="fa fa-exchange"></i>
+													</button>
+												</div>
+											</div>
+											<div class="caption product-detail">
+												<h4 class="product-name">
+													<a href="#" title="lorem ippsum dolor dummy">${item.getNome()}</a>
+												</h4>
+												<p class="price product-price">
+													${item.getPrezzo()}<span class="price-tax"></span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</c:forEach>
+							</div>
+						</div>
+					</div>
+					<!-- TAB LEGUMES -->
+					<div id="tab-legumes" class="tab-content">
+						<div class="box">
+							<div id="special-slidertab"
+								class="row owl-carousel product-slider">
+									<c:forEach items="${legumesList}" var="item">
+										<div class="item">
+											<div class="product-thumb transition">
+												<div class="image product-imageblock">
+													<a href="product.html"> <img
+														src="${item.getImmagine()}"
+														alt=""
+														title="lorem ippsum dolor dummy" class="img-responsive"
+														style="height: 300px; width: 291px;" />
+													</a>
+													<div class="button-group">
+														<button type="button" class="addtocart-btn">Add To
+															Cart</button>
+														<button type="button" class="compare" data-toggle="tooltip"
+															title="Compare this Product">
+															<i class="fa fa-exchange"></i>
+														</button>
+													</div>
+												</div>
+												<div class="caption product-detail">
+													<h4 class="product-name">
+														<a href="product.html" title="lorem ippsum dolor dummy">${item.getNome()}</a>
+													</h4>
+													<p class="price product-price">
+														${item.getPrezzo()}<span class="price-tax"></span>
+													</p>
+												</div>
+											</div>
+										</div>
+									</c:forEach>
+							</div>
+						</div>
+					</div>
+					<!-- TAB TUBERS -->
+					<div id="tab-tubers" class="tab-content">
+						<div class="box">
+							<div id="bestseller-slidertab"
+								class="row owl-carousel product-slider">
+									<c:forEach items="${tubersList}" var="item">
+										<div class="item">
+											<div class="product-thumb transition">
+												<div class="image product-imageblock">
+													<a href="product.html"> <img
+														src="${item.getImmagine()}"
+														alt=""
+														title="lorem ippsum dolor dummy" class="img-responsive"
+														style="height: 300px; width: 291px;" />
+													</a>
+													<div class="button-group">
+														<button type="button" class="addtocart-btn">Add To
+															Cart</button>
+														<button type="button" class="compare" data-toggle="tooltip"
+															title="Compare this Product">
+															<i class="fa fa-exchange"></i>
+														</button>
+													</div>
+												</div>
+												<div class="caption product-detail">
+													<h4 class="product-name">
+														<a href="product.html" title="lorem ippsum dolor dummy">${item.getNome()}</a>
+													</h4>
+													<p class="price product-price">
+														${item.getPrezzo()}<span class="price-tax"></span>
+													</p>
+												</div>
+											</div>
+										</div>
+									</c:forEach>
+							</div>
+						</div>
+					</div>
+					<!-- TAB FRUIT -->
+					<div id="tab-fruit" class="tab-content">
+						<div class="box">
+							<div id="bestsellers-slidertab"
+								class="row owl-carousel product-slider">
+									<c:forEach items="${fruitList}" var="item">
+										<div class="item">
+											<div class="product-thumb transition">
+												<div class="image product-imageblock">
+													<a href="product.html"> <img
+														src="${item.getImmagine()}"
+														alt=""
+														title="lorem ippsum dolor dummy" class="img-responsive"
+														style="height: 300px; width: 291px;" />
+													</a>
+													<div class="button-group">
+														<button type="button" class="addtocart-btn">Add To
+															Cart</button>
+														<button type="button" class="compare" data-toggle="tooltip"
+															title="Compare this Product">
+															<i class="fa fa-exchange"></i>
+														</button>
+													</div>
+												</div>
+												<div class="caption product-detail">
+													<h4 class="product-name">
+														<a href="product.html" title="lorem ippsum dolor dummy">${item.getNome()}</a>
+													</h4>
+													<p class="price product-price">
+														${item.getPrezzo()}<span class="price-tax"></span>
+													</p>
+												</div>
+											</div>
+										</div>
+									</c:forEach>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<!-- FEED RSS -->
+				<div class="blog">
+					<div class="blog-heading">
+						<h3>Ultime Notizie dal mondo dell'agricoltura</h3>
+					</div>
+					<div class="blog-inner box">
+						<ul class="list-unstyled blog-wrapper" id="latest-blog">
+							<c:forEach items="${feeder}" var="item">
+								<div class="item blog-slider-item" style="display: inline-block;">
+									<div class="panel-default">
+										<div class="blog-image">
+											<a href="${item.link}" class="blog-imagelink"> <img
+												src="${item.image}" alt="#"
+												style="width: 400px; height: 266px;">
+											</a>
+											<span class="blog-hover"></span>
+											<span class="blog-date">28/02/2020</span>
+											<span class="blog-readmore-outer"><a
+												href="${item.link}" target="_blank" class="blog-readmore">Read
+													More</a>
+											</span>
+										</div>
+										<div class="blog-content">
+											<a href="${item.link}" target="_blank" class="blog-name">
+												<h2>${item.title}</h2>
+											</a>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>
+				<div id="brand_carouse" class="owl-carousel brand-logo">
+				    <c:forEach var = "i" begin = "1" end = "9">
+				    	<div class="item text-center">
+							<a href="#"><img src="image/brand/brand${i}.png"
+								class="img-responsive" /></a>
+						</div>
+					</c:forEach>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- FOOTER -->
 	<%@ include file="footer.jsp"%>

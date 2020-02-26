@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,7 +20,10 @@ import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 
+import model.CategoriaProdotto;
+import model.Prodotto;
 import model.RSS;
+import persistence.DBManager;
 
 
 public class RSSController extends HttpServlet {
@@ -30,6 +34,12 @@ public class RSSController extends HttpServlet {
 		
 		response.setContentType("text/html;charset=UTF-8");
 
+		List<Prodotto> listaProdotti = DBManager.getInstance().dammiProdotti();
+		List<Prodotto> listaProdottiFrutta = DBManager.getInstance().dammiProdottiPerCategoria("Frutta");
+		List<Prodotto> listaProdottiVerdura = DBManager.getInstance().dammiProdottiPerCategoria("Verdura");
+		List<Prodotto> listaProdottiLegumi = DBManager.getInstance().dammiProdottiPerCategoria("Legumi");
+		List<Prodotto> listaProdottiTuberi = DBManager.getInstance().dammiProdottiPerCategoria("Tuberi");
+		
 		URL url = new URL("http://rss.imagelinenetwork.com/AgroNotizie");
 		XmlReader xmlReader = null;
 		List<RSS> RSSList = new LinkedList<RSS>();
@@ -61,13 +71,10 @@ public class RSSController extends HttpServlet {
 				}
 
 				// PROVA OUTPUT
-				for (int i = 0; i < 5; i++) {
-					RSSList2.add(RSSList.get(i));
-					System.out.println(RSSList2.get(i).getTitle());
-					System.out.println(RSSList2.get(i).getImage());
-					System.out.println(RSSList2.get(i).getLink());
-					System.out.println("");
+				for (int i = 0; i < 9; i++) {
+					RSSList2.add(RSSList.get(i));					
 				}
+				
 			} catch (IllegalArgumentException e) {
 				e.printStackTrace();
 			} catch (FeedException e) {
@@ -76,8 +83,13 @@ public class RSSController extends HttpServlet {
 				if (xmlReader != null)
 					xmlReader.close();
 			}
-			request.setAttribute("feeder", RSSList);
-			//response.sendRedirect("index.jsp");
+			
+			request.setAttribute("fruitList", listaProdottiFrutta);
+			request.setAttribute("vegetablesList", listaProdottiVerdura);
+			request.setAttribute("legumesList", listaProdottiLegumi);
+			request.setAttribute("tubersList", listaProdottiTuberi);
+			request.setAttribute("latestProduct", listaProdotti);
+			request.setAttribute("feeder", RSSList2);
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.include(request, response);
