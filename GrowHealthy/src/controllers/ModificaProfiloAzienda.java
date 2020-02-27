@@ -42,7 +42,7 @@ public class ModificaProfiloAzienda extends HttpServlet {
 		azienda.setRagioneSociale(ragioneSociale);
 		azienda.setSedeLegale(sedeLegale);
 		azienda.setReferente(referente);
-		azienda.setpIva(Integer.parseInt(pIva));
+		azienda.setpIva(pIva);
 		azienda.setTelefono(telefono);
 		azienda.setDescrizione(descrizione);
 

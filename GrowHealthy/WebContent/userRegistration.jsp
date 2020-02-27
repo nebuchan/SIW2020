@@ -94,6 +94,11 @@
 										<strong>Codice fiscale inserito non valido!</strong>
 						</div>
 						
+						<div class="alert alert-success" id="alert-success-inputcf"
+										style="display: none !important;">
+										<strong>Codice fiscale inserito valido!</strong>
+						</div>
+						
 					</div>
 					
 					<div class="form-group required">
@@ -116,6 +121,11 @@
 						<div class="alert alert-warning" id="alert-inputtelephone"
 										style="display: none !important;">
 										<strong>Numero telefono inserito non valido!</strong>
+						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputtelephone"
+										style="display: none !important;">
+										<strong>Numero telefono inserito valido!</strong>
 						</div>
 						
 					</div>
@@ -164,6 +174,11 @@
 						<div class="alert alert-warning" id="alert-inputpostcode"
 										style="display: none !important;">
 										<strong>CAP inserito non valido!</strong>
+						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputpostcode"
+										style="display: none !important;">
+										<strong>CAP inserito valido!</strong>
 						</div>
 					</div>
 

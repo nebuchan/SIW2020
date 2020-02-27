@@ -5,7 +5,7 @@ public class Azienda {
 	private String ragioneSociale;
 	private String sedeLegale;
 	private String referente;
-	private long pIva;
+	private String pIva;
 	private String email;
 	private String password;
 	private String telefono;
@@ -35,11 +35,11 @@ public class Azienda {
 		this.referente = referente;
 	}
 
-	public long getpIva() {
+	public String getpIva() {
 		return pIva;
 	}
 
-	public void setpIva(long pIva) {
+	public void setpIva(String pIva) {
 		this.pIva = pIva;
 	}
 

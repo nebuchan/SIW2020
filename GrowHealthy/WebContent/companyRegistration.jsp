@@ -80,6 +80,11 @@
 										style="display: none !important;">
 										<strong>Partita iva inserita non valida!</strong>
 						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputpiva"
+										style="display: none !important;">
+										<strong>Partita iva inserita valida!</strong>
+						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-ragioneSociale" class="col-sm-2 control-label">Ragione
@@ -115,6 +120,11 @@
 						<div class="alert alert-warning" id="alert-inputtelephone"
 										style="display: none !important;">
 										<strong>Numero telefono inserito non valido!</strong>
+						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputtelephone"
+										style="display: none !important;">
+										<strong>Numero telefono inserito valido!</strong>
 						</div>
 					</div>
 					<div class="form-group required">

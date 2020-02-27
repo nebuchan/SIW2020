@@ -7,9 +7,15 @@ $(document).ready(function() {
 		
 		  if (piva.value.search(pattern) == -1)
 		  {
+			  $("#alert-success-inputpiva").hide();
 			  $("#alert-inputpiva").show("slow").delay(3500).fadeOut();
 			  piva.value = "";
 		    piva.focus();
+		  }
+		  else
+		  {
+			  $("#alert-inputpiva").hide();
+			  $("#alert-success-inputpiva").show("slow").delay(3500).fadeOut();
 		  }
 	});
 	
@@ -21,9 +27,15 @@ $(document).ready(function() {
 		  
 		  if (CodiceFiscale.value.search(pattern) == -1)
 		  {
+			  $("#alert-success-inputcf").hide();
 			  $("#alert-inputcf").show("slow").delay(3500).fadeOut();
 		    CodiceFiscale.value = "";
 		    CodiceFiscale.focus();
+		  }
+		  else
+		  {
+			  $("#alert-inputcf").hide();
+			  $("#alert-success-inputcf").show("slow").delay(3500).fadeOut();
 		  }
 	});
 	
@@ -33,9 +45,15 @@ $(document).ready(function() {
 	  
 		  if (numeroTelefono.value.search(pattern) == -1)
 		  {
+			  $("#alert-success-inputtelephone").hide();
 			  $("#alert-inputtelephone").show("slow").delay(3500).fadeOut();
 		    numeroTelefono.value = "";
 		    numeroTelefono.focus();
+		  }
+		  else
+		  {
+			  $("#alert-inputtelephone").hide();
+			  $("#alert-success-inputtelephone").show("slow").delay(3500).fadeOut();
 		  }
 	});
 	
@@ -45,15 +63,23 @@ $(document).ready(function() {
 	  
 		  if (cap.value.search(pattern) == -1)
 		  {
+			  $("#alert-success-inputpostcode").hide();
 			  $("#alert-inputpostcode").show("slow").delay(3500).fadeOut();
 		    cap.value = "";
 		    cap.focus();
+		  }
+		  else
+		  {
+			  $("#alert-inputpostcode").hide();
+			  $("#alert-success-inputpostcode").show("slow").delay(3500).fadeOut();
 		  }
 	});
 	
 	$("#input-password").change(function() {
 		var pattern=/^[a-z0-9]{6,25}$/;
 		var password = document.getElementById("input-password");
+		var confirmPassword = document.getElementById("input-confirm-password");
+		
 		
 		if (password.value.search(pattern) == -1)
 		  {
@@ -61,6 +87,14 @@ $(document).ready(function() {
 			  password.value="";
 		    password.focus();
 		  }
+		
+		if($("#input-confirm-password").val()!="" && $("#input-password").val() !=  $("#input-confirm-password").val())
+		{
+			$("#alert-confirm-success").hide();
+			$("#alert-confirm-unsuccess").show("slow").delay(3500).fadeOut();
+			confirmPassword.value="";
+		    confirmPassword.focus();
+		}
 	});
 	
 	$("#input-confirm-password").change(function() {

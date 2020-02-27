@@ -25,13 +25,13 @@ public class AziendaDaoJDBC implements AziendaDao {
 
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into azienda(email, password, ragione_sociale, sede_legale, partita_iva, referente, telefono, descrizione) values (?,?,?,?,?,?,?,?)";
+			String insert = "insert into azienda(email, password, ragione_sociale, sede_legale, referente, telefono, descrizione, partita_iva) values (?,?,?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
 			statement.setString(1, azienda.getEmail());
 			statement.setString(2, azienda.getPassword());
 			statement.setString(3, azienda.getRagioneSociale());
 			statement.setString(4, azienda.getSedeLegale());
-			statement.setLong(5, azienda.getpIva());
+			statement.setString(5, azienda.getpIva());
 			statement.setString(6, azienda.getReferente());
 			statement.setString(7, azienda.getTelefono());
 			statement.setString(8, azienda.getDescrizione());
@@ -66,7 +66,7 @@ public class AziendaDaoJDBC implements AziendaDao {
 				azienda.setPassword(result.getString("password"));
 				azienda.setRagioneSociale(result.getString("ragione_sociale"));
 				azienda.setSedeLegale(result.getString("sede_legale"));
-				azienda.setpIva(result.getInt("partita_iva"));
+				azienda.setpIva(result.getString("partita_iva"));
 				azienda.setReferente(result.getString("referente"));
 				azienda.setTelefono(result.getString("telefono"));
 				azienda.setDescrizione(result.getString("descrizione"));
@@ -101,7 +101,7 @@ public class AziendaDaoJDBC implements AziendaDao {
 				azienda.setPassword(result.getString("password"));
 				azienda.setRagioneSociale(result.getString("ragione_sociale"));
 				azienda.setSedeLegale(result.getString("sede_legale"));
-				azienda.setpIva(result.getInt("partita_iva"));
+				azienda.setpIva(result.getString("partita_iva"));
 				azienda.setReferente(result.getString("referente"));
 				azienda.setTelefono(result.getString("telefono"));
 				azienda.setDescrizione(result.getString("descrizione"));
@@ -130,7 +130,7 @@ public class AziendaDaoJDBC implements AziendaDao {
 			statement.setString(1, azienda.getPassword());
 			statement.setString(2, azienda.getRagioneSociale());
 			statement.setString(3, azienda.getSedeLegale());
-			statement.setLong(4, azienda.getpIva());
+			statement.setString(4, azienda.getpIva());
 			statement.setString(5, azienda.getReferente());
 			statement.setString(6, azienda.getTelefono());
 			statement.setString(7, azienda.getDescrizione());

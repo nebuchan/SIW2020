@@ -35,7 +35,7 @@ public class RegistrazioneAzienda extends HttpServlet {
 		azienda.setRagioneSociale(ragioneSociale);
 		azienda.setSedeLegale(sedeLegale);
 		azienda.setReferente(referente);
-		azienda.setpIva(Long.parseLong(pIva));
+		azienda.setpIva(pIva);
 		azienda.setTelefono(telefono);
 		azienda.setDescrizione(descrizione);
 
