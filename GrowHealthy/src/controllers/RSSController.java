@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,10 +19,7 @@ import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 
-import model.CategoriaProdotto;
-import model.Prodotto;
 import model.RSS;
-import persistence.DBManager;
 
 
 public class RSSController extends HttpServlet {
@@ -33,12 +29,6 @@ public class RSSController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html;charset=UTF-8");
-
-		List<Prodotto> listaProdotti = DBManager.getInstance().dammiProdotti();
-		List<Prodotto> listaProdottiFrutta = DBManager.getInstance().dammiProdottiPerCategoria("Frutta");
-		List<Prodotto> listaProdottiVerdura = DBManager.getInstance().dammiProdottiPerCategoria("Verdura");
-		List<Prodotto> listaProdottiLegumi = DBManager.getInstance().dammiProdottiPerCategoria("Legumi");
-		List<Prodotto> listaProdottiTuberi = DBManager.getInstance().dammiProdottiPerCategoria("Tuberi");
 		
 		URL url = new URL("http://rss.imagelinenetwork.com/AgroNotizie");
 		XmlReader xmlReader = null;
@@ -84,11 +74,6 @@ public class RSSController extends HttpServlet {
 					xmlReader.close();
 			}
 			
-			request.setAttribute("fruitList", listaProdottiFrutta);
-			request.setAttribute("vegetablesList", listaProdottiVerdura);
-			request.setAttribute("legumesList", listaProdottiLegumi);
-			request.setAttribute("tubersList", listaProdottiTuberi);
-			request.setAttribute("latestProduct", listaProdotti);
 			request.setAttribute("feeder", RSSList2);
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");

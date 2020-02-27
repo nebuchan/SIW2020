@@ -189,7 +189,6 @@
 						<thead>
 							<tr>
 								<th class="text-center">Codice</th>
-								<th class="text-center">Prodotti</th>
 								<th class="text-center">Indirizzo</th>
 								<th class="text-center">Metodo Spedizione</th>
 								<th class="text-center">Dati Pagamento</th>

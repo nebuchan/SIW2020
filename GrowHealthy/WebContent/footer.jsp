@@ -11,48 +11,16 @@
  							<!-- DESCRIZIONE -->
 							<p>Grow Healthy è una piattaforma creata con l'obiettivo di instaurare relazioni commerciali
 									in modo semplice e costruttivo fra aziende e clienti</p>
-							<!-- PAGAMENTI -->
-							<p><span><i class="fas fa-lock"></i></span> Pagamenti Sicuri</p>
-							<div class="my-cards" style="font-size:35px">
-								<a href="https://www.mastercard.it/" target="_blank"><i class="fab fa-cc-mastercard"></i></a>
-								<a href="https://www.paypal.com/" target="_blank"><i class="fab fa-cc-paypal"></i></a>
-								<a href="https://www.americanexpress.com/" target="_blank"><i class="fab fa-cc-amex"></i></a>
-								<a href="https://www.visa.com/" target="_blank"><i class="fab fa-cc-visa"></i></a>
-								<a href="https://www.discover.com/" target="_blank"><i class="fab fa-cc-discover"></i></a>
-							</div>
+		
 						</li>
 					</ul>
 					<br>
 					<br>
 				</div>
 			</div>
-			<!-- CATEGORIE -->
-			<div class="col-sm-2 footer-block" style="text-align:center">
-				<div class="my-footer-widget my-categories-widget">
-					<h5 class="footer-title">Categorie</h5>
-					<ul class="list-unstyled ul-wrapper">
-						<li style="list-style:square"><a href="categories.jsp">Terreni</a></li>
-						<li style="list-style:square"><a href="categories.jsp">Ortaggi</a></li>
-						<li style="list-style:square"><a href="categories.jsp">Prodotti agricoli</a></li>
-					</ul>
-					<br>
-				</div>
-			</div>
-			<!-- INFORMAZIONI -->
-			<div class="col-sm-2 footer-block" style="text-align:center">
-				<div class="my-footer-widget my-information-widget">
-					<h5 class="footer-title">Informazioni</h5>
-					<ul class="list-unstyled ul-wrapper">
-						<li style="list-style:square"><a href="aboutUS.jsp">Chi siamo</a></li>
-						<li style="list-style:square"><a href="#">Contattaci</a></li>
-						<li style="list-style:square"><a href="#">Termini & Condizioni</a></li>
-						<li style="list-style:square"><a href="#">Spedizione</a></li>
-					</ul>
-					<br>
-				</div>
-			</div>
+			
 			<!-- CONTATTI -->
-			<div class="col-sm-4 footer-block" style="text-align:center">
+			<div class="col-sm-4 footer-block" style="text-align:center; left: 400px;">
 				<div class="my-footer-widget">						
 					<h5 class="footer-title">Contatti</h5>					
 					<ul class="list-unstyled ul-wrapper">
@@ -66,16 +34,7 @@
 							<a href="mailto:contact@growhealthy.com">
 								<i class="fas fa-envelope" > Email : contact@growhealthy.com</i>
 							</a>
-							<br>
-							<br>
-							<!-- SOCIAL WIDGET -->
-							<div class="my-social-widget" style="font-size:35px; margin-top:12px;">
-								<a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-								<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-								<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-								<a href="#" target="_blank"><i class="fab fa-google-plus-square"></i></a>
-								<a href="#" target="_blank"><i class="fab fa-youtube-square"></i></a>
-							</div>
+					
 						</li>
 					</ul>
 				</div>

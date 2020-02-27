@@ -28,7 +28,6 @@ $(document).ready(function() {
 							var $acquistoTr = (
 									"<tr>"
 										+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
-										+ "<td class='text-center'> <div id='divProducts'></div></td>"
 										+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
 										+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
 										+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
@@ -37,22 +36,12 @@ $(document).ready(function() {
 										+ "</tr>")
 								
 						
-										$("#tableMyData2 tbody").append($acquistoTr);
-						
-							for(var j = 0; j < acquisti.length; j++){
-								if(acquisti[i].codice == acquisti[j].codice){
-									var $product = ("<h4>"+acquisti[j].prodotto+", "+acquisti[j].azienda+"</h4>")
-								}
-								$("#divProducts").append($product);
-							}		
-						}
-					
-						else if(cod != acquisti[i].codice){
+										$("#tableMyData2 tbody").append($acquistoTr);		
+						}else if(cod != acquisti[i].codice){
 							cod = acquisti[i].codice;
 							var $acquistoTr = (
 									"<tr>"
 										+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
-										+ "<td class='text-center'><div id='divProducts'></div></td>"
 										+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
 										+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
 										+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
@@ -61,13 +50,7 @@ $(document).ready(function() {
 										+ "</tr>")
 						
 						   $("#tableMyData2 tbody").append($acquistoTr);
-						
-							for(var j = 0; j < acquisti.length; j++){
-								if(acquisti[i].codice == acquisti[j].codice){
-									var $product = ("<h4>"+acquisti[j].prodotto+", "+acquisti[j].azienda+"</h4>")
-								}
-								$("#divProducts").append($product);
-							}
+
 						}
 					}
 				}
