@@ -54,3 +54,72 @@ function ValidateForm(form)
 			
 		}
 	}
+	
+	
+$(document).ready(function() {
+	$("#inputquantitamagazzino").change(function() {
+		var pattern=/^[0-9]{0,7}$/;
+		var qty = document.getElementById("inputquantitamagazzino");
+		var qtyMin = document.getElementById("inputquantitaminima");
+	  
+		  if (qty.value.search(pattern) == -1)
+		  {
+			  $("#alert-success-inputqty").hide();
+			  $("#alert-inputqtycompare").hide();
+			  $("#alert-inputqtylong").show("slow").delay(3500).fadeOut();
+		    qty.value = "";
+		    qty.focus();
+		  }
+		  else if(qtyMin.value != "" && qty.value < qtyMin.value)
+		  {
+			  
+			  $("#alert-success-inputqty").hide();
+			  $("#alert-inputqtylong").hide();
+			  $("#alert-inputqtycompare").show("slow").delay(3500).fadeOut();
+			  
+			  qty.value="";
+			  qty.focus();
+		  }
+		  else if(qty.value > qtyMin.value)
+		  {
+			  $("#alert-inputqtylong").hide();
+			  $("#alert-inputqtycompare").hide();
+			  $("#alert-success-inputqty").show("slow").delay(3500).fadeOut();
+		  }
+			  
+	});
+	
+	$("#inputquantitaminima").change(function() {
+		var pattern=/^[0-9]{0,7}$/;
+		var qty = document.getElementById("inputquantitamagazzino");
+		var qtyMin = document.getElementById("inputquantitaminima");
+	  
+		  if (qtyMin.value.search(pattern) == -1)
+		  {
+			  $("#alert-success-inputqtym").hide();
+			  $("#alert-inputqtycomparem").hide();
+			  $("#alert-inputqtylongm").show("slow").delay(3500).fadeOut();
+		    qtyMin.value = "";
+		    qtyMin.focus();
+		  }
+		  else if(qty.value != "" && qty.value < qtyMin.value)
+		  {
+			  
+			  $("#alert-success-inputqtym").hide();
+			  $("#alert-inputqtylongm").hide();
+			  $("#alert-inputqtycomparem").show("slow").delay(3500).fadeOut();
+			  
+			  qtyMin.value="";
+			  qtyMin.focus();
+		  }
+		  else if(qty.value > qtyMin.value)
+		  {
+			  $("#alert-inputqtylongm").hide();
+			  $("#alert-inputqtycomparem").hide();
+			  $("#alert-success-inputqtym").show("slow").delay(3500).fadeOut();
+		  }
+			  
+	});
+	
+	
+});

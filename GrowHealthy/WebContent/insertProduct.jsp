@@ -83,6 +83,22 @@
 							<input type="text" class="form-control" id="inputquantitamagazzino"
 								placeholder="Quantita Magazzino" name="quantitaMagazzino">
 						</div>
+						
+						<div class="alert alert-warning" id="alert-inputqtycompare"
+											style="display: none !important;">
+											<strong>Quantità magazzino inserita minore di Quantità minima da acquistare!</strong>
+						</div>
+						
+						<div class="alert alert-warning" id="alert-inputqtylong"
+											style="display: none !important;">
+											<strong>Attenzione, cifra quantità inserita troppo lunga o contenente caratteri speciali!</strong>
+						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputqty"
+											style="display: none !important;">
+											<strong>Quantita magazzino inserita valida!</strong>
+						</div>
+						
 					</div>
 					<div class="form-group required">
 						<label for="input-quantitaMinima" class="col-sm-2 control-label">Quantità Minima</label>
@@ -90,6 +106,22 @@
 							<input type="text" class="form-control" id="inputquantitaminima"
 								placeholder="Quantita Minima" name="quantitaMinima">
 						</div>
+						
+						<div class="alert alert-warning" id="alert-inputqtycomparem"
+											style="display: none !important;">
+											<strong>Quantità minima inserita maggiore di Quantità Magazzino!</strong>
+						</div>
+						
+						<div class="alert alert-warning" id="alert-inputqtylongm"
+											style="display: none !important;">
+											<strong>Attenzione, cifra quantità inserita troppo lunga o contenente caratteri speciali!</strong>
+						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputqtym"
+											style="display: none !important;">
+											<strong>Quantita inserita valida!</strong>
+						</div>
+						
 					</div>
 					<div class="form-group required">
 						<label for="input-descrizione" class="col-sm-2 control-label">Descrizione</label>
