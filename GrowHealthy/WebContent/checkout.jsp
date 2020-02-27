@@ -324,7 +324,6 @@
 									<table class="table table-bordered" id="tableCart">
 										<thead>
 											<tr>
-												<td class="text-center">Image</td>
 												<td class="text-center">Nome</td>
 												<td class="text-center">Categoria</td>
 												<td class="text-center">Azienda</td>

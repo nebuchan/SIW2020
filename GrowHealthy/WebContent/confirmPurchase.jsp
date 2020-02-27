@@ -50,7 +50,10 @@
 	<%@ include file="navbar.jsp"%>
 
 	<div class="container" style="border-style: solid; border-radius: 25px; border-color: green; min-height: 500px; margin-top: 10px;">
+	<img src="image/successPayment.jpg" style="margin-left: 455px; margin-top: 5px;">
 		<h1 align="center" style="color: green; margin-top: 50px;">Pagamento avvenuto con successo!</h1>
+		<br>
+		<h1 align="center" style="color: green;">Grazie per aver comprato da noi</h1>
 		<div class="container" align="center" style="margin-top: 5%">
 			<a href="home" class="btn btn-default">OK! </a>
 		</div>

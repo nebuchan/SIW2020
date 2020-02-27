@@ -33,6 +33,7 @@
 <script src="javascript/common.js" type="text/javascript"></script>
 <script src="javascript/global.js" type="text/javascript"></script>
 <script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<script src="javascript/cart.js" type="text/javascript"></script>
 
 <script src="https://kit.fontawesome.com/efd0a43034.js"
 	crossorigin="anonymous"></script>
@@ -60,7 +61,6 @@
 						<table class="table table-bordered" id="tableCart">
 							<thead>
 								<tr>
-									<td class="text-center">Image</td>
 									<td class="text-center">Nome</td>
 									<td class="text-center">Categoria</td>
 									<td class="text-center">Azienda</td>

@@ -34,13 +34,11 @@ $(document).ready(function() {
 	if(products.cart.length == 0){
 		$("#tableCart tbody").append("<tr><td></td><td></td><td></td><td class='text-center'><span><strong>Nessun prodotto nel carrello</strong></span></td><td></td><td></td><td></td></tr>");
 	}else{
+		$("#tableCart tbody").empty();
+		
 		for(var i = 0; i<products.cart.length; i++){
 			var $productTr = (
-					"<tr>"
-						+ "<td class='text-center'>" 
-						+ "<a href='product.html'>"
-						+ "<img class='img-thumbnail' title='women's clothing' alt='women's clothing' src='image/product/2product50x59.jpg'>"
-						+"</a></td>" 
+					"<tr>" 
 						+ "<td class='text-center'><a href='javascript:void(0);'>"+products.cart[i].nome+"</a></td>"
 						+ "<td class='text-center'>"+products.cart[i].categoria+"</td>"
 						+ "<td class='text-center'>"+products.cart[i].azienda+"</td>"
@@ -58,7 +56,7 @@ $(document).ready(function() {
 						+ "</div>"
 					+ "</td>"
 					+ "<td class='text-center'>"+products.cart[i].prezzo+" €</td>"
-					+ "<td class='text-center'>"+parseFloat(products.cart[i].prezzo) * parseInt(products.cart[i].quantita)+" €</td>"
+					+ "<td class='text-center'><span id='t"+i+"'>"+parseFloat(products.cart[i].prezzo) * parseInt(products.cart[i].quantita)+"</span> €</td>"
 				+ "</tr>")
 				
 			$("#tableCart tbody").append($productTr);
@@ -186,6 +184,7 @@ function updateQuantity(id) {
 				$("#alert_conferma_update").show("slow").delay(3500).fadeOut();
 				$("#alert_conferma_updateCheckout").show("slow").delay(3500).fadeOut();
 				products.cart[i].quantita = $("#q"+i).val();
+				$("#t"+i).text(parseFloat(products.cart[i].prezzo) * parseInt(products.cart[i].quantita + " EUR"));
 			
 			}
 		}
@@ -213,15 +212,10 @@ function showCart() {
 		for (var i = 0; i < products.cart.length; i++) {
 			var $product = (
 					"<tr>"
-					+ "<td class='text-left'>"
-					+ "<a href='#'><img class='img-thumbnail' src="
-					+ "image/product/7product50x59.jpg"
-					+ "></a>"
-					+ "</td>"
-					+ "<td class='text-left'><a href='javascript:void(0);'>"
+					+ "<td class='text-center'><a href='javascript:void(0);'>"
 					+ products.cart[i].nome
 					+ "</a></td>"
-					+ "<td class='text-left'>x "
+					+ "<td class='text-center'>x "
 					+ products.cart[i].quantita
 					+ " kg</td>"
 					+ "<td class='text-center'>&#8364; "
