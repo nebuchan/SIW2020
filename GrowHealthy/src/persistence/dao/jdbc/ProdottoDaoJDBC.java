@@ -69,7 +69,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
 				prodotto.setQuantitaMin(result.getInt("quantita_minima"));
 				prodotto.setDescrizione(result.getString("descrizione"));
-				prodotto.setPrezzo(result.getInt("prezzo"));
+				prodotto.setPrezzo(result.getDouble("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
 				prodotto.setImmagine(result.getString("immagine"));
 
@@ -105,7 +105,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
 				prodotto.setQuantitaMin(result.getInt("quantita_minima"));
 				prodotto.setDescrizione(result.getString("descrizione"));
-				prodotto.setPrezzo(result.getInt("prezzo"));
+				prodotto.setPrezzo(result.getDouble("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
 				prodotto.setImmagine(result.getString("immagine"));
 
@@ -190,7 +190,7 @@ public class ProdottoDaoJDBC implements ProdottoDao {
 				prodotto.setQuantitaMagazzino(result.getInt("quantita_magazzino"));
 				prodotto.setQuantitaMin(result.getInt("quantita_minima"));
 				prodotto.setDescrizione(result.getString("descrizione"));
-				prodotto.setPrezzo(result.getInt("prezzo"));
+				prodotto.setPrezzo(result.getDouble("prezzo"));
 				prodotto.setEmailAzienda(result.getString("azienda"));
 				prodotto.setImmagine(result.getString("immagine"));
 				prodotti.add(prodotto);

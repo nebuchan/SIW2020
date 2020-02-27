@@ -66,7 +66,7 @@ public class InserimentoProdotto extends HttpServlet {
 			prodotto.setQuantitaMagazzino(Integer.parseInt(quantitaMagazzino));
 			prodotto.setQuantitaMin(Integer.parseInt(quantitaMinima));
 			prodotto.setDescrizione(descrizione);
-			prodotto.setPrezzo(Integer.parseInt(prezzo));
+			prodotto.setPrezzo(Double.parseDouble(prezzo));
 			prodotto.setEmailAzienda(a.getEmail());
 			
 			File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
