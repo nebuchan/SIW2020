@@ -4,6 +4,15 @@
 <script src="javascript/js.cookie.js" type="text/javascript"></script>
 
 <header>
+<!-- Google Analytics tracking code -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-159047557-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- end Google Analytics tracking code -->
+
 	<div class="header-top">
 		<div class="container">
 			<div class="row">
