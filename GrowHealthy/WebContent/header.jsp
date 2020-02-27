@@ -2,7 +2,6 @@
 
 <script src="javascript/cart.js" type="text/javascript"></script>
 <script src="javascript/js.cookie.js" type="text/javascript"></script>
-<script src="javascript/clientProfile.js" type="text/javascript"></script>
 
 <header>
 	<div class="header-top">
