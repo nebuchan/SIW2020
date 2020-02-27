@@ -34,6 +34,7 @@
 <script src="javascript/global.js" type="text/javascript"></script>
 <script src="owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 <script src="javascript/parally.js"></script>
+<script src="javascript/RSS.js" type="text/javascript"></script>
 
 <script>
 	$('.parallax').parally({

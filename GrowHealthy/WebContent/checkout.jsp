@@ -53,7 +53,7 @@
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="/GrowHealthy/"><i class="fa fa-home"></i></a></li>
+			<li><a href="home"><i class="fa fa-home"></i></a></li>
 			<li><a href="cart.jsp">Carrello</a></li>
 		</ul>
 		<div class="row">

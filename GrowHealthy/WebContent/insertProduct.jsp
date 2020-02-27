@@ -52,7 +52,7 @@
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="/GrowHealthy/"><i class="fa fa-home"></i></a></li>
+			<li><a href="index.jsp"><i class="fa fa-home"></i></a></li>
 			<li><a href="#">Account</a></li>
 			<li><a href="userRegistration.jsp">Inserimento Prodotto</a></li>
 		</ul>

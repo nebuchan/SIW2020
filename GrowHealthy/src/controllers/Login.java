@@ -26,7 +26,7 @@ public class Login extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
-		RequestDispatcher rd = request.getRequestDispatcher("rssController");
+		RequestDispatcher rd = request.getRequestDispatcher("home");
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");

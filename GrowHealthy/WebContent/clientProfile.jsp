@@ -49,7 +49,7 @@
 
 	<div class="container">
 		<ul class="breadcrumb">
-			<li><a href="/GrowHealthy/"><i class="fa fa-home"></i></a></li>
+			<li><a href="home"><i class="fa fa-home"></i></a></li>
 		</ul>
 		<div class="row">
 			<div id="column-left" class="col-sm-3 hidden-xs column-left">

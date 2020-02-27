@@ -74,10 +74,8 @@ public class RSSController extends HttpServlet {
 					xmlReader.close();
 			}
 			
-			request.setAttribute("feeder", RSSList2);
+			request.getSession().setAttribute("feeder", RSSList2);
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-		rd.include(request, response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
