@@ -34,8 +34,8 @@ public class DBManager {
 	private DBManager() {
 		try {
 			Class.forName("org.postgresql.Driver").newInstance();
-			dataSource = new DataSource("jdbc:postgresql://packy.db.elephantsql.com:5432/scqjcqio", "scqjcqio",
-					"wynuYWnkYD7uF6IIIkWyj25hlvlUYs2S");
+			dataSource = new DataSource("jdbc:postgresql://rogue.db.elephantsql.com:5432/lozsagvt", "lozsagvt",
+					"vB3BpkQKOAo82JeUyJpgkgwctO_h5Z2X");
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
