@@ -37,6 +37,8 @@
 
 	<script src="https://kit.fontawesome.com/efd0a43034.js" crossorigin="anonymous"></script>
 
+	<script src="javascript/insertProduct.js" type="text/javascript"></script>
+
 </head>
 
 <body class="account-register col-2">
@@ -77,19 +79,52 @@
 						</div>							
 					</div>
 					<div class="form-group required">
+					<input type="hidden" id="oldstockqty" value="${stockQuantity}">
 						<label for="input-stockQuantity" class="col-sm-2 control-label">Quantità Disponibile</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-stockQuantity"
 								 name="quantitaDisponibile" value="${stockQuantity}" required>
 						</div>	
+						
+						<div class="alert alert-warning" id="alert-inputqtycompare"
+											style="display: none !important;">
+											<strong>Quantità magazzino inserita minore di Quantità minima da acquistare!</strong>
+						</div>
+						
+						<div class="alert alert-warning" id="alert-inputqtylong"
+											style="display: none !important;">
+											<strong>Attenzione, cifra quantità inserita troppo lunga o contenente caratteri speciali!</strong>
+						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputqty"
+											style="display: none !important;">
+											<strong>Quantita magazzino inserita valida!</strong>
+						</div>
+						
 					</div>
 					
 					<div class="form-group required">
+					<input type="hidden" id="oldminqty" value="${minimumQuantity}">
 							<label for="input-minimumQuantity" class="col-sm-2 control-label">Quantità Minima </label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="input-minimumQuantity"
 								 name="quantitaMinima" value="${minimumQuantity}" required>
 						</div>	
+						
+						<div class="alert alert-warning" id="alert-inputqtycomparem"
+											style="display: none !important;">
+											<strong>Quantità minima inserita maggiore di Quantità Magazzino!</strong>
+						</div>
+						
+						<div class="alert alert-warning" id="alert-inputqtylongm"
+											style="display: none !important;">
+											<strong>Attenzione, cifra quantità inserita troppo lunga o contenente caratteri speciali!</strong>
+						</div>
+						
+						<div class="alert alert-success" id="alert-success-inputqtym"
+											style="display: none !important;">
+											<strong>Quantita inserita valida!</strong>
+						</div>
 					</div>
 					<div class="form-group required">
 						<label for="input-dexcription" class="col-sm-2 control-label">Descrizione</label>

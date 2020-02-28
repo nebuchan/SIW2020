@@ -58,7 +58,7 @@ function ValidateForm(form)
 	
 $(document).ready(function() {
 	$("#inputquantitamagazzino").change(function() {
-		var pattern=/^[0-9]{0,7}$/;
+		var pattern=/^[0-9]{1,7}$/;
 		var qty = document.getElementById("inputquantitamagazzino");
 		var qtyMin = document.getElementById("inputquantitaminima");
 	  
@@ -70,7 +70,7 @@ $(document).ready(function() {
 		    qty.value = "";
 		    qty.focus();
 		  }
-		  else if(qtyMin.value != "" && qty.value < qtyMin.value)
+		  else if(qtyMin.value != "" && parseInt(qtyMin.value) > parseInt(qty.value) )
 		  {
 			  
 			  $("#alert-success-inputqty").hide();
@@ -80,7 +80,7 @@ $(document).ready(function() {
 			  qty.value="";
 			  qty.focus();
 		  }
-		  else if(qty.value > qtyMin.value)
+		  else if(parseInt(qty.value) > parseInt(qtyMin.value))
 		  {
 			  $("#alert-inputqtylong").hide();
 			  $("#alert-inputqtycompare").hide();
@@ -90,7 +90,7 @@ $(document).ready(function() {
 	});
 	
 	$("#inputquantitaminima").change(function() {
-		var pattern=/^[0-9]{0,7}$/;
+		var pattern=/^[0-9]{1,7}$/;
 		var qty = document.getElementById("inputquantitamagazzino");
 		var qtyMin = document.getElementById("inputquantitaminima");
 	  
@@ -102,9 +102,8 @@ $(document).ready(function() {
 		    qtyMin.value = "";
 		    qtyMin.focus();
 		  }
-		  else if(qty.value != "" && qty.value < qtyMin.value)
+		  else if((qty.value != "") && (parseInt(qtyMin.value) > parseInt(qty.value)))
 		  {
-			  
 			  $("#alert-success-inputqtym").hide();
 			  $("#alert-inputqtylongm").hide();
 			  $("#alert-inputqtycomparem").show("slow").delay(3500).fadeOut();
@@ -112,7 +111,7 @@ $(document).ready(function() {
 			  qtyMin.value="";
 			  qtyMin.focus();
 		  }
-		  else if(qty.value > qtyMin.value)
+		  else if(parseInt(qty.value) > parseInt(qtyMin.value))
 		  {
 			  $("#alert-inputqtylongm").hide();
 			  $("#alert-inputqtycomparem").hide();
@@ -120,6 +119,74 @@ $(document).ready(function() {
 		  }
 			  
 	});
+	
+	$("#input-stockQuantity").change(function() {
+		var pattern=/^[0-9]{1,7}$/;
+		var qty = document.getElementById("input-stockQuantity");
+		var qtyMin = document.getElementById("input-minimumQuantity");
+		
+		var backup = document.getElementById("oldstockqty");
+	  
+		  if (qty.value.search(pattern) == -1)
+		  {
+			  $("#alert-success-inputqty").hide();
+			  $("#alert-inputqtycompare").hide();
+			  $("#alert-inputqtylong").show("slow").delay(3500).fadeOut();
+		    qty.value = backup.value;
+		    qty.focus();
+		  }
+		  else if(qtyMin.value != "" && parseInt(qtyMin.value) > parseInt(qty.value) )
+		  {
+			  
+			  $("#alert-success-inputqty").hide();
+			  $("#alert-inputqtylong").hide();
+			  $("#alert-inputqtycompare").show("slow").delay(3500).fadeOut();
+			  
+			  qty.value=backup.value;
+			  qty.focus();
+		  }
+		  else if(parseInt(qty.value) > parseInt(qtyMin.value))
+		  {
+			  $("#alert-inputqtylong").hide();
+			  $("#alert-inputqtycompare").hide();
+			  $("#alert-success-inputqty").show("slow").delay(3500).fadeOut();
+		  }
+			  
+	});
+	
+	$("#input-minimumQuantity").change(function() {
+		var pattern=/^[0-9]{1,7}$/;
+		var qty = document.getElementById("input-stockQuantity");
+		var qtyMin = document.getElementById("input-minimumQuantity");
+	  
+		var backup = document.getElementById("oldminqty");
+		
+		  if (qtyMin.value.search(pattern) == -1)
+		  {
+			  $("#alert-success-inputqtym").hide();
+			  $("#alert-inputqtycomparem").hide();
+			  $("#alert-inputqtylongm").show("slow").delay(3500).fadeOut();
+		    qtyMin.value = backup.value;
+		    qtyMin.focus();
+		  }
+		  else if((qty.value != "") && (parseInt(qtyMin.value) > parseInt(qty.value)))
+		  {
+			  $("#alert-success-inputqtym").hide();
+			  $("#alert-inputqtylongm").hide();
+			  $("#alert-inputqtycomparem").show("slow").delay(3500).fadeOut();
+			  
+			  qtyMin.value=backup.value;
+			  qtyMin.focus();
+		  }
+		  else if(parseInt(qty.value) > parseInt(qtyMin.value))
+		  {
+			  $("#alert-inputqtylongm").hide();
+			  $("#alert-inputqtycomparem").hide();
+			  $("#alert-success-inputqtym").show("slow").delay(3500).fadeOut();
+		  }
+			  
+	});
+	
 	
 	
 });
