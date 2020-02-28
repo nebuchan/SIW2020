@@ -91,68 +91,51 @@ $(document).ready(function() {
 			type: "post",
 			success: function(res) {
 				
-				var acquisti = JSON.parse(res);
+var acquisti = JSON.parse(res);
 				
-				var cod = 0;
+				var cod = acquisti[0].codice;
 				var cont = 0;
 				
 				if(acquisti.length == 0){
 					$("#tableMyData2 tbody").append("<tr><td></td><td></td><td class='text-center'>Nessun acquisto effettuato</td><td></td><td></td><td></td>");
-				}else{
-				
+				}
+				else{
 					for(var i = 0; i < acquisti.length; i++){
+					
+						if(cont == 0 ){
+							cont=cont + 1;
 						
-							if(cod == 0 && cont == 0 ){
-								cont=cont + 1;
-							
-								var $acquistoTr = (
-										"<tr>"
-											+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
-											+ "<td class='text-center'> <div id='divProducts'></div></td>"
-											+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
-											+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
-											+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
-											+ "<td class='text-center'>"+acquisti[i].data+"</td>"
-											+ "<td class='text-center'>€ "+acquisti[i].totale+"</td>"
-											+ "</tr>")
-									
-							
-											$("#tableMyData2 tbody").append($acquistoTr);
-							
-								for(var j = 0; j < acquisti.length; j++){
-									if(acquisti[i].codice == acquisti[j].codice){
-										var $product = ("<h4>"+acquisti[j].prodotto+", "+acquisti[j].azienda+"</h4>")
-									}
-									$("#divProducts").append($product);
-								}		
-							}
-						
-							else if(cod != acquisti[i].codice){
-								cod = acquisti[i].codice;
-								var $acquistoTr = (
-										"<tr>"
-											+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
-											+ "<td class='text-center'><div id='divProducts'></div></td>"
-											+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
-											+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
-											+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
-											+ "<td class='text-center'>"+acquisti[i].data+"</td>"
-											+ "<td class='text-center'>€ "+acquisti[i].totale+"</td>"
-											+ "</tr>")
-							
-								$("#tableMyData2 tbody").append($acquistoTr);
+							var $acquistoTr = (
+									"<tr>"
+										+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
+										+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
+										+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
+										+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
+										+ "<td class='text-center'>"+acquisti[i].data+"</td>"
+										+ "<td class='text-center'>€ "+acquisti[i].totale+"</td>"
+										+ "</tr>")
 								
-								for(var j = 0; j < acquisti.length; j++){
-									if(acquisti[i].codice == acquisti[j].codice){
-										var $product = ("<h4>"+acquisti[j].prodotto+", "+acquisti[j].azienda+"</h4>")
-									}
-									$("#divProducts").append($product);
-								}
-							}
+						
+										$("#tableMyData2 tbody").append($acquistoTr);		
+						}else if(cod != acquisti[i].codice){
+							cod = acquisti[i].codice;
+							var $acquistoTr = (
+									"<tr>"
+										+ "<td class='text-center'>"+acquisti[i].codice+"</td>"
+										+ "<td class='text-center'>"+acquisti[i].indirizzo+"</td>"
+										+ "<td class='text-center'>"+acquisti[i].spedizione+"</td>"
+										+ "<td class='text-center'>"+acquisti[i].pagamento+"</td>"
+										+ "<td class='text-center'>"+acquisti[i].data+"</td>"
+										+ "<td class='text-center'>€ "+acquisti[i].totale+"</td>"
+										+ "</tr>")
+						
+						   $("#tableMyData2 tbody").append($acquistoTr);
+
 						}
 					}
-				}	
-			});
+				}
+			}
+    	})	
 		
 		});
 	});
